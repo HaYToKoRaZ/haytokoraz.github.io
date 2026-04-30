@@ -8,6 +8,29 @@
     <meta name="description" content="Windows 98 temalı kişisel portfolyo ve proje sayfası.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .notepad-content-area {
+            background: white;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            padding: 10px;
+            height: 100%;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            border: 1px solid var(--win98-dark-grey);
+            box-shadow: inset 1px 1px 0 0 var(--win98-black);
+            flex: 1;
+        }
+        .notepad-content-area a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .notepad-content-area a:hover {
+            color: darkblue;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,7 +101,7 @@
             <span>Yardım</span>
         </div>
         <div class="notepad-content">
-            <textarea id="notepad-textarea" class="notepad-textarea" readonly></textarea>
+            <div id="notepad-content-area" class="notepad-content-area"></div>
         </div>
     </div>
 

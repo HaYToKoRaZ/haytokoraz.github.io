@@ -58,79 +58,31 @@
             transition: transform 0.2s;
         }
 
-        .project-card:hover {
-            transform: scale(1.02);
-            z-index: 5;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--win98-dark-grey);
-            padding-bottom: 8px;
-        }
-
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border: 1px solid var(--win98-dark-grey);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2px;
-        }
-
-        .card-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .card-title {
-            font-weight: bold;
-            font-size: 13px;
-            color: var(--win98-blue);
-            flex: 1;
-        }
-
-        .card-footer {
-            margin-top: auto;
+        .restricted-box {
+            background: #ddd;
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            padding: 25px;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            padding-top: 5px;
-        }
-
-        .store-links {
-            display: flex;
-            gap: 5px;
-        }
-
-        .store-btn {
-            flex: 1;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
-            padding: 2px 4px;
-            font-size: 9px;
-            text-decoration: none;
-            color: black;
+            gap: 15px;
+        }
+
+        .restricted-text {
+            color: #800000;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .login-btn-fake {
+            padding: 5px 20px;
             background: var(--win98-grey);
             border: 2px solid;
             border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
-        }
-
-        .store-btn:active {
-            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
-            padding: 3px 3px 1px 5px;
-        }
-
-        .store-btn img {
-            width: 10px;
-            height: 10px;
+            font-size: 11px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -243,19 +195,25 @@
                         <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" alt="">
                         <span>PC Yazılımlarım</span>
                     </div>
-                    <div style="background: #ddd; border: 1px dashed var(--win98-dark-grey); padding: 20px; text-align: center; font-size: 11px;">
-                        Bu kategoride henüz yayınlanmış bir yazılım bulunmamaktadır.
+                    <div class="restricted-box">
+                        <img src="https://win98icons.alexmeub.com/icons/png/key_web-0.png" alt="Restricted">
+                        <div class="restricted-text">ERİŞİM KISITLANDI / ACCESS RESTRICTED</div>
+                        <p style="font-size: 10px;">Bu bölümdeki yazılımları görüntülemek için yetkili oturum açmanız gerekmektedir.</p>
+                        <button class="login-btn-fake">OTURUM AÇ / LOGIN</button>
                     </div>
                 </section>
 
                 <!-- Category: Scriptlerim -->
                 <section class="category-section">
                     <div class="category-title">
-                        <img src="https://win98icons.alexmeub.com/icons/png/scroll_hor-0.png" alt="">
+                        <img src="https://win98icons.alexmeub.com/icons/png/script_file-0.png" alt="">
                         <span>Scriptlerim</span>
                     </div>
-                    <div style="background: #ddd; border: 1px dashed var(--win98-dark-grey); padding: 20px; text-align: center; font-size: 11px;">
-                        Betikler ve otomasyon scriptleri yakında burada sergilenecektir.
+                    <div class="restricted-box">
+                        <img src="https://win98icons.alexmeub.com/icons/png/msg_warning-0.png" alt="Restricted">
+                        <div class="restricted-text">YETKİSİZ ERİŞİM / UNAUTHORIZED ACCESS</div>
+                        <p style="font-size: 10px;">Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.</p>
+                        <button class="login-btn-fake">KİMLİK DOĞRULA / AUTHENTICATE</button>
                     </div>
                 </section>
 

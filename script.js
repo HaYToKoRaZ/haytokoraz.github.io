@@ -12,7 +12,7 @@ const translations = {
         start_btn: "Başlat",
         notepad_title: "İletişim.txt - Not Defteri",
         contact_header: "İLETİŞİM BİLGİLERİ",
-        ext_header: "Toplam 5 adet eklenti yüklendi. Detaylar ve mağaza bağlantıları için kartlara tıklayın.",
+        ext_header: "Toplam 5 adet eklenti yüklendi. Detaylar için kartlara tıklayın.",
         btn_back: "Geri Dön",
         btn_store: "MAĞAZA",
         btn_detail: "DETAY",
@@ -28,7 +28,7 @@ const translations = {
         start_btn: "Start",
         notepad_title: "Contact.txt - Notepad",
         contact_header: "CONTACT INFORMATION",
-        ext_header: "A total of 5 extensions loaded. Click on cards for details and store links.",
+        ext_header: "A total of 5 extensions loaded. Click on cards for details.",
         btn_back: "Go Back",
         btn_store: "STORE",
         btn_detail: "DETAILS",
@@ -51,7 +51,7 @@ function applyLanguage(lang) {
     const t = translations[lang];
 
     // Update title
-    document.title = lang === 'tr' ? 'HaYTo | Windows 98 Edition' : 'HaYTo | Windows 98 Edition';
+    document.title = 'HaYTo | Windows 98 Edition';
 
     // Map elements by data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -65,10 +65,21 @@ function applyLanguage(lang) {
         }
     });
 
-    // Update Notepad specifically if it exists
-    const notepadText = document.getElementById('notepad-textarea');
-    if (notepadText) {
-        notepadText.value = `${t.contact_header}\n------------------\n\nInstagram: https://www.instagram.com/HaYTo/\nSteam: https://steamcommunity.com/id/HaYTo/\nEmail: korazhayto@gmail.com\n\nStatus: ONLINE\nLocation: CYBER_SPACE\nProtocol: V.4.0.2`;
+    // Update Notepad Specifically
+    const notepadArea = document.getElementById('notepad-content-area');
+    if (notepadArea) {
+        notepadArea.innerHTML = `
+            <b>${t.contact_header}</b>
+            -------------------------
+            
+            <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank">@haytokoraz</a>
+            <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank">HaYTo Profile</a>
+            <b>Email:</b> <a href="mailto:korazhayto@gmail.com">korazhayto@gmail.com</a>
+            
+            <b>Status:</b> ONLINE
+            <b>Location:</b> CYBER_SPACE
+            <b>Protocol:</b> V.4.0.2
+        `;
     }
 }
 
@@ -101,10 +112,12 @@ document.querySelectorAll('.window').forEach(win => {
 
 function openNotepad() {
     const notepad = document.getElementById('notepad');
-    notepad.style.display = 'flex';
-    document.getElementById('notepad-task').style.display = 'flex';
-    document.querySelectorAll('.window').forEach(w => w.style.zIndex = 10);
-    notepad.style.zIndex = 100;
+    if (notepad) {
+        notepad.style.display = 'flex';
+        document.getElementById('notepad-task').style.display = 'flex';
+        document.querySelectorAll('.window').forEach(w => w.style.zIndex = 10);
+        notepad.style.zIndex = 100;
+    }
 }
 
 function closeNotepad() {
