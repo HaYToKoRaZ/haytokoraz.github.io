@@ -35,4 +35,42 @@ Explore the suite of browser extensions developed by HaYTo:
 - **Steam**: [HaYTo Profile](https://steamcommunity.com/id/HaYTo/)
 
 ---
+
+# HaYTo | Windows 98 Sürümü 💾
+
+**HaYTo**'nun nostaljik dijital dünyasına hoş geldiniz. Bu proje, klasik **Windows 98** arayüzünün tarayıcı tabanlı, tam işlevsel bir yeniden canlandırmasıdır; kişisel portfolyo ve proje vitrini olarak hizmet vermektedir.
+
+## 🖥️ Proje Genel Bakışı
+
+Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımlarını sergilerken bilişim dünyasının altın çağını geri getirmek için tasarlandı. Masaüstü ortamı, görev çubuğu, başlat menüsü ve sürüklenebilir pencereler ile tamamen orijinal retro estetiğine sahiptir.
+
+### Temel Özellikler:
+- **Orijinal Retro Arayüz**: 1998 görünümünü ve hissini yansıtmak için saf CSS ile oluşturuldu.
+- **Çoklu Dil Desteği (i18n)**: Tarayıcı dilini (TR/EN) otomatik olarak algılar ve sistem tepsisi üzerinden manuel geçişe izin verir.
+- **Duyarlı Navigasyon**: Projelere ve iletişim bilgilerine hızlı erişim için masaüstü simgeleri ve görev çubuğu kısayolları.
+- **İnteraktif Not Defteri**: İletişim bilgilerine işlevsel bir retro Not Defteri penceresinden erişim.
+
+## 🚀 Öne Çıkan Eklentiler
+
+HaYTo tarafından geliştirilen tarayıcı eklentilerini keşfedin:
+
+1. **Whatsapp To Sahibinden**: WhatsApp mesajlaşması ile Sahibinden ilanları arasındaki boşluğu sorunsuz bir şekilde doldurun.
+2. **Old Cold Freezer**: Gelişmiş sekme yönetimi ve bellek optimizasyonu.
+3. **Old ExtSwitch**: Chrome ve Edge için premium, glassmorphic (cam görünümlü) eklenti yöneticisi.
+4. **Old School RSS**: Modern haber akışı okumanın nostaljik bir yorumu.
+5. **Old Cloud StartPage**: Tarayıcınız için senkronize edilmiş, bulut tabanlı bir kontrol paneli.
+
+## 🛠️ Kullanılan Teknolojiler
+
+- **HTML5**: Semantik yapı.
+- **Vanilla CSS**: Retro estetik üzerinde maksimum kontrol için özel stil (framework kullanılmadı).
+- **JavaScript**: Pencere mantığı, dil değiştirme ve gerçek zamanlı saat işlevselliği.
+
+## 🔗 Bağlantılar
+
+- **Canlı Site**: [haytokoraz.github.io](https://haytokoraz.github.io/)
+- **Instagram**: [@HaYTo](https://www.instagram.com/HaYTo/)
+- **Steam**: [HaYTo Profili](https://steamcommunity.com/id/HaYTo/)
+
+---
 *SYSTEM_READY // 1980*
