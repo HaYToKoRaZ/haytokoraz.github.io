@@ -84,6 +84,84 @@
             font-size: 11px;
             cursor: pointer;
         }
+
+        /* Project Card Internal Layout */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--win98-dark-grey);
+            padding-bottom: 8px;
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+            background: white;
+            border: 1px solid var(--win98-dark-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            overflow: hidden;
+        }
+
+        .card-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 13px;
+            color: var(--win98-blue);
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-top: 5px;
+        }
+
+        .store-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .store-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 2px 4px;
+            font-size: 9px;
+            text-decoration: none;
+            color: black;
+            background: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+        }
+
+        .store-btn:active {
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            padding: 3px 3px 1px 5px;
+        }
+
+        .store-btn img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
