@@ -4,137 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yazılım Kataloğu | HaYToKoRaZ</title>
+    <title>Eklentilerim | HaYToKoRaZ</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .catalog-container {
-            display: flex;
-            height: 400px;
-            background: white;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: #eee;
             border: 2px solid;
             border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            height: 500px;
+            overflow-y: auto;
         }
 
-        .catalog-sidebar {
-            width: 150px;
+        .project-card {
             background: var(--win98-grey);
-            border-right: 2px solid var(--win98-dark-grey);
-            padding: 10px;
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            box-shadow: 1px 1px 0 0 var(--win98-black);
+            padding: 15px;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.2s;
         }
 
-        .sidebar-item {
-            padding: 5px;
-            font-size: 11px;
-            cursor: default;
+        .project-card:hover {
+            transform: scale(1.02);
+            z-index: 5;
+        }
+
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
+            border-bottom: 1px solid var(--win98-dark-grey);
+            padding-bottom: 8px;
         }
 
-        .sidebar-item:hover {
-            background: var(--win98-blue);
-            color: white;
-        }
-
-        .sidebar-item.active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .catalog-main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .catalog-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .program-entry {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            gap: 15px;
-            cursor: default;
-        }
-
-        .program-entry:hover {
-            background: #f0f0f0;
-        }
-
-        .program-entry.selected {
-            background: var(--win98-blue);
-            color: white;
-        }
-
-        .program-icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        .program-details {
-            flex: 1;
-        }
-
-        .program-name {
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        .program-desc {
-            font-size: 11px;
-            opacity: 0.8;
-        }
-
-        .catalog-preview {
-            height: 150px;
-            background: #eee;
-            border-top: 2px solid var(--win98-dark-grey);
-            display: flex;
-            padding: 10px;
-            gap: 15px;
-        }
-
-        .preview-image {
-            width: 200px;
-            height: 100%;
-            background: #000;
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
             border: 1px solid var(--win98-dark-grey);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            padding: 4px;
         }
 
-        .preview-image img {
+        .card-icon img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
-        .preview-info {
-            flex: 1;
-            font-size: 11px;
-        }
-
-        .preview-title {
+        .card-title {
             font-weight: bold;
             font-size: 13px;
-            margin-bottom: 5px;
             color: var(--win98-blue);
+            flex: 1;
         }
 
-        .run-btn {
-            margin-top: 10px;
-            padding: 2px 15px;
+        .card-desc {
+            font-size: 11px;
+            line-height: 1.4;
+            height: 45px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .card-tag {
+            font-size: 9px;
+            background: #ddd;
+            border: 1px solid var(--win98-dark-grey);
+            padding: 1px 5px;
+            text-transform: uppercase;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            font-size: 9px;
+            font-weight: bold;
+            color: #008000;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #00ff00;
         }
     </style>
 </head>
@@ -142,11 +123,11 @@
 <body>
     <div class="desktop"></div>
 
-    <div class="window" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px;">
+    <div class="window" style="top: 5%; left: 5%; width: 90%; min-height: 600px;">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="https://win98icons.alexmeub.com/icons/png/msagent-0.png" width="16" height="16" alt="">
-                Yazılım Seçici - HaYToKoRaZ Projeleri
+                <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" alt="">
+                C:\Projelerim\Eklentiler
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn" onclick="location.href='index.html'">_</button>
@@ -154,88 +135,110 @@
                 <button class="win-btn" onclick="location.href='index.html'">r</button>
             </div>
         </div>
-
-        <div class="window-content" style="padding: 10px;">
-            <div class="catalog-container">
-                <div class="catalog-sidebar">
-                    <div class="sidebar-item active">
-                        <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" alt="">
-                        Tümü
+        
+        <div class="window-content" style="padding: 15px;">
+            <p style="margin-bottom: 15px; font-size: 12px;">Toplam 5 adet eklenti yüklendi. Detaylar ve mağaza bağlantıları için kartlara tıklayın.</p>
+            
+            <div class="projects-grid">
+                <!-- Whatsapp to Sahibinden -->
+                <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="project-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <img src="https://lh3.googleusercontent.com/kpgemfhcbfplfinonlfolenclpjmplbd=s128-rj-wa-v1" alt="WTS">
+                        </div>
+                        <div class="card-title">Whatsapp to Sahibinden</div>
                     </div>
-                    <div class="sidebar-item">
-                        <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" width="16" alt="">
-                        Tarayıcı
+                    <div class="card-desc">Sahibinden ilanlarını WhatsApp'a bağlayın! Telefon numaralarını tek tıkla mesajlaşma linkine dönüştürün.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">Whatsapp</span>
+                        <span class="card-tag">Sahibinden</span>
+                        <span class="card-tag">Helper</span>
                     </div>
-                    <div class="sidebar-item">
-                        <img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" width="16" alt="">
-                        Araçlar
+                    <div class="card-footer">
+                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
+                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;">MAĞAZA</button>
                     </div>
-                </div>
+                </a>
 
-                <div class="catalog-main">
-                    <div class="catalog-list">
-                        <!-- Old Cold Freezer -->
-                        <div class="program-entry" onclick="selectProgram('OCF')">
-                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
-                            <div class="program-details">
-                                <div class="program-name">Old Cold Freezer</div>
-                                <div class="program-desc">Akıllı Sekme Dondurucu ve Bellek Optimizasyonu</div>
-                            </div>
+                <!-- Old Cold Freezer -->
+                <a href="#" class="project-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <img src="https://win98icons.alexmeub.com/icons/png/pda_notel-0.png" alt="OCF">
                         </div>
-
-                        <!-- Old ExtSwitch -->
-                        <div class="program-entry" onclick="selectProgram('OES')">
-                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
-                            <div class="program-details">
-                                <div class="program-name">Old ExtSwitch</div>
-                                <div class="program-desc">Profesyonel Eklenti Yönetim Paneli</div>
-                            </div>
-                        </div>
-
-                        <!-- Hayto New Tab -->
-                        <div class="program-entry" onclick="selectProgram('HNT')">
-                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
-                            <div class="program-details">
-                                <div class="program-name">Hayto New Tab</div>
-                                <div class="program-desc">Kişiselleştirilmiş Dashboard ve RSS Okuyucu</div>
-                            </div>
-                        </div>
-
-                        <!-- Old Local Tab -->
-                        <div class="program-entry" onclick="selectProgram('OLT')">
-                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
-                            <div class="program-details">
-                                <div class="program-name">Old Local Tab</div>
-                                <div class="program-desc">Verimlilik Odaklı Yerel Başlangıç Sayfası</div>
-                            </div>
-                        </div>
-
-                        <!-- Whatsapp to Sahibinden -->
-                        <div class="program-entry" onclick="selectProgram('WTS')">
-                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
-                            <div class="program-details">
-                                <div class="program-name">Whatsapp to Sahibinden</div>
-                                <div class="program-desc">Hızlı İlan Entegrasyon ve Erişim Aracı</div>
-                            </div>
-                        </div>
+                        <div class="card-title">Old Cold Freezer</div>
                     </div>
-
-                    <div class="catalog-preview" id="preview-box">
-                        <div class="preview-image">
-                            <img src="extension_previews_1777581568334.png" alt="Preview">
-                        </div>
-                        <div class="preview-info">
-                            <div class="preview-title" id="p-title">Program Seçin</div>
-                            <div id="p-desc">Detayları görmek için listeden bir eklentiye tıklayın.</div>
-                            <button class="classic-btn run-btn" id="p-btn" style="display: none;">ŞİMDİ ÇALIŞTIR</button>
-                        </div>
+                    <div class="card-desc">Tarayıcı belleğini optimize eden, aktif olmayan sekmeleri donduran akıllı tab yöneticisi.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">Chrome</span>
+                        <span class="card-tag">Optimization</span>
                     </div>
-                </div>
+                    <div class="card-footer">
+                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
+                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;">DETAY</button>
+                    </div>
+                </a>
+
+                <!-- Old ExtSwitch -->
+                <a href="#" class="project-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" alt="OES">
+                        </div>
+                        <div class="card-title">Old ExtSwitch</div>
+                    </div>
+                    <div class="card-desc">Eklentilerinizi tek tıkla yönetin, gruplayın ve senkronize edin. Modern ve hızlı kontrol paneli.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">Manager</span>
+                        <span class="card-tag">Sync</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
+                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;">DETAY</button>
+                    </div>
+                </a>
+
+                <!-- Hayto New Tab -->
+                <a href="#" class="project-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt="HNT">
+                        </div>
+                        <div class="card-title">Hayto New Tab</div>
+                    </div>
+                    <div class="card-desc">Kişiselleştirilmiş yeni sekme sayfası. RSS haberleri, hava durumu ve favori linkler bir arada.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">Dashboard</span>
+                        <span class="card-tag">RSS</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
+                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;">DETAY</button>
+                    </div>
+                </a>
+
+                <!-- Old Local Tab -->
+                <a href="#" class="project-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" alt="OLT">
+                        </div>
+                        <div class="card-title">Old Local Tab</div>
+                    </div>
+                    <div class="card-desc">Yerel verimlilik odaklı, gizlilik dostu ve hızlı erişim paneli eklentisi.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">Productivity</span>
+                        <span class="card-tag">Local</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
+                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;">DETAY</button>
+                    </div>
+                </a>
             </div>
 
-            <div style="margin-top: 10px; text-align: right; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 11px;">Toplam 5 öğe bulundu.</span>
-                <button class="classic-btn" onclick="location.href='index.html'">Kapat</button>
+            <div style="margin-top: 15px; text-align: right;">
+                <button class="classic-btn" onclick="location.href='index.html'">Geri Dön</button>
             </div>
         </div>
     </div>
@@ -248,74 +251,18 @@
         </div>
         <div class="taskbar-divider"></div>
         <div class="task-item" style="border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey); box-shadow: none; background: #ddd;">
-            <img src="https://win98icons.alexmeub.com/icons/png/msagent-0.png" width="16" height="16" style="margin-right: 5px;">
-            Yazılım Seçici
+            <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" style="margin-right: 5px;">
+            Eklentiler
         </div>
         
         <div class="systray">
-            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 05_ENTRIES</span>
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 05</span>
             <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>
     </div>
 
-    <script>
-        const programs = {
-            'OCF': {
-                title: 'Old Cold Freezer',
-                desc: 'Bu uygulama, tarayıcınızın fazla bellek tüketmesini engellemek için aktif olmayan sekmeleri otomatik olarak dondurur. %40\'a varan performans artışı sağlar.',
-                link: '#'
-            },
-            'OES': {
-                title: 'Old ExtSwitch',
-                desc: 'Eklentilerinizi kategorize etmenize, tek tıkla açıp kapatmanıza olanak tanıyan gelişmiş bir yönetim aracıdır.',
-                link: '#'
-            },
-            'HNT': {
-                title: 'Hayto New Tab',
-                desc: 'Yeni sekme deneyiminizi tamamen değiştirir. RSS akışları, yer imleri ve kişisel notlarınız tek ekranda.',
-                link: '#'
-            },
-            'OLT': {
-                title: 'Old Local Tab',
-                desc: 'Tamamen yerel çalışan, gizliliğe önem veren ve hız tutkunları için optimize edilmiş bir başlangıç sayfası eklentisidir.',
-                link: '#'
-            },
-            'WTS': {
-                title: 'Whatsapp to Sahibinden',
-                desc: 'Whatsapp üzerinden Sahibinden.com ilanlarına hızlı erişim ve entegrasyon sağlayan yardımcı araçtır. İlan detaylarını kolayca aktarmanıza yardımcı olur.',
-                link: 'https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd?authuser=0&hl=tr'
-            }
-        };
-
-        function selectProgram(id) {
-            // Remove previous selections
-            document.querySelectorAll('.program-entry').forEach(el => el.classList.remove('selected'));
-            
-            // Highlight selected
-            const entries = document.querySelectorAll('.program-entry');
-            const index = Object.keys(programs).indexOf(id);
-            entries[index].classList.add('selected');
-
-            // Update preview
-            const prog = programs[id];
-            document.getElementById('p-title').textContent = prog.title;
-            document.getElementById('p-desc').textContent = prog.desc;
-            const btn = document.getElementById('p-btn');
-            btn.style.display = 'block';
-            btn.onclick = () => window.open(prog.link, '_blank');
-        }
-
-        // Clock logic
-        function updateClock() {
-            const now = new Date();
-            const h = String(now.getHours()).padStart(2, '0');
-            const m = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${h}:${m}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
