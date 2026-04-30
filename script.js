@@ -73,6 +73,7 @@ function applyLanguage(lang) {
             -------------------------
             
             <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank">@haytokoraz</a>
+            <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank">@HaYTo</a>
             <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank">HaYTo Profile</a>
             <b>Email:</b> <a href="mailto:korazhayto@gmail.com">korazhayto@gmail.com</a>
             
