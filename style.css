@@ -143,6 +143,15 @@ body {
 /* --- Button Styling (Cyberpunk style) --- */
 .interact-box {
     margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.projects-btn {
+    --primary: var(--neon-purple);
+    --shadow-primary: var(--neon-blue);
 }
 
 .cybr-btn {

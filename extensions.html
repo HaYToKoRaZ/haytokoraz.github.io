@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eklentiler | HaYToKoRaZ Projects</title>
+    <meta name="description" content="Geliştirdiğim tarayıcı eklentileri ve dijital araçlar kataloğu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            max-height: 60vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--neon-blue) transparent;
+        }
+
+        .projects-grid::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .projects-grid::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+        }
+
+        .project-card {
+            background: rgba(0, 243, 255, 0.03);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            background: rgba(0, 243, 255, 0.1);
+            border-color: var(--neon-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+        }
+
+        .project-card::before {
+            content: 'MODULE_ID: ' attr(data-id);
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 0.6rem;
+            color: var(--neon-blue);
+            font-family: var(--font-display);
+            opacity: 0.5;
+        }
+
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        .project-card .status {
+            font-size: 0.7rem;
+            font-family: var(--font-display);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 10px var(--neon-blue);
+            transform: translateX(-5px);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanner-line"></div>
+    <div class="noise-overlay"></div>
+    <div class="grid-background"></div>
+
+    <main class="main-frame">
+        <div class="status-bar">
+            <span class="status-code">PROJECT_DATABASE // LOADED</span>
+            <span class="status-time" id="clock">00:00:00</span>
+        </div>
+
+        <section class="content" style="text-align: left;">
+            <a href="index.html" class="back-link">< RETURN_TO_CORE</a>
+            <h1 class="main-title" style="font-size: 3rem; text-align: left; letter-spacing: 0;">EKLENTİLER</h1>
+            
+            <div class="projects-grid">
+                <!-- Old Cold Freezer -->
+                <a href="#" class="project-card" data-id="OCF-01">
+                    <div class="status"><span class="status-dot"></span> ACTIVE</div>
+                    <h3>Old Cold Freezer</h3>
+                    <p>Tarayıcı belleğini optimize eden, aktif olmayan sekmeleri donduran akıllı tab yöneticisi.</p>
+                    <div class="project-tags">
+                        <span class="tag">Chrome</span>
+                        <span class="tag">Optimization</span>
+                        <span class="tag">Privacy</span>
+                    </div>
+                </a>
+
+                <!-- Old ExtSwitch -->
+                <a href="#" class="project-card" data-id="OES-02">
+                    <div class="status"><span class="status-dot"></span> ACTIVE</div>
+                    <h3>Old ExtSwitch</h3>
+                    <p>Eklentilerinizi tek tıkla yönetin, gruplayın ve senkronize edin. Modern ve hızlı kontrol paneli.</p>
+                    <div class="project-tags">
+                        <span class="tag">Manager</span>
+                        <span class="tag">Workflow</span>
+                        <span class="tag">Sync</span>
+                    </div>
+                </a>
+
+                <!-- Hayto New Tab -->
+                <a href="#" class="project-card" data-id="HNT-03">
+                    <div class="status"><span class="status-dot"></span> ACTIVE</div>
+                    <h3>Hayto New Tab</h3>
+                    <p>Kişiselleştirilmiş yeni sekme sayfası. RSS haberleri, hava durumu ve favori linkler bir arada.</p>
+                    <div class="project-tags">
+                        <span class="tag">Dashboard</span>
+                        <span class="tag">RSS</span>
+                        <span class="tag">Custom</span>
+                    </div>
+                </a>
+
+                <!-- Old Local Tab -->
+                <a href="#" class="project-card" data-id="OLT-04">
+                    <div class="status"><span class="status-dot"></span> ACTIVE</div>
+                    <h3>Old Local Tab</h3>
+                    <p>Yerel verimlilik odaklı, gizlilik dostu ve hızlı erişim paneli eklentisi.</p>
+                    <div class="project-tags">
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Local</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer-info">
+            <div class="info-block">
+                <span class="label">SEC_LEVEL</span>
+                <span class="value">ENCRYPTED</span>
+            </div>
+            <div class="info-block">
+                <span class="label">RECORDS</span>
+                <span class="value">04_ENTRIES</span>
+            </div>
+        </footer >
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
