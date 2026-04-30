@@ -232,6 +232,36 @@ body {
     font-weight: 700;
 }
 
+.social-link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.social-link:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 5px var(--neon-blue);
+    transition: width 0.3s ease;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
 /* --- Overlay --- */
 #overlay-message {
     position: fixed;
