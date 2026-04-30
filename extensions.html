@@ -40,8 +40,8 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
         }
 
         .project-card {
@@ -49,7 +49,7 @@
             border: 2px solid;
             border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
             box-shadow: 1px 1px 0 0 var(--win98-black);
-            padding: 15px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -72,14 +72,14 @@
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background: white;
             border: 1px solid var(--win98-dark-grey);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4px;
+            padding: 2px;
         }
 
         .card-icon img {
@@ -95,20 +95,12 @@
             flex: 1;
         }
 
-        .card-desc {
-            font-size: 11px;
-            line-height: 1.4;
-            height: 45px;
-            overflow: hidden;
-        }
-
         .card-footer {
             margin-top: auto;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            padding-top: 10px;
-            border-top: 1px solid #ddd;
+            gap: 5px;
+            padding-top: 5px;
         }
 
         .store-links {
@@ -122,8 +114,8 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            padding: 3px 5px;
-            font-size: 10px;
+            padding: 2px 4px;
+            font-size: 9px;
             text-decoration: none;
             color: black;
             background: var(--win98-grey);
@@ -133,12 +125,12 @@
 
         .store-btn:active {
             border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
-            padding: 4px 4px 2px 6px;
+            padding: 3px 3px 1px 5px;
         }
 
         .store-btn img {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
         }
     </style>
 </head>
@@ -173,9 +165,8 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="whatsapp.png" alt=""></div>
-                                <div class="card-title">Whatsapp to Sahibinden</div>
+                                <div class="card-title">Whatsapp To Sahibinden</div>
                             </div>
-                            <div class="card-desc">Sahibinden ilanlarını WhatsApp'a bağlayın!</div>
                             <div class="card-footer">
                                 <div class="store-links">
                                     <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="store-btn">
@@ -194,7 +185,6 @@
                                 <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/pda_notel-0.png" alt=""></div>
                                 <div class="card-title">Old Cold Freezer</div>
                             </div>
-                            <div class="card-desc">Tarayıcı belleğini optimize eden sekme yöneticisi.</div>
                             <div class="card-footer">
                                 <div class="store-links">
                                     <a href="#" class="store-btn"><img src="chrome.png" alt=""> Chrome</a>
@@ -209,7 +199,34 @@
                                 <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" alt=""></div>
                                 <div class="card-title">Old ExtSwitch</div>
                             </div>
-                            <div class="card-desc">Profesyonel eklenti yönetim paneli.</div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="#" class="store-btn"><img src="chrome.png" alt=""> Chrome</a>
+                                    <a href="#" class="store-btn"><img src="edge.png" alt=""> Edge</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Old School RSS -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/message_scrolling-0.png" alt=""></div>
+                                <div class="card-title">Old School RSS</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="#" class="store-btn"><img src="chrome.png" alt=""> Chrome</a>
+                                    <a href="#" class="store-btn"><img src="edge.png" alt=""> Edge</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Old Cloud StartPage -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/world-2.png" alt=""></div>
+                                <div class="card-title">Old Cloud StartPage</div>
+                            </div>
                             <div class="card-footer">
                                 <div class="store-links">
                                     <a href="#" class="store-btn"><img src="chrome.png" alt=""> Chrome</a>
@@ -268,7 +285,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 03</span>
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 05</span>
             <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>
