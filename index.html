@@ -4,71 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aaaaMerhaba Dünya | Gelecekd Burada</title>
-    <meta name="description" content="Cyberpunk temalı, interaktif Merhaba Dünya deneyimi.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap"
-        rel="stylesheet">
+    <title>HaYToKoRaZ | Windows 98 Edition</title>
+    <meta name="description" content="Windows 98 temalı kişisel portfolyo ve proje sayfası.">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="scanner-line"></div>
-    <div class="noise-overlay"></div>
-
-    <div class="grid-background"></div>
-
-    <main class="main-frame">
-        <div class="status-bar">
-            <span class="status-code">SYSTEM_READY // 2026</span>
-            <span class="status-time" id="clock">00:00:00</span>
+    <!-- Desktop Icons -->
+    <div class="desktop">
+        <a href="https://www.instagram.com/haytokoraz/" target="_blank" class="desktop-icon">
+            <img src="https://win98icons.alexmeub.com/icons/png/camera-0.png" alt="Instagram">
+            <span>Instagram.lnk</span>
+        </a>
+        <a href="https://steamcommunity.com/id/HaYTo/" target="_blank" class="desktop-icon">
+            <img src="https://win98icons.alexmeub.com/icons/png/joystick-0.png" alt="Steam">
+            <span>Steam.lnk</span>
+        </a>
+        <a href="mailto:korazhayto@gmail.com" class="desktop-icon">
+            <img src="https://win98icons.alexmeub.com/icons/png/envelope_closed-0.png" alt="Email">
+            <span>Mail.lnk</span>
+        </a>
+        <a href="extensions.html" class="desktop-icon">
+            <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" alt="Projects">
+            <span>Projelerim.lnk</span>
+        </a>
+        <div class="desktop-icon">
+            <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-0.png" alt="Recycle Bin">
+            <span>Çöp Kutusu</span>
         </div>
+    </div>
 
-        <section class="content">
-            <div class="glitch-wrapper">
-                <h1 class="main-title" data-text="MERHABA DÜNYA">MERHABA DÜNYA</h1>
+    <!-- Main Window -->
+    <div class="window main-window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" alt="">
+                Hoş Geldiniz - HaYToKoRaZ.exe
             </div>
-            <p class="tagline">YENİ NESİL DİJİTAL DENEYİMİN BAŞLANGICI</p>
+            <div class="title-bar-controls">
+                <button class="win-btn">0</button>
+                <button class="win-btn">1</button>
+                <button class="win-btn">r</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <p class="welcome-text">Sisteme başarıyla giriş yapıldı.</p>
+            <p style="margin-bottom: 10px;">Merhaba, ben <b>HaYToKoRaZ</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.</p>
+            <p style="margin-bottom: 20px;">Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 10px;">
+                <button class="classic-btn" onclick="location.href='extensions.html'">PROJELERİ GÖR</button>
+                <button class="classic-btn" onclick="alert('İletişim: korazhayto@gmail.com')">BİLGİ AL</button>
+            </div>
+        </div>
+    </div>
 
-            <div class="interact-box">
-                <button class="cybr-btn" onclick="initializeSystem()">
-                    SİSTEMİ BAŞLAT<span aria-hidden>_</span>
-                    <span class="cybr-btn__glitch">SİSTEMİ BAŞLAT_</span>
-                    <span class="cybr-btn__tag">R25</span>
-                </button>
-                <a href="extensions.html" class="cybr-btn projects-btn" style="text-decoration: none; display: inline-block; margin-top: 1rem;">
-                    EKLENTİLERİM<span aria-hidden>_</span>
-                    <span class="cybr-btn__glitch">EKLENTİLERİM_</span>
-                    <span class="cybr-btn__tag">P04</span>
-                </a>
-            </div>
-        </section>
-
-        <footer class="footer-info">
-            <div class="info-block">
-                <span class="label">LOC</span>
-                <span class="value">CYBER_SPACE</span>
-            </div>
-            <div class="info-block">
-                <span class="label">PROTO</span>
-                <span class="value">V.4.0.2</span>
-            </div>
-            <div class="info-block">
-                <span class="label">SOCIAL</span>
-                <span class="value">
-                    <a href="https://x.com/haytokoraz" target="_blank" class="social-link">TWITTER_X</a>
-                </span>
-            </div>
-        </footer>
-    </main>
-
-    <div id="overlay-message" class="hidden">
-        <div class="msg-content">
-            <h2>ERİŞİM SAĞLANDI</h2>
-            <p>Dünyaya hoş geldiniz, gezgin.</p>
-            <button onclick="closeOverlay()">KAPAT</button>
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="start-button">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="">
+            Başlat
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="task-item">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" style="margin-right: 5px;">
+            HaYToKoRaZ.exe
+        </div>
+        
+        <div class="systray">
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
+            <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" alt="">
+            <span id="clock">00:00</span>
         </div>
     </div>
 
