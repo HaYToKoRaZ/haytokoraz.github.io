@@ -4,58 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projelerim | Windows 98 Edition</title>
+    <title>Yazılım Kataloğu | HaYToKoRaZ</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .explorer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 20px;
-            padding: 20px;
+        .catalog-container {
+            display: flex;
+            height: 400px;
             background: white;
             border: 2px solid;
             border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
-            height: 300px;
-            overflow-y: auto;
         }
 
-        .folder-icon {
+        .catalog-sidebar {
+            width: 150px;
+            background: var(--win98-grey);
+            border-right: 2px solid var(--win98-dark-grey);
+            padding: 10px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
-            color: black;
+            gap: 10px;
+        }
+
+        .sidebar-item {
+            padding: 5px;
             font-size: 11px;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .folder-icon img {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 5px;
-        }
-
-        .folder-icon:hover span {
+        .sidebar-item:hover {
             background: var(--win98-blue);
             color: white;
         }
 
-        .explorer-toolbar {
-            display: flex;
-            gap: 10px;
-            padding: 5px;
-            border-bottom: 1px solid var(--win98-dark-grey);
-            margin-bottom: 5px;
-            font-size: 11px;
+        .sidebar-item.active {
+            font-weight: bold;
+            text-decoration: underline;
         }
 
-        .toolbar-item {
-            padding: 2px 5px;
+        .catalog-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .catalog-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .program-entry {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            gap: 15px;
             cursor: default;
         }
 
-        .toolbar-item:hover {
-            box-shadow: inset 1px 1px 0 var(--win98-white), inset -1px -1px 0 var(--win98-dark-grey);
+        .program-entry:hover {
+            background: #f0f0f0;
+        }
+
+        .program-entry.selected {
+            background: var(--win98-blue);
+            color: white;
+        }
+
+        .program-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .program-details {
+            flex: 1;
+        }
+
+        .program-name {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .program-desc {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .catalog-preview {
+            height: 150px;
+            background: #eee;
+            border-top: 2px solid var(--win98-dark-grey);
+            display: flex;
+            padding: 10px;
+            gap: 15px;
+        }
+
+        .preview-image {
+            width: 200px;
+            height: 100%;
+            background: #000;
+            border: 1px solid var(--win98-dark-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-info {
+            flex: 1;
+            font-size: 11px;
+        }
+
+        .preview-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: var(--win98-blue);
+        }
+
+        .run-btn {
+            margin-top: 10px;
+            padding: 2px 15px;
         }
     </style>
 </head>
@@ -63,11 +142,11 @@
 <body>
     <div class="desktop"></div>
 
-    <div class="window" style="top: 10%; left: 10%; width: 80%; min-height: 450px;">
+    <div class="window" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px;">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" alt="">
-                C:\Belgelerim\Projelerim
+                <img src="https://win98icons.alexmeub.com/icons/png/msagent-0.png" width="16" height="16" alt="">
+                Yazılım Seçici - HaYToKoRaZ Projeleri
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn" onclick="location.href='index.html'">_</button>
@@ -75,39 +154,78 @@
                 <button class="win-btn" onclick="location.href='index.html'">r</button>
             </div>
         </div>
-        
-        <div class="explorer-toolbar">
-            <div class="toolbar-item" onclick="location.href='index.html'">Dosya</div>
-            <div class="toolbar-item">Düzen</div>
-            <div class="toolbar-item">Görünüm</div>
-            <div class="toolbar-item">Yardım</div>
-        </div>
 
         <div class="window-content" style="padding: 10px;">
-            <div class="explorer-grid">
-                <a href="#" class="folder-icon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" alt="">
-                    <span>Old Cold Freezer.exe</span>
-                </a>
-                <a href="#" class="folder-icon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" alt="">
-                    <span>Old ExtSwitch.exe</span>
-                </a>
-                <a href="#" class="folder-icon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" alt="">
-                    <span>Hayto New Tab.exe</span>
-                </a>
-                <a href="#" class="folder-icon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" alt="">
-                    <span>Old Local Tab.exe</span>
-                </a>
+            <div class="catalog-container">
+                <div class="catalog-sidebar">
+                    <div class="sidebar-item active">
+                        <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" alt="">
+                        Tümü
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" width="16" alt="">
+                        Tarayıcı
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" width="16" alt="">
+                        Araçlar
+                    </div>
+                </div>
+
+                <div class="catalog-main">
+                    <div class="catalog-list">
+                        <!-- Old Cold Freezer -->
+                        <div class="program-entry" onclick="selectProgram('OCF')">
+                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
+                            <div class="program-details">
+                                <div class="program-name">Old Cold Freezer</div>
+                                <div class="program-desc">Akıllı Sekme Dondurucu ve Bellek Optimizasyonu</div>
+                            </div>
+                        </div>
+
+                        <!-- Old ExtSwitch -->
+                        <div class="program-entry" onclick="selectProgram('OES')">
+                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
+                            <div class="program-details">
+                                <div class="program-name">Old ExtSwitch</div>
+                                <div class="program-desc">Profesyonel Eklenti Yönetim Paneli</div>
+                            </div>
+                        </div>
+
+                        <!-- Hayto New Tab -->
+                        <div class="program-entry" onclick="selectProgram('HNT')">
+                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
+                            <div class="program-details">
+                                <div class="program-name">Hayto New Tab</div>
+                                <div class="program-desc">Kişiselleştirilmiş Dashboard ve RSS Okuyucu</div>
+                            </div>
+                        </div>
+
+                        <!-- Old Local Tab -->
+                        <div class="program-entry" onclick="selectProgram('OLT')">
+                            <img src="https://win98icons.alexmeub.com/icons/png/executable-0.png" class="program-icon" alt="">
+                            <div class="program-details">
+                                <div class="program-name">Old Local Tab</div>
+                                <div class="program-desc">Verimlilik Odaklı Yerel Başlangıç Sayfası</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-preview" id="preview-box">
+                        <div class="preview-image">
+                            <img src="extension_previews_1777581568334.png" alt="Preview">
+                        </div>
+                        <div class="preview-info">
+                            <div class="preview-title" id="p-title">Program Seçin</div>
+                            <div id="p-desc">Detayları görmek için listeden bir eklentiye tıklayın.</div>
+                            <button class="classic-btn run-btn" id="p-btn" style="display: none;">ŞİMDİ ÇALIŞTIR</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div style="margin-top: 20px; font-size: 11px; border: 1px solid var(--win98-dark-grey); padding: 5px; background: #eee;">
-                <b>Dosya Bilgisi:</b> Seçilen öğenin detayları burada görünecektir.
-            </div>
-            
-            <div style="margin-top: 10px; text-align: right;">
+
+            <div style="margin-top: 10px; text-align: right; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px;">Toplam 4 öğe bulundu.</span>
                 <button class="classic-btn" onclick="location.href='index.html'">Kapat</button>
             </div>
         </div>
@@ -121,8 +239,8 @@
         </div>
         <div class="taskbar-divider"></div>
         <div class="task-item" style="border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey); box-shadow: none; background: #ddd;">
-            <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" style="margin-right: 5px;">
-            Projelerim
+            <img src="https://win98icons.alexmeub.com/icons/png/msagent-0.png" width="16" height="16" style="margin-right: 5px;">
+            Yazılım Seçici
         </div>
         
         <div class="systray">
@@ -132,7 +250,58 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const programs = {
+            'OCF': {
+                title: 'Old Cold Freezer',
+                desc: 'Bu uygulama, tarayıcınızın fazla bellek tüketmesini engellemek için aktif olmayan sekmeleri otomatik olarak dondurur. %40\'a varan performans artışı sağlar.',
+                link: '#'
+            },
+            'OES': {
+                title: 'Old ExtSwitch',
+                desc: 'Eklentilerinizi kategorize etmenize, tek tıkla açıp kapatmanıza olanak tanıyan gelişmiş bir yönetim aracıdır.',
+                link: '#'
+            },
+            'HNT': {
+                title: 'Hayto New Tab',
+                desc: 'Yeni sekme deneyiminizi tamamen değiştirir. RSS akışları, yer imleri ve kişisel notlarınız tek ekranda.',
+                link: '#'
+            },
+            'OLT': {
+                title: 'Old Local Tab',
+                desc: 'Tamamen yerel çalışan, gizliliğe önem veren ve hız tutkunları için optimize edilmiş bir başlangıç sayfası eklentisidir.',
+                link: '#'
+            }
+        };
+
+        function selectProgram(id) {
+            // Remove previous selections
+            document.querySelectorAll('.program-entry').forEach(el => el.classList.remove('selected'));
+            
+            // Highlight selected
+            const entries = document.querySelectorAll('.program-entry');
+            const index = Object.keys(programs).indexOf(id);
+            entries[index].classList.add('selected');
+
+            // Update preview
+            const prog = programs[id];
+            document.getElementById('p-title').textContent = prog.title;
+            document.getElementById('p-desc').textContent = prog.desc;
+            const btn = document.getElementById('p-btn');
+            btn.style.display = 'block';
+            btn.onclick = () => window.open(prog.link, '_blank');
+        }
+
+        // Clock logic
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${h}:${m}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 
 </html>
