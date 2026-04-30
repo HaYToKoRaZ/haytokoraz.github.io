@@ -15,7 +15,7 @@
 }
 
 body {
-    background: var(--win98-teal) url('assets/wallpaper.png');
+    background: var(--win98-teal) url('assets/win98wallpaper.jpg');
     background-size: cover;
     font-family: 'Tahoma', 'Verdana', sans-serif;
     height: 100vh;
@@ -229,7 +229,7 @@ body {
     width: 16px;
 }
 ::-webkit-scrollbar-track {
-    background: url('assets/wallpaper.png');
+    background: url('assets/win98wallpaper.jpg');
 }
 ::-webkit-scrollbar-thumb {
     background: var(--win98-grey);
@@ -279,4 +279,3 @@ body {
     border-bottom: 1px solid var(--win98-dark-grey);
     background: var(--win98-grey);
 }
-
