@@ -236,3 +236,46 @@ body {
     border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
     box-shadow: 1px 1px 0 0 var(--win98-black);
 }
+
+/* --- Notepad Window --- */
+.notepad-window {
+    width: 350px;
+    height: 300px;
+    top: 35%;
+    left: 55%;
+    display: none;
+    flex-direction: column;
+}
+
+.notepad-content {
+    background: white;
+    flex: 1;
+    border: 1px solid var(--win98-dark-grey);
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notepad-textarea {
+    width: 100%;
+    flex: 1;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    padding: 5px;
+    white-space: pre-wrap;
+    background: white;
+    color: black;
+}
+
+.notepad-menu {
+    display: flex;
+    gap: 10px;
+    padding: 2px 5px;
+    font-size: 11px;
+    border-bottom: 1px solid var(--win98-dark-grey);
+    background: var(--win98-grey);
+}
+

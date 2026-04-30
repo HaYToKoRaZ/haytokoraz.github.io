@@ -28,3 +28,17 @@ document.querySelectorAll('.window').forEach(win => {
         win.style.zIndex = 100;
     });
 });
+
+function openNotepad() {
+    const notepad = document.getElementById('notepad');
+    notepad.style.display = 'flex';
+    document.getElementById('notepad-task').style.display = 'flex';
+    // Bring to front
+    document.querySelectorAll('.window').forEach(w => w.style.zIndex = 10);
+    notepad.style.zIndex = 100;
+}
+
+function closeNotepad() {
+    document.getElementById('notepad').style.display = 'none';
+    document.getElementById('notepad-task').style.display = 'none';
+}

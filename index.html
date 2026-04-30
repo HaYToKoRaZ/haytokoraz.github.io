@@ -54,8 +54,41 @@
             
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <button class="classic-btn" onclick="location.href='extensions.html'">PROJELERİ GÖR</button>
-                <button class="classic-btn" onclick="alert('İletişim: korazhayto@gmail.com')">BİLGİ AL</button>
+                <button class="classic-btn" onclick="openNotepad()">BİLGİ AL</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Notepad Window -->
+    <div id="notepad" class="window notepad-window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" alt="">
+                İletişim.txt - Not Defteri
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeNotepad()">r</button>
+            </div>
+        </div>
+        <div class="notepad-menu">
+            <span>Dosya</span>
+            <span>Düzen</span>
+            <span>Arama</span>
+            <span>Yardım</span>
+        </div>
+        <div class="notepad-content">
+            <textarea class="notepad-textarea" readonly>
+İLETİŞİM BİLGİLERİ
+------------------
+
+Instagram: https://www.instagram.com/haytokoraz/
+Steam: https://steamcommunity.com/id/HaYTo/
+Email: korazhayto@gmail.com
+
+Sistem Durumu: ÇEVRİMİÇİ
+Konum: CYBER_SPACE
+Protokol: V.4.0.2
+            </textarea>
         </div>
     </div>
 
@@ -66,9 +99,13 @@
             Başlat
         </div>
         <div class="taskbar-divider"></div>
-        <div class="task-item">
+        <div class="task-item" id="main-task">
             <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" style="margin-right: 5px;">
             HaYToKoRaZ.exe
+        </div>
+        <div class="task-item" id="notepad-task" style="display: none;">
+            <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" style="margin-right: 5px;">
+            İletişim.txt - Not...
         </div>
         
         <div class="systray">
