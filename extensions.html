@@ -9,7 +9,7 @@
     <style>
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
             background: #eee;
@@ -97,6 +97,45 @@
             height: 45px;
             overflow: hidden;
         }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .store-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .store-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 3px 5px;
+            font-size: 10px;
+            text-decoration: none;
+            color: black;
+            background: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+        }
+
+        .store-btn:active {
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            padding: 4px 4px 2px 6px;
+        }
+
+        .store-btn img {
+            width: 12px;
+            height: 12px;
+        }
     </style>
 </head>
 
@@ -117,7 +156,7 @@
         </div>
         
         <div class="window-content" style="padding: 15px;">
-            <p style="margin-bottom: 15px; font-size: 12px;" data-i18n="ext_header">Toplam 5 adet eklenti yüklendi. Detaylar için kartlara tıklayın.</p>
+            <p style="margin-bottom: 15px; font-size: 12px;" data-i18n="ext_header">Toplam 5 adet eklenti yüklendi. Mağaza bağlantıları için logolara tıklayın.</p>
             
             <div class="category-tabs">
                 <div class="tab active" onclick="showCategory('extensions')" id="tab-extensions">Eklentilerim</div>
@@ -126,42 +165,84 @@
             </div>
 
             <div class="projects-grid" id="projects-grid">
-                <!-- Extensions (Default) -->
-                <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="project-card ext-item">
+                <!-- Whatsapp to Sahibinden -->
+                <div class="project-card ext-item">
                     <div class="card-header">
                         <div class="card-icon"><img src="wp.png" alt=""></div>
                         <div class="card-title">Whatsapp to Sahibinden</div>
                     </div>
                     <div class="card-desc">Sahibinden ilanlarını WhatsApp'a bağlayın!</div>
-                </a>
-                <a href="#" class="project-card ext-item">
+                    <div class="card-footer">
+                        <div class="store-links">
+                            <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="store-btn">
+                                <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""> Chrome
+                            </a>
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="store-btn">
+                                <img src="https://win98icons.alexmeub.com/icons/png/msie2-2.png" alt=""> Edge
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old Cold Freezer -->
+                <div class="project-card ext-item">
                     <div class="card-header">
                         <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/pda_notel-0.png" alt=""></div>
                         <div class="card-title">Old Cold Freezer</div>
                     </div>
                     <div class="card-desc">Tarayıcı belleğini optimize eden sekme yöneticisi.</div>
-                </a>
-                <a href="#" class="project-card ext-item">
+                    <div class="card-footer">
+                        <div class="store-links">
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""> Chrome</a>
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/msie2-2.png" alt=""> Edge</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old ExtSwitch -->
+                <div class="project-card ext-item">
                     <div class="card-header">
                         <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" alt=""></div>
                         <div class="card-title">Old ExtSwitch</div>
                     </div>
                     <div class="card-desc">Profesyonel eklenti yönetim paneli.</div>
-                </a>
-                <a href="#" class="project-card ext-item">
+                    <div class="card-footer">
+                        <div class="store-links">
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""> Chrome</a>
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/msie2-2.png" alt=""> Edge</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hayto New Tab -->
+                <div class="project-card ext-item">
                     <div class="card-header">
                         <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""></div>
                         <div class="card-title">Hayto New Tab</div>
                     </div>
                     <div class="card-desc">Kişiselleştirilmiş Dashboard ve RSS Okuyucu.</div>
-                </a>
-                <a href="#" class="project-card ext-item">
+                    <div class="card-footer">
+                        <div class="store-links">
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""> Chrome</a>
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/msie2-2.png" alt=""> Edge</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old Local Tab -->
+                <div class="project-card ext-item">
                     <div class="card-header">
                         <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" alt=""></div>
                         <div class="card-title">Old Local Tab</div>
                     </div>
                     <div class="card-desc">Verimlilik odaklı yerel başlangıç sayfası.</div>
-                </a>
+                    <div class="card-footer">
+                        <div class="store-links">
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""> Chrome</a>
+                            <a href="#" class="store-btn"><img src="https://win98icons.alexmeub.com/icons/png/msie2-2.png" alt=""> Edge</a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Placeholder for others -->
                 <div class="pc-item" style="display: none; grid-column: 1/-1; text-align: center; padding-top: 50px;">
@@ -207,11 +288,9 @@
     <script src="script.js"></script>
     <script>
         function showCategory(cat) {
-            // Update tabs
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.getElementById('tab-' + cat).classList.add('active');
 
-            // Update items
             document.querySelectorAll('.ext-item').forEach(el => el.style.display = (cat === 'extensions' ? 'flex' : 'none'));
             document.querySelectorAll('.pc-item').forEach(el => el.style.display = (cat === 'pc' ? 'block' : 'none'));
             document.querySelectorAll('.scripts-item').forEach(el => el.style.display = (cat === 'scripts' ? 'block' : 'none'));
