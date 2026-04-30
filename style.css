@@ -15,7 +15,8 @@
 }
 
 body {
-    background-color: var(--win98-teal);
+    background: var(--win98-teal) url('assets/wallpaper.png');
+    background-size: cover;
     font-family: 'Tahoma', 'Verdana', sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -228,7 +229,7 @@ body {
     width: 16px;
 }
 ::-webkit-scrollbar-track {
-    background: url('https://win98icons.alexmeub.com/images/background.png');
+    background: url('assets/wallpaper.png');
 }
 ::-webkit-scrollbar-thumb {
     background: var(--win98-grey);
