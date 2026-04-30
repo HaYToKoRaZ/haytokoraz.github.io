@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projelerim | HaYToKoRaZ</title>
+    <title>Projelerim | HaYTo</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .projects-grid {
@@ -15,7 +15,7 @@
             background: #eee;
             border: 2px solid;
             border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
-            height: 500px;
+            height: 450px;
             overflow-y: auto;
         }
 
@@ -33,9 +33,30 @@
             transition: transform 0.2s;
         }
 
-        .project-card:hover {
-            transform: scale(1.02);
-            z-index: 5;
+        .category-tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: -2px;
+            padding-left: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab {
+            padding: 4px 15px;
+            background: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) transparent var(--win98-white);
+            font-size: 11px;
+            cursor: default;
+        }
+
+        .tab.active {
+            padding-top: 6px;
+            margin-top: -2px;
+            background: #eee;
+            border-bottom: 2px solid #eee;
+            font-weight: bold;
         }
 
         .card-header {
@@ -75,47 +96,6 @@
             line-height: 1.4;
             height: 45px;
             overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
-
-        .card-tags {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-        }
-
-        .card-tag {
-            font-size: 9px;
-            background: #ddd;
-            border: 1px solid var(--win98-dark-grey);
-            padding: 1px 5px;
-            text-transform: uppercase;
-        }
-
-        .card-footer {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .status-badge {
-            font-size: 9px;
-            font-weight: bold;
-            color: #008000;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background: #00ff00;
-            border-radius: 50%;
-            box-shadow: 0 0 5px #00ff00;
         }
     </style>
 </head>
@@ -127,7 +107,7 @@
         <div class="title-bar">
             <div class="title-bar-text">
                 <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" alt="">
-                C:\Projelerim\Eklentiler
+                C:\Projelerim
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn" onclick="location.href='index.html'">_</button>
@@ -137,104 +117,61 @@
         </div>
         
         <div class="window-content" style="padding: 15px;">
-            <p style="margin-bottom: 15px; font-size: 12px;" data-i18n="ext_header">Toplam 5 adet eklenti yüklendi. Detaylar ve mağaza bağlantıları için kartlara tıklayın.</p>
+            <p style="margin-bottom: 15px; font-size: 12px;" data-i18n="ext_header">Toplam 5 adet eklenti yüklendi. Detaylar için kartlara tıklayın.</p>
             
-            <div class="projects-grid">
-                <!-- Whatsapp to Sahibinden -->
-                <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="project-card">
+            <div class="category-tabs">
+                <div class="tab active" onclick="showCategory('extensions')" id="tab-extensions">Eklentilerim</div>
+                <div class="tab" onclick="showCategory('pc')" id="tab-pc">PC Yazılımlarım</div>
+                <div class="tab" onclick="showCategory('scripts')" id="tab-scripts">Scriptlerim</div>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Extensions (Default) -->
+                <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="project-card ext-item">
                     <div class="card-header">
-                        <div class="card-icon">
-                            <img src="wp.png" alt="WTS">
-                        </div>
+                        <div class="card-icon"><img src="wp.png" alt=""></div>
                         <div class="card-title">Whatsapp to Sahibinden</div>
                     </div>
-                    <div class="card-desc">Sahibinden ilanlarını WhatsApp'a bağlayın! Telefon numaralarını tek tıkla mesajlaşma linkine dönüştürün.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Whatsapp</span>
-                        <span class="card-tag">Sahibinden</span>
-                        <span class="card-tag">Helper</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
-                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;" data-i18n="btn_store">MAĞAZA</button>
-                    </div>
+                    <div class="card-desc">Sahibinden ilanlarını WhatsApp'a bağlayın!</div>
                 </a>
-
-                <!-- Old Cold Freezer -->
-                <a href="#" class="project-card">
+                <a href="#" class="project-card ext-item">
                     <div class="card-header">
-                        <div class="card-icon">
-                            <img src="https://win98icons.alexmeub.com/icons/png/pda_notel-0.png" alt="OCF">
-                        </div>
+                        <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/pda_notel-0.png" alt=""></div>
                         <div class="card-title">Old Cold Freezer</div>
                     </div>
-                    <div class="card-desc">Tarayıcı belleğini optimize eden, aktif olmayan sekmeleri donduran akıllı tab yöneticisi.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Chrome</span>
-                        <span class="card-tag">Optimization</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
-                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;" data-i18n="btn_detail">DETAY</button>
-                    </div>
+                    <div class="card-desc">Tarayıcı belleğini optimize eden sekme yöneticisi.</div>
                 </a>
-
-                <!-- Old ExtSwitch -->
-                <a href="#" class="project-card">
+                <a href="#" class="project-card ext-item">
                     <div class="card-header">
-                        <div class="card-icon">
-                            <img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" alt="OES">
-                        </div>
+                        <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" alt=""></div>
                         <div class="card-title">Old ExtSwitch</div>
                     </div>
-                    <div class="card-desc">Eklentilerinizi tek tıkla yönetin, gruplayın ve senkronize edin. Modern ve hızlı kontrol paneli.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Manager</span>
-                        <span class="card-tag">Sync</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
-                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;" data-i18n="btn_detail">DETAY</button>
-                    </div>
+                    <div class="card-desc">Profesyonel eklenti yönetim paneli.</div>
                 </a>
-
-                <!-- Hayto New Tab -->
-                <a href="#" class="project-card">
+                <a href="#" class="project-card ext-item">
                     <div class="card-header">
-                        <div class="card-icon">
-                            <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt="HNT">
-                        </div>
+                        <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/world-0.png" alt=""></div>
                         <div class="card-title">Hayto New Tab</div>
                     </div>
-                    <div class="card-desc">Kişiselleştirilmiş yeni sekme sayfası. RSS haberleri, hava durumu ve favori linkler bir arada.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Dashboard</span>
-                        <span class="card-tag">RSS</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
-                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;" data-i18n="btn_detail">DETAY</button>
-                    </div>
+                    <div class="card-desc">Kişiselleştirilmiş Dashboard ve RSS Okuyucu.</div>
                 </a>
-
-                <!-- Old Local Tab -->
-                <a href="#" class="project-card">
+                <a href="#" class="project-card ext-item">
                     <div class="card-header">
-                        <div class="card-icon">
-                            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" alt="OLT">
-                        </div>
+                        <div class="card-icon"><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" alt=""></div>
                         <div class="card-title">Old Local Tab</div>
                     </div>
-                    <div class="card-desc">Yerel verimlilik odaklı, gizlilik dostu ve hızlı erişim paneli eklentisi.</div>
-                    <div class="card-tags">
-                        <span class="card-tag">Productivity</span>
-                        <span class="card-tag">Local</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="status-badge"><div class="status-dot"></div> ACTIVE</div>
-                        <button class="classic-btn" style="padding: 2px 10px; font-size: 10px;" data-i18n="btn_detail">DETAY</button>
-                    </div>
+                    <div class="card-desc">Verimlilik odaklı yerel başlangıç sayfası.</div>
                 </a>
+
+                <!-- Placeholder for others -->
+                <div class="pc-item" style="display: none; grid-column: 1/-1; text-align: center; padding-top: 50px;">
+                    <img src="https://win98icons.alexmeub.com/icons/png/warning_shield-0.png" alt=""><br>
+                    Bu kategoride henüz kayıtlı yazılım bulunamadı.
+                </div>
+                <div class="scripts-item" style="display: none; grid-column: 1/-1; text-align: center; padding-top: 50px;">
+                    <img src="https://win98icons.alexmeub.com/icons/png/warning_shield-0.png" alt=""><br>
+                    Bu kategoride henüz kayıtlı script bulunamadı.
+                </div>
             </div>
 
             <div style="margin-top: 15px; text-align: right;">
@@ -252,16 +189,15 @@
         <div class="taskbar-divider"></div>
         <div class="task-item" style="border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey); box-shadow: none; background: #ddd;">
             <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" width="16" height="16" style="margin-right: 5px;">
-            Eklentiler
-        </div>
-
-        <!-- Language Selectors -->
-        <div style="margin-left: 10px; display: flex; gap: 2px;">
-            <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
-            <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
+            Projelerim
         </div>
         
         <div class="systray">
+            <!-- Language Selectors -->
+            <div style="display: flex; gap: 2px; margin-right: 10px;">
+                <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
+                <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
+            </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 05</span>
             <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" alt="">
             <span id="clock">00:00</span>
@@ -269,6 +205,18 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        function showCategory(cat) {
+            // Update tabs
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + cat).classList.add('active');
+
+            // Update items
+            document.querySelectorAll('.ext-item').forEach(el => el.style.display = (cat === 'extensions' ? 'flex' : 'none'));
+            document.querySelectorAll('.pc-item').forEach(el => el.style.display = (cat === 'pc' ? 'block' : 'none'));
+            document.querySelectorAll('.scripts-item').forEach(el => el.style.display = (cat === 'scripts' ? 'block' : 'none'));
+        }
+    </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 const translations = {
     tr: {
         welcome_msg: "Sisteme başarıyla giriş yapıldı.",
-        intro_text: "Merhaba, ben <b>HaYToKoRaZ</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.",
+        intro_text: "Merhaba, ben <b>HaYTo</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.",
         projects_info: "Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.",
         btn_projects: "PROJELERİ GÖR",
         btn_info: "BİLGİ AL",
@@ -21,7 +21,7 @@ const translations = {
     },
     en: {
         welcome_msg: "System login successful.",
-        intro_text: "Hi, I'm <b>HaYToKoRaZ</b>. I love blending modern technologies with a retro perspective.",
+        intro_text: "Hi, I'm <b>HaYTo</b>. I love blending modern technologies with a retro perspective.",
         projects_info: "To see the projects I've developed, you can open the <b>Projelerim.lnk</b> file on the desktop or click the button below.",
         btn_projects: "VIEW PROJECTS",
         btn_info: "GET INFO",
@@ -50,6 +50,9 @@ function applyLanguage(lang) {
     localStorage.setItem('lang', lang);
     const t = translations[lang];
 
+    // Update title
+    document.title = lang === 'tr' ? 'HaYTo | Windows 98 Edition' : 'HaYTo | Windows 98 Edition';
+
     // Map elements by data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -65,7 +68,7 @@ function applyLanguage(lang) {
     // Update Notepad specifically if it exists
     const notepadText = document.getElementById('notepad-textarea');
     if (notepadText) {
-        notepadText.value = `${t.contact_header}\n------------------\n\nInstagram: https://www.instagram.com/haytokoraz/\nSteam: https://steamcommunity.com/id/HaYTo/\nEmail: korazhayto@gmail.com\n\nStatus: ONLINE\nLocation: CYBER_SPACE\nProtocol: V.4.0.2`;
+        notepadText.value = `${t.contact_header}\n------------------\n\nInstagram: https://www.instagram.com/HaYTo/\nSteam: https://steamcommunity.com/id/HaYTo/\nEmail: korazhayto@gmail.com\n\nStatus: ONLINE\nLocation: CYBER_SPACE\nProtocol: V.4.0.2`;
     }
 }
 
