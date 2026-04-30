@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +31,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Desktop Icons -->
     <div class="desktop">
@@ -79,7 +77,6 @@
             <p class="welcome-text" data-i18n="welcome_msg">Sisteme başarıyla giriş yapıldı.</p>
             <p style="margin-bottom: 10px;" data-i18n="intro_text">Merhaba, ben <b>HaYTo</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.</p>
             <p style="margin-bottom: 20px;" data-i18n="projects_info">Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.</p>
-            
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <button class="classic-btn" onclick="location.href='extensions.html'" data-i18n="btn_projects">PROJELERİ GÖR</button>
                 <button class="classic-btn" onclick="openNotepad()" data-i18n="btn_info">BİLGİ AL</button>
@@ -116,18 +113,15 @@
             <span data-i18n="start_btn">Başlat</span>
         </div>
         <div class="taskbar-divider"></div>
-        
         <div class="task-item" id="main-task">
-            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" style="margin-right: 5px;">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" alt="" style="margin-right: 5px;">
             HaYTo.exe
         </div>
         <div class="task-item" id="notepad-task" style="display: none;">
-            <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" style="margin-right: 5px;">
+            <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" alt="" style="margin-right: 5px;">
             İletişim.txt...
         </div>
-        
         <div class="systray">
-            <!-- Language Selectors -->
             <div style="display: flex; gap: 2px; margin-right: 10px;">
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
@@ -137,8 +131,6 @@
             <span id="clock">00:00</span>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
