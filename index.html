@@ -26,11 +26,11 @@
         </a>
         <a href="extensions.html" class="desktop-icon">
             <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" alt="Projects">
-            <span>Projelerim.lnk</span>
+            <span data-i18n="projects_lnk">Projelerim.lnk</span>
         </a>
         <div class="desktop-icon">
             <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-0.png" alt="Recycle Bin">
-            <span>Çöp Kutusu</span>
+            <span data-i18n="recycle_bin">Çöp Kutusu</span>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
         <div class="title-bar">
             <div class="title-bar-text">
                 <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" alt="">
-                Hoş Geldiniz - HaYToKoRaZ.exe
+                HaYToKoRaZ.exe
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn">0</button>
@@ -48,13 +48,13 @@
             </div>
         </div>
         <div class="window-content">
-            <p class="welcome-text">Sisteme başarıyla giriş yapıldı.</p>
-            <p style="margin-bottom: 10px;">Merhaba, ben <b>HaYToKoRaZ</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.</p>
-            <p style="margin-bottom: 20px;">Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.</p>
+            <p class="welcome-text" data-i18n="welcome_msg">Sisteme başarıyla giriş yapıldı.</p>
+            <p style="margin-bottom: 10px;" data-i18n="intro_text">Merhaba, ben <b>HaYToKoRaZ</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.</p>
+            <p style="margin-bottom: 20px;" data-i18n="projects_info">Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.</p>
             
             <div style="display: flex; justify-content: center; gap: 10px;">
-                <button class="classic-btn" onclick="location.href='extensions.html'">PROJELERİ GÖR</button>
-                <button class="classic-btn" onclick="openNotepad()">BİLGİ AL</button>
+                <button class="classic-btn" onclick="location.href='extensions.html'" data-i18n="btn_projects">PROJELERİ GÖR</button>
+                <button class="classic-btn" onclick="openNotepad()" data-i18n="btn_info">BİLGİ AL</button>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
         <div class="title-bar">
             <div class="title-bar-text">
                 <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" alt="">
-                İletişim.txt - Not Defteri
+                <span data-i18n="notepad_title">İletişim.txt - Not Defteri</span>
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn" onclick="closeNotepad()">r</button>
@@ -77,18 +77,7 @@
             <span>Yardım</span>
         </div>
         <div class="notepad-content">
-            <textarea class="notepad-textarea" readonly>
-İLETİŞİM BİLGİLERİ
-------------------
-
-Instagram: https://www.instagram.com/haytokoraz/
-Steam: https://steamcommunity.com/id/HaYTo/
-Email: korazhayto@gmail.com
-
-Sistem Durumu: ÇEVRİMİÇİ
-Konum: CYBER_SPACE
-Protokol: V.4.0.2
-            </textarea>
+            <textarea id="notepad-textarea" class="notepad-textarea" readonly></textarea>
         </div>
     </div>
 
@@ -96,16 +85,23 @@ Protokol: V.4.0.2
     <div class="taskbar">
         <div class="start-button">
             <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="">
-            Başlat
+            <span data-i18n="start_btn">Başlat</span>
         </div>
         <div class="taskbar-divider"></div>
+        
         <div class="task-item" id="main-task">
             <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" width="16" height="16" style="margin-right: 5px;">
             HaYToKoRaZ.exe
         </div>
         <div class="task-item" id="notepad-task" style="display: none;">
             <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="16" height="16" style="margin-right: 5px;">
-            İletişim.txt - Not...
+            İletişim.txt...
+        </div>
+
+        <!-- Language Selectors -->
+        <div style="margin-left: 10px; display: flex; gap: 2px;">
+            <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
+            <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
         </div>
         
         <div class="systray">
