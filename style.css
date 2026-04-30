@@ -1,0 +1,270 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc00ff;
+    --neon-pink: #ff0055;
+    --dark-bg: #050505;
+    --grid-color: rgba(0, 243, 255, 0.05);
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-display: 'Syncopate', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: var(--font-main);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Background Effects --- */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg) translateY(-50%);
+    z-index: -1;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(-50%); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(0%); }
+}
+
+.scanner-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 15px var(--neon-blue);
+    z-index: 100;
+    animation: scan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { top: -5%; }
+    100% { top: 105%; }
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* --- Layout Frame --- */
+.main-frame {
+    width: 90vw;
+    height: 85vh;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+/* --- Content Section --- */
+.content {
+    text-align: center;
+}
+
+.glitch-wrapper {
+    position: relative;
+}
+
+.main-title {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: -5px;
+    color: white;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--neon-blue),
+                 -0.025em 0.05em 0 var(--neon-purple);
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.tagline {
+    font-size: 1rem;
+    letter-spacing: 10px;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+/* --- Button Styling (Cyberpunk style) --- */
+.interact-box {
+    margin-top: 4rem;
+}
+
+.cybr-btn {
+    --primary: var(--neon-blue);
+    --shadow-primary: var(--neon-purple);
+    --color: white;
+    --font-size: 1.2rem;
+    --clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    
+    font-family: var(--font-display);
+    color: var(--color);
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    outline: transparent;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 700;
+    border: 0;
+    min-width: 300px;
+    height: 75px;
+    line-height: 75px;
+    transition: background 0.2s;
+}
+
+.cybr-btn:hover { background: rgba(0, 243, 255, 0.1); }
+
+.cybr-btn:after, .cybr-btn:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    clip-path: var(--clip-path);
+}
+
+.cybr-btn:before {
+    background: var(--shadow-primary);
+    transform: translate(4px, 4px);
+}
+
+.cybr-btn:after {
+    background: var(--primary);
+}
+
+.cybr-btn__glitch {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--primary);
+    filter: drop-shadow(-2px 3px #ff0055) drop-shadow(-1px -3px #bc00ff);
+    color: white;
+    display: none;
+    clip-path: var(--clip-path);
+}
+
+.cybr-btn:hover .cybr-btn__glitch { display: block; animation: glitch-btn 0.3s infinite; }
+
+@keyframes glitch-btn {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); }
+    25% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); }
+    50% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); }
+    75% { clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); }
+}
+
+/* --- Footer --- */
+.footer-info {
+    display: flex;
+    gap: 3rem;
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block .label {
+    font-size: 0.6rem;
+    color: var(--neon-blue);
+    font-family: var(--font-display);
+}
+
+.info-block .value {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* --- Overlay --- */
+#overlay-message {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+}
+
+.hidden { display: none !important; }
+
+.msg-content {
+    text-align: center;
+    padding: 3rem;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 30px var(--neon-blue);
+}
+
+.msg-content h2 { font-family: var(--font-display); margin-bottom: 1rem; }
+.msg-content button {
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    background: var(--neon-blue);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title { font-size: 3rem; letter-spacing: -2px; }
+    .tagline { font-size: 0.7rem; letter-spacing: 5px; }
+}

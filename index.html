@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merhaba Dünya | Gelecek Burada</title>
+    <meta name="description" content="Cyberpunk temalı, interaktif Merhaba Dünya deneyimi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanner-line"></div>
+    <div class="noise-overlay"></div>
+    
+    <div class="grid-background"></div>
+
+    <main class="main-frame">
+        <div class="status-bar">
+            <span class="status-code">SYSTEM_READY // 2026</span>
+            <span class="status-time" id="clock">00:00:00</span>
+        </div>
+
+        <section class="content">
+            <div class="glitch-wrapper">
+                <h1 class="main-title" data-text="MERHABA DÜNYA">MERHABA DÜNYA</h1>
+            </div>
+            <p class="tagline">YENİ NESİL DİJİTAL DENEYİMİN BAŞLANGICI</p>
+            
+            <div class="interact-box">
+                <button class="cybr-btn" onclick="initializeSystem()">
+                    SİSTEMİ BAŞLAT<span aria-hidden>_</span>
+                    <span class="cybr-btn__glitch">SİSTEMİ BAŞLAT_</span>
+                    <span class="cybr-btn__tag">R25</span>
+                </button>
+            </div>
+        </section>
+
+        <footer class="footer-info">
+            <div class="info-block">
+                <span class="label">LOC</span>
+                <span class="value">CYBER_SPACE</span>
+            </div>
+            <div class="info-block">
+                <span class="label">PROTO</span>
+                <span class="value">V.4.0.2</span>
+            </div>
+        </footer>
+    </main>
+
+    <div id="overlay-message" class="hidden">
+        <div class="msg-content">
+            <h2>ERİŞİM SAĞLANDI</h2>
+            <p>Dünyaya hoş geldiniz, gezgin.</p>
+            <button onclick="closeOverlay()">KAPAT</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
