@@ -27,7 +27,7 @@ This site is designed to bring back the golden era of computing while showcasing
 | Extension | Platform | Icon |
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
-| **Old Cold Freezer** | Coming Soon | <img src="assets/freezer.png" width="32"> |
+| **Old Cold Freezer** | [Chrome](https://chromewebstore.google.com/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk?utm_source=item-share-cb) | <img src="assets/freezer.png" width="32"> |
 | **Old ExtSwitch** | Coming Soon | <img src="assets/extswitch.png" width="32"> |
 | **Old School RSS** | Coming Soon | <img src="assets/rss.png" width="32"> |
 | **Old Cloud StartPage** | Coming Soon | <img src="assets/startpage.png" width="32"> |
@@ -79,7 +79,7 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 | Eklenti Adı | Mağaza | İkon |
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
-| **Old Cold Freezer** | Yakında | <img src="assets/freezer.png" width="32"> |
+| **Old Cold Freezer** | [Chrome](https://chromewebstore.google.com/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk?utm_source=item-share-cb) | <img src="assets/freezer.png" width="32"> |
 | **Old ExtSwitch** | Yakında | <img src="assets/extswitch.png" width="32"> |
 | **Old School RSS** | Yakında | <img src="assets/rss.png" width="32"> |
 | **Old Cloud StartPage** | Yakında | <img src="assets/startpage.png" width="32"> |
