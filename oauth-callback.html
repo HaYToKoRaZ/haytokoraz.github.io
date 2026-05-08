@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Auth Complete</title></head>
-<body><p>Authentication complete. You may close this window.</p></body>
+<head>
+  <meta charset="UTF-8">
+  <title>Google ile Giriş Yapılıyor...</title>
+  <script>
+    // Edge bu yönlendirmeyi yakalayacak ve pencereyi otomatik kapatacak.
+    const extId = "kbipkhdpjgcoookghiobhlfmmdpofjka";
+    window.location.replace(`https://${extId}.chromiumapp.org/${window.location.hash}`);
+  </script>
+</head>
+<body>
+  <p>Lütfen bekleyin, eklentiye yönlendiriliyorsunuz...</p>
+</body>
 </html>
