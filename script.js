@@ -17,7 +17,11 @@ const translations = {
         btn_store: "MAĞAZA",
         btn_detail: "DETAY",
         recycle_bin: "Çöp Kutusu",
-        projects_lnk: "Projelerim.lnk"
+        projects_lnk: "Projelerim.lnk",
+        gmail_title: "Old Gmail Notifications",
+        gmail_desc: "Gmail için klasik bildirim sesini ve eski nostaljik tarzı geri getiren tarayıcı eklentisi.",
+        haytool_title: "HaYTool Youtube Download",
+        haytool_desc: "YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı."
     },
     en: {
         welcome_msg: "System login successful.",
@@ -33,7 +37,11 @@ const translations = {
         btn_store: "STORE",
         btn_detail: "DETAILS",
         recycle_bin: "Recycle Bin",
-        projects_lnk: "Projects.lnk"
+        projects_lnk: "Projects.lnk",
+        gmail_title: "Old Gmail Notifications",
+        gmail_desc: "Browser extension that brings back the classic notification sound and nostalgic style for Gmail.",
+        haytool_title: "HaYTool Youtube Download",
+        haytool_desc: "A premium, lightweight, and cross-platform automation software that automatically monitors YouTube channels and downloads new videos in the background."
     }
 };
 
