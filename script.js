@@ -22,7 +22,7 @@ const translations = {
         gmail_desc: "Gmail için klasik bildirim sesini ve eski nostaljik tarzı geri getiren tarayıcı eklentisi.",
         haytool_title: "HaYTool Youtube Download",
         haytool_desc: "YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.",
-        haytool_firewall_title: "HaYTooL Firewall v2.1.0",
+        haytool_firewall_title: "HaYTooL Firewall",
         haytool_firewall_desc: "Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli."
     },
     en: {
@@ -44,7 +44,7 @@ const translations = {
         gmail_desc: "Browser extension that brings back the classic notification sound and nostalgic style for Gmail.",
         haytool_title: "HaYTool Youtube Download",
         haytool_desc: "A premium, lightweight, and cross-platform automation software that automatically monitors YouTube channels and downloads new videos in the background.",
-        haytool_firewall_title: "HaYTooL Firewall v2.1.0",
+        haytool_firewall_title: "HaYTooL Firewall",
         haytool_firewall_desc: "A modern Windows Firewall control panel that categorizes rules into profiles and allows bulk blocking or whitelisting of thousands of .EXE files via recursive folder scanning."
     }
 };
