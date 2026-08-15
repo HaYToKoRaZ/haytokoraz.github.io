@@ -44,6 +44,26 @@
             gap: 15px;
         }
 
+        .pc-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .pc-projects-grid .project-card:last-child {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 700px) {
+            .pc-projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pc-projects-grid .project-card:last-child {
+                grid-column: span 1;
+            }
+        }
+
         .project-card {
             background: var(--win98-grey);
             border: 2px solid;
@@ -296,28 +316,7 @@
                         <img src="assets/pc_icon.png" alt="">
                         <span>PC Yazılımlarım</span>
                     </div>
-                    <div class="projects-grid">
-                        <!-- HaYTool Youtube Download -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTool Logo"></div>
-                                <div class="card-title" data-i18n="haytool_title">HaYTool Youtube Download</div>
-                            </div>
-                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
-                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download" target="_blank" class="store-btn">
-                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="pc-projects-grid">
                         <!-- HaYTooL Firewall -->
                         <div class="project-card">
                             <div class="card-header">
@@ -333,6 +332,48 @@
                                         <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTooL Weather -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/weather.png" alt="HaYTooL Weather Logo"></div>
+                                <div class="card-title" data-i18n="haytool_weather_title">HaYTooL Weather</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_weather_desc">
+                                Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTool Youtube Download -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTool Logo"></div>
+                                <div class="card-title" data-i18n="haytool_title">HaYTool Youtube Download</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
+                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
                                         <img src="assets/pc_icon.png" alt="Download"> İndir / Release
                                     </a>
                                 </div>
@@ -381,7 +422,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 08</span>
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 09</span>
             <img src="assets/speaker_icon.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>

@@ -23,7 +23,9 @@ const translations = {
         haytool_title: "HaYTool Youtube Download",
         haytool_desc: "YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.",
         haytool_firewall_title: "HaYTooL Firewall",
-        haytool_firewall_desc: "Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli."
+        haytool_firewall_desc: "Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.",
+        haytool_weather_title: "HaYTooL Weather",
+        haytool_weather_desc: "Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması."
     },
     en: {
         welcome_msg: "System login successful.",
@@ -45,7 +47,9 @@ const translations = {
         haytool_title: "HaYTool Youtube Download",
         haytool_desc: "A premium, lightweight, and cross-platform automation software that automatically monitors YouTube channels and downloads new videos in the background.",
         haytool_firewall_title: "HaYTooL Firewall",
-        haytool_firewall_desc: "A modern Windows Firewall control panel that categorizes rules into profiles and allows bulk blocking or whitelisting of thousands of .EXE files via recursive folder scanning."
+        haytool_firewall_desc: "A modern Windows Firewall control panel that categorizes rules into profiles and allows bulk blocking or whitelisting of thousands of .EXE files via recursive folder scanning.",
+        haytool_weather_title: "HaYTooL Weather",
+        haytool_weather_desc: "An ultra-lightweight, native Windows desktop application that runs silently in the system tray, dynamically rendering live temperature and weather condition icons."
     }
 };
 
