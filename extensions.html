@@ -50,7 +50,7 @@
             gap: 15px;
         }
 
-        .pc-projects-grid .project-card:last-child {
+        .pc-projects-grid .project-card:last-child:nth-child(odd) {
             grid-column: span 2;
         }
 
@@ -59,7 +59,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .pc-projects-grid .project-card:last-child {
+            .pc-projects-grid .project-card:last-child:nth-child(odd) {
                 grid-column: span 1;
             }
         }
@@ -359,11 +359,32 @@
                             </div>
                         </div>
 
-                        <!-- HaYTool Youtube Download -->
+                        <!-- HaYTooL Wallpaper -->
                         <div class="project-card">
                             <div class="card-header">
-                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTool Logo"></div>
-                                <div class="card-title" data-i18n="haytool_title">HaYTool Youtube Download</div>
+                                <div class="card-icon"><img src="assets/wallpaper.png" alt="HaYTooL Wallpaper Logo"></div>
+                                <div class="card-title" data-i18n="haytool_wallpaper_title">HaYTooL Wallpaper</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_wallpaper_desc">
+                                Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTooL Youtube Download -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTooL Logo"></div>
+                                <div class="card-title" data-i18n="haytool_title">HaYTooL Youtube Download</div>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
                                 YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
