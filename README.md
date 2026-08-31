@@ -34,6 +34,17 @@ This site is designed to bring back the golden era of computing while showcasing
 
 ---
 
+## 💻 PC Softwares
+
+| Software | Repository | Icon |
+| :--- | :--- | :---: |
+| **HaYTooL Firewall** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32"> |
+| **HaYTooL Weather** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32"> |
+| **HaYTooL Youtube Download** | [GitHub Repo](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32"> |
+| **HaYTooL Wallpaper** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32"> |
+
+---
+
 ## 🛠️ Built With
 
 - **HTML5**: Semantic structure.
@@ -83,6 +94,17 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 | **Old ExtSwitch** | [Chrome Mağazası](https://chrome.google.com/webstore/detail/ckapbjkdiefncgoenbkkcbmcmmhmlobd) | <img src="assets/extswitch.png" width="32"> |
 | **Old School RSS** | Yakında | <img src="assets/rss.png" width="32"> |
 | **Old Cloud StartPage** | Yakında | <img src="assets/startpage.png" width="32"> |
+
+---
+
+## 💻 PC Yazılımları
+
+| Yazılım Adı | Depo | İkon |
+| :--- | :--- | :---: |
+| **HaYTooL Firewall** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32"> |
+| **HaYTooL Weather** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32"> |
+| **HaYTooL Youtube Download** | [GitHub Repo](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32"> |
+| **HaYTooL Wallpaper** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32"> |
 
 ---
 
