@@ -119,13 +119,11 @@
             height: 32px;
             min-width: 32px;
             max-width: 32px;
-            background: white;
-            border: 1px solid var(--win98-dark-grey);
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2px;
-            overflow: hidden;
+            padding: 0;
         }
 
         .card-icon img {
@@ -204,13 +202,55 @@
         <div class="window-content" style="padding: 15px;">
             <div class="projects-container">
                 
-                <!-- Category: Eklentilerim -->
+                <!-- Category: Tarayıcı Eklentileri -->
                 <section class="category-section">
                     <div class="category-title">
                         <img src="assets/world_icon.png" alt="">
-                        <span>Eklentilerim</span>
+                        <span data-i18n="category_extensions">Tarayıcı Eklentileri (Chrome, Edge ve Helium)</span>
                     </div>
                     <div class="projects-grid">
+                        <!-- Cloud StartPage -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/cloud_startpage.png" alt="Cloud StartPage"></div>
+                                <div class="card-title">Cloud StartPage</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="cloud_startpage_desc">
+                                Hızlı, minimalist ve bulut entegrasyonlu özelleştirilebilir yeni sekme ve başlangıç sayfası eklentisi.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage" target="_blank" class="store-btn">
+                                        <img src="assets/github.png" alt="GitHub"> GitHub Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ExtensityPlus -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/extensityplus.png" alt="ExtensityPlus"></div>
+                                <div class="card-title">ExtensityPlus</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="extensityplus_desc">
+                                Tarayıcı eklentilerinizi tek tıkla hızlıca yönetmenizi, etkinleştirip devre dışı bırakmanızı sağlayan pratik eklenti yöneticisi.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/ExtensityPlus-HaYTooL/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL" target="_blank" class="store-btn">
+                                        <img src="assets/github.png" alt="GitHub"> GitHub Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Whatsapp to Sahibinden -->
                         <div class="project-card">
                             <div class="card-header">
@@ -243,41 +283,11 @@
                             </div>
                         </div>
 
-                        <!-- Old ExtSwitch -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/extswitch.png" alt=""></div>
-                                <div class="card-title">Old ExtSwitch</div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://chrome.google.com/webstore/detail/ckapbjkdiefncgoenbkkcbmcmmhmlobd" target="_blank" class="store-btn">
-                                        <img src="assets/chrome.png" alt=""> Chrome
-                                    </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/jkaakmhhhibgoanfpehiceeimcgcbpbl" target="_blank" class="store-btn"><img src="assets/edge.png" alt=""> Edge</a>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Old School RSS -->
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/rss.png" alt=""></div>
                                 <div class="card-title">Old School RSS</div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="#" class="store-btn"><img src="assets/chrome.png" alt=""> Chrome</a>
-                                    <a href="#" class="store-btn"><img src="assets/edge.png" alt=""> Edge</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Old Cloud StartPage -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/startpage.png" alt=""></div>
-                                <div class="card-title">Old Cloud StartPage</div>
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
@@ -314,25 +324,46 @@
                 <section class="category-section">
                     <div class="category-title">
                         <img src="assets/pc_icon.png" alt="">
-                        <span>PC Yazılımlarım</span>
+                        <span data-i18n="category_pc">PC Yazılımlarım</span>
                     </div>
                     <div class="pc-projects-grid">
+                        <!-- HaYTooL Youtube Download -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTooL Logo"></div>
+                                <div class="card-title" data-i18n="haytool_title">Youtube Download HaYTooL</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
+                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/haytool-youtube-download/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/github.png" alt="Download"> İndir / Release
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- HaYTooL Firewall -->
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/firewall.png" alt="HaYTooL Firewall Logo"></div>
-                                <div class="card-title" data-i18n="haytool_firewall_title">HaYTooL Firewall</div>
+                                <div class="card-title" data-i18n="haytool_firewall_title">Firewall HaYTooL</div>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_firewall_desc">
                                 Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall" target="_blank" class="store-btn">
-                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Firewall/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> İndir / Release
                                     </a>
                                 </div>
                             </div>
@@ -342,18 +373,18 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/weather.png" alt="HaYTooL Weather Logo"></div>
-                                <div class="card-title" data-i18n="haytool_weather_title">HaYTooL Weather</div>
+                                <div class="card-title" data-i18n="haytool_weather_title">Weather HaYTooL</div>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_weather_desc">
                                 Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather" target="_blank" class="store-btn">
-                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Weather/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> İndir / Release
                                     </a>
                                 </div>
                             </div>
@@ -363,39 +394,18 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/wallpaper.png" alt="HaYTooL Wallpaper Logo"></div>
-                                <div class="card-title" data-i18n="haytool_wallpaper_title">HaYTooL Wallpaper</div>
+                                <div class="card-title" data-i18n="haytool_wallpaper_title">Wallpaper HaYTooL</div>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_wallpaper_desc">
                                 Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper" target="_blank" class="store-btn">
-                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Wallpaper/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" alt="Web Site"> Web Sitesi
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- HaYTooL Youtube Download -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/haytool.png" alt="HaYTooL Logo"></div>
-                                <div class="card-title" data-i18n="haytool_title">HaYTooL Youtube Download</div>
-                            </div>
-                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
-                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download" target="_blank" class="store-btn">
-                                        <img src="assets/world_icon.png" alt="GitHub"> GitHub Repo
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/pc_icon.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> İndir / Release
                                     </a>
                                 </div>
                             </div>
@@ -407,7 +417,7 @@
                 <section class="category-section">
                     <div class="category-title">
                         <img src="assets/script_icon.png" alt="">
-                        <span>Scriptlerim</span>
+                        <span data-i18n="category_scripts">Scriptlerim</span>
                     </div>
                     <div class="restricted-box">
                         <img src="assets/warning_icon.png" alt="Restricted">

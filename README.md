@@ -28,9 +28,9 @@ This site is designed to bring back the golden era of computing while showcasing
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
 | **Old Cold Freezer** | [Chrome](https://chrome.google.com/webstore/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk) | <img src="assets/freezer.png" width="32"> |
-| **Old ExtSwitch** | [Chrome Store](https://chrome.google.com/webstore/detail/ckapbjkdiefncgoenbkkcbmcmmhmlobd) | <img src="assets/extswitch.png" width="32"> |
+| **ExtensityPlus** | [Web Site](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Release](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL/releases/tag/v2.2.0) | <img src="assets/extensityplus.png" width="32"> |
 | **Old School RSS** | Coming Soon | <img src="assets/rss.png" width="32"> |
-| **Old Cloud StartPage** | Coming Soon | <img src="assets/startpage.png" width="32"> |
+| **Cloud StartPage** | [Web Site](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
 
 ---
 
@@ -38,10 +38,10 @@ This site is designed to bring back the golden era of computing while showcasing
 
 | Software | Repository | Icon |
 | :--- | :--- | :---: |
-| **HaYTooL Firewall** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32"> |
-| **HaYTooL Weather** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32"> |
-| **HaYTooL Youtube Download** | [GitHub Repo](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32"> |
-| **HaYTooL Wallpaper** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32"> |
+| **HaYTooL Firewall** | [Web Site](https://haytokoraz.github.io/HaYTooL-Firewall/) | <img src="assets/firewall.png" width="32"> |
+| **HaYTooL Weather** | [Web Site](https://haytokoraz.github.io/HaYTooL-Weather/) | <img src="assets/weather.png" width="32"> |
+| **HaYTooL Youtube Download** | [Web Site](https://haytokoraz.github.io/haytool-youtube-download/) | <img src="assets/haytool.png" width="32"> |
+| **HaYTooL Wallpaper** | [Web Site](https://haytokoraz.github.io/HaYTooL-Wallpaper/) | <img src="assets/wallpaper.png" width="32"> |
 
 ---
 
@@ -91,9 +91,9 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
 | **Old Cold Freezer** | [Chrome](https://chrome.google.com/webstore/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk) | <img src="assets/freezer.png" width="32"> |
-| **Old ExtSwitch** | [Chrome Mağazası](https://chrome.google.com/webstore/detail/ckapbjkdiefncgoenbkkcbmcmmhmlobd) | <img src="assets/extswitch.png" width="32"> |
+| **ExtensityPlus** | [Web Sitesi](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Release](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL/releases/tag/v2.2.0) | <img src="assets/extensityplus.png" width="32"> |
 | **Old School RSS** | Yakında | <img src="assets/rss.png" width="32"> |
-| **Old Cloud StartPage** | Yakında | <img src="assets/startpage.png" width="32"> |
+| **Cloud StartPage** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
 
 ---
 
@@ -101,10 +101,10 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 
 | Yazılım Adı | Depo | İkon |
 | :--- | :--- | :---: |
-| **HaYTooL Firewall** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32"> |
-| **HaYTooL Weather** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32"> |
-| **HaYTooL Youtube Download** | [GitHub Repo](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32"> |
-| **HaYTooL Wallpaper** | [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32"> |
+| **HaYTooL Firewall** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Firewall/) | <img src="assets/firewall.png" width="32"> |
+| **HaYTooL Weather** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Weather/) | <img src="assets/weather.png" width="32"> |
+| **HaYTooL Youtube Download** | [Web Sitesi](https://haytokoraz.github.io/haytool-youtube-download/) | <img src="assets/haytool.png" width="32"> |
+| **HaYTooL Wallpaper** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Wallpaper/) | <img src="assets/wallpaper.png" width="32"> |
 
 ---
 
