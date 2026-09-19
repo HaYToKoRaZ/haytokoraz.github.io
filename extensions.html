@@ -61,21 +61,19 @@
 
         .pc-projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
 
-        .pc-projects-grid .project-card:last-child:nth-child(odd) {
-            grid-column: span 2;
+        @media (max-width: 1200px) {
+            .pc-projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 650px) {
             .pc-projects-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .pc-projects-grid .project-card:last-child:nth-child(odd) {
-                grid-column: span 1;
             }
         }
 
@@ -224,10 +222,10 @@
                         <img src="assets/world_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_extensions">Tarayıcı Eklentileri</span>
                         <span class="browser-badges">
-                            (<img src="assets/chrome.png" class="browser-badge-icon" alt="Chrome" title="Chrome"> Chrome, 
-                            <img src="assets/edge.png" class="browser-badge-icon" alt="Edge" title="Edge"> Edge 
+                            (<img src="assets/helium.png" class="browser-badge-icon" alt="Helium" title="Helium"> Helium, 
+                            <img src="assets/chrome.png" class="browser-badge-icon" alt="Chrome" title="Chrome"> Chrome 
                             <span data-i18n="and_word">ve</span> 
-                            <img src="assets/helium.png" class="browser-badge-icon" alt="Helium" title="Helium"> Helium)
+                            <img src="assets/edge.png" class="browser-badge-icon" alt="Edge" title="Edge"> Edge)
                         </span>
                     </div>
                     <div class="projects-grid">
@@ -364,6 +362,12 @@
                     <div class="category-title">
                         <img src="assets/pc_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_pc">PC Yazılımlarım</span>
+                        <span class="browser-badges">
+                            (<img src="assets/linux.svg" class="browser-badge-icon" alt="Linux" title="Linux"> Linux, 
+                            <img src="assets/windows.svg" class="browser-badge-icon" alt="Windows" title="Windows"> Windows 
+                            <span data-i18n="and_word">ve</span> 
+                            <img src="assets/macos.svg" class="browser-badge-icon" alt="macOS" title="macOS"> macOS)
+                        </span>
                     </div>
                     <div class="pc-projects-grid">
                         <!-- HaYTooL Youtube Download -->
