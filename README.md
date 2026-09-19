@@ -27,10 +27,10 @@ This site is designed to bring back the golden era of computing while showcasing
 | Extension | Platform | Icon |
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
-| **Old Cold Freezer** | [Chrome](https://chrome.google.com/webstore/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk) | <img src="assets/freezer.png" width="32"> |
-| **ExtensityPlus** | [Web Site](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Release](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL/releases/tag/v2.2.0) | <img src="assets/extensityplus.png" width="32"> |
+| **TabSuspender HaYTooL** | [Web Site](https://haytokoraz.github.io/TabSuspender-HaYTooL/) / [Edge](https://microsoftedge.microsoft.com/addons/detail/oiiaihdhfoepcipblaiggcbignahmbeg) / [GitHub](https://github.com/HaYToKoRaZ/TabSuspender-HaYTooL) | <img src="assets/tabsuspender.png" width="32"> |
+| **ExtensityPlus** | [Web Site](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Chrome](https://chromewebstore.google.com/detail/mpcogfjfimnlfamonkfelppdcdhfhcom) / [GitHub](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL) | <img src="assets/extensityplus.png" width="32"> |
 | **Old School RSS** | Coming Soon | <img src="assets/rss.png" width="32"> |
-| **Cloud StartPage** | [Web Site](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
+| **Cloud StartPage** | [Web Site](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [Chrome](https://chromewebstore.google.com/detail/haytool-cloud-startpage/fgiompioalgpjalpmdjchlgecgdkkncn) / [Edge](https://microsoftedge.microsoft.com/addons/detail/haytool-cloud-startpage/jkefcejfnbeifclgpkfkpidoegohcchp) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
 
 ---
 
@@ -90,10 +90,10 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 | Eklenti Adı | Mağaza | İkon |
 | :--- | :--- | :---: |
 | **Whatsapp To Sahibinden** | [Chrome](https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) / [Edge](https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd) | <img src="assets/whatsapp.png" width="32"> |
-| **Old Cold Freezer** | [Chrome](https://chrome.google.com/webstore/detail/badpaibbcnpjoadgjgmkjpjbedpcejpk) | <img src="assets/freezer.png" width="32"> |
-| **ExtensityPlus** | [Web Sitesi](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Release](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL/releases/tag/v2.2.0) | <img src="assets/extensityplus.png" width="32"> |
+| **TabSuspender HaYTooL** | [Web Sitesi](https://haytokoraz.github.io/TabSuspender-HaYTooL/) / [Edge](https://microsoftedge.microsoft.com/addons/detail/oiiaihdhfoepcipblaiggcbignahmbeg) / [GitHub](https://github.com/HaYToKoRaZ/TabSuspender-HaYTooL) | <img src="assets/tabsuspender.png" width="32"> |
+| **ExtensityPlus** | [Web Sitesi](https://haytokoraz.github.io/ExtensityPlus-HaYTooL/) / [Chrome](https://chromewebstore.google.com/detail/mpcogfjfimnlfamonkfelppdcdhfhcom) / [GitHub](https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL) | <img src="assets/extensityplus.png" width="32"> |
 | **Old School RSS** | Yakında | <img src="assets/rss.png" width="32"> |
-| **Cloud StartPage** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [GitHub Repo](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
+| **Cloud StartPage** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/) / [Chrome](https://chromewebstore.google.com/detail/haytool-cloud-startpage/fgiompioalgpjalpmdjchlgecgdkkncn) / [Edge](https://microsoftedge.microsoft.com/addons/detail/haytool-cloud-startpage/jkefcejfnbeifclgpkfkpidoegohcchp) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage) | <img src="assets/cloud_startpage.png" width="32"> |
 
 ---
 
