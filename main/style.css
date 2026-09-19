@@ -51,7 +51,7 @@ body {
     user-select: none;
 }
 
-.desktop-icon img, .desktop-icon .icon-placeholder {
+.desktop-icon img {
     width: 32px;
     height: 32px;
     margin-bottom: 5px;
@@ -227,11 +227,6 @@ body {
     box-shadow: none;
 }
 
-/* --- Icons SVGs --- */
-.icon-svg {
-    fill: white;
-}
-
 /* Scrollbar retro */
 ::-webkit-scrollbar {
     width: 16px;
@@ -263,20 +258,6 @@ body {
     padding: 2px;
     display: flex;
     flex-direction: column;
-}
-
-.notepad-textarea {
-    width: 100%;
-    flex: 1;
-    border: none;
-    outline: none;
-    resize: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 13px;
-    padding: 5px;
-    white-space: pre-wrap;
-    background: white;
-    color: black;
 }
 
 .notepad-menu {
