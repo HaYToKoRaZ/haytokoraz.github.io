@@ -1,0 +1,10 @@
+# Local agent tools and configurations (only on local machine)
+.agents/
+.gemini/
+
+# System and editor files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+*.log
