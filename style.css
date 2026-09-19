@@ -28,12 +28,14 @@ body {
 .desktop {
     flex: 1;
     position: relative;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 80px);
-    grid-template-rows: repeat(auto-fill, 100px);
-    gap: 20px;
-    align-content: start;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 12px 16px;
+    max-height: calc(100vh - 28px);
+    overflow: hidden;
 }
 
 .desktop-icon {
@@ -45,12 +47,15 @@ body {
     text-decoration: none;
     font-size: 11px;
     cursor: default;
+    width: 85px;
+    user-select: none;
 }
 
 .desktop-icon img, .desktop-icon .icon-placeholder {
     width: 32px;
     height: 32px;
     margin-bottom: 5px;
+    object-fit: contain;
 }
 
 .desktop-icon:hover span {
@@ -59,6 +64,9 @@ body {
 
 .desktop-icon span {
     padding: 2px 4px;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.2;
 }
 
 /* --- Windows --- */
@@ -279,3 +287,25 @@ body {
     border-bottom: 1px solid var(--win98-dark-grey);
     background: var(--win98-grey);
 }
+
+/* --- Responsive rules --- */
+@media (max-width: 768px) {
+    .desktop {
+        flex-direction: row;
+        align-content: flex-start;
+        overflow-y: auto;
+        max-height: calc(100vh - 28px);
+        padding: 10px;
+        gap: 12px 8px;
+    }
+    .desktop-icon {
+        width: 70px;
+        font-size: 10px;
+    }
+    .window.main-window {
+        min-width: 90%;
+        max-width: 95%;
+        top: 15%;
+    }
+}
+
