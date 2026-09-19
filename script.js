@@ -32,6 +32,7 @@ const translations = {
         category_pc: "PC Yazılımlarım",
         category_scripts: "Scriptlerim",
         tabsuspender_desc: "Kullanılmayan sekmeleri otomatik uyutarak RAM ve sistem kaynaklarından %85'e varan tasarruf sağlayan akıllı, ultra hafif ve gizlilik odaklı sekme yöneticisi.",
+        webtranslate_desc: "Işık hızında tam sayfa ve seçili metin çevirmeni. 6 farklı çeviri motoru, canlı ilerleme ve çoklu sekme karşılaştırma özellikli akıllı eklenti.",
         haytool_weather_title: "Weather HaYTooL",
         haytool_weather_desc: "Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması."
     },
@@ -55,6 +56,7 @@ const translations = {
         cloud_startpage_desc: "A fast, minimalist, and customizable new tab & start page extension with cloud integration.",
         extensityplus_desc: "A handy extension manager to quickly manage, enable, and disable your browser extensions with a single click.",
         tabsuspender_desc: "Smart, ultra-lightweight and privacy-first tab suspender that saves up to 85% RAM and battery by putting background tabs to sleep.",
+        webtranslate_desc: "Lightning fast full-page and selection translator featuring 6 engines, real-time progress HUD and multi-tab live comparison.",
         category_extensions: "Browser Extensions (Chrome, Edge & Helium)",
         category_pc: "PC Software",
         category_scripts: "My Scripts",
