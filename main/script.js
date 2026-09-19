@@ -261,16 +261,16 @@ function initSecretTrigger() {
     
     triggers.forEach(el => {
         if (!el) return;
-        // Cift tiklama ile ac
-        el.addEventListener('dblclick', (e) => {
-            e.preventDefault();
-            openStatsWindow();
-        });
-        // Fare orta tekerlek tusu (button 1) ile ac
+        // Yalnizca fare orta tekerlek tusu (button 1) ile ac
         el.addEventListener('auxclick', (e) => {
             if (e.button === 1) {
                 e.preventDefault();
                 openStatsWindow();
+            }
+        });
+        el.addEventListener('mousedown', (e) => {
+            if (e.button === 1) {
+                e.preventDefault();
             }
         });
     });
