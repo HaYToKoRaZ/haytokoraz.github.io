@@ -269,6 +269,81 @@ body {
     background: var(--win98-grey);
 }
 
+/* --- Secret Stats Window (Easter Egg) --- */
+.stats-window {
+    width: 320px;
+    top: 25%;
+    left: 45%;
+    display: none;
+    flex-direction: column;
+}
+
+.stats-content {
+    background: var(--win98-grey);
+    padding: 6px;
+    font-size: 11px;
+}
+
+.stats-box {
+    background: white;
+    border: 2px solid;
+    border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+    box-shadow: inset 1px 1px 0 0 var(--win98-black);
+    padding: 10px;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.stats-header {
+    font-weight: bold;
+    color: var(--win98-blue);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    font-size: 11px;
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 3px;
+}
+
+.stat-label {
+    color: #222;
+    font-size: 11px;
+}
+
+.stat-value {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000080;
+    background: #e8e8e8;
+    padding: 1px 5px;
+    border: 1px solid #aaa;
+    min-width: 45px;
+    text-align: right;
+}
+
+.stats-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 6px;
+    border-top: 1px solid #ccc;
+    font-size: 10px;
+    color: #555;
+}
+
 /* --- Responsive rules --- */
 @media (max-width: 768px) {
     .desktop {

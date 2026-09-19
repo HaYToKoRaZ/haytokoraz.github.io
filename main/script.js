@@ -78,6 +78,8 @@ let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith
 document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(currentLang);
     startClock();
+    recordVisit();
+    initSecretTrigger();
     console.log('--- SYSTEM_READY // 1980 ---');
 });
 
@@ -161,3 +163,116 @@ function closeNotepad() {
     document.getElementById('notepad').style.display = 'none';
     document.getElementById('notepad-task').style.display = 'none';
 }
+
+// --- Secret Visitor Counter & Stats Logic ---
+const STATS_API_BASE = 'https://countapi.mileshilliard.com/api/v1';
+const SITE_NAMESPACE = 'haytokoraz_portfolio';
+
+function getStatsKeys() {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    return {
+        daily: `${SITE_NAMESPACE}_day_${yyyy}_${mm}_${dd}`,
+        monthly: `${SITE_NAMESPACE}_month_${yyyy}_${mm}`,
+        yearly: `${SITE_NAMESPACE}_year_${yyyy}`,
+        total: `${SITE_NAMESPACE}_total`
+    };
+}
+
+async function recordVisit() {
+    const isNewSession = !sessionStorage.getItem('hayto_session_active');
+    const keys = getStatsKeys();
+    const endpoint = isNewSession ? 'hit' : 'get';
+    
+    try {
+        await Promise.all([
+            fetch(`${STATS_API_BASE}/${endpoint}/${keys.daily}`).catch(() => null),
+            fetch(`${STATS_API_BASE}/${endpoint}/${keys.monthly}`).catch(() => null),
+            fetch(`${STATS_API_BASE}/${endpoint}/${keys.yearly}`).catch(() => null),
+            fetch(`${STATS_API_BASE}/${endpoint}/${keys.total}`).catch(() => null),
+        ]);
+        
+        if (isNewSession) {
+            sessionStorage.setItem('hayto_session_active', 'true');
+        }
+    } catch (e) {
+        console.warn('Stats recording bypassed:', e);
+    }
+}
+
+async function refreshStats() {
+    const keys = getStatsKeys();
+    const setVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val !== undefined && val !== null ? val.toLocaleString() : '---';
+    };
+    
+    setVal('stat-daily', '...');
+    setVal('stat-monthly', '...');
+    setVal('stat-yearly', '...');
+    setVal('stat-total', '...');
+
+    try {
+        const [dailyRes, monthlyRes, yearlyRes, totalRes] = await Promise.all([
+            fetch(`${STATS_API_BASE}/get/${keys.daily}`).then(r => r.json()).catch(() => null),
+            fetch(`${STATS_API_BASE}/get/${keys.monthly}`).then(r => r.json()).catch(() => null),
+            fetch(`${STATS_API_BASE}/get/${keys.yearly}`).then(r => r.json()).catch(() => null),
+            fetch(`${STATS_API_BASE}/get/${keys.total}`).then(r => r.json()).catch(() => null),
+        ]);
+
+        setVal('stat-daily', dailyRes?.value ?? 1);
+        setVal('stat-monthly', monthlyRes?.value ?? 1);
+        setVal('stat-yearly', yearlyRes?.value ?? 1);
+        setVal('stat-total', totalRes?.value ?? 1);
+    } catch (e) {
+        setVal('stat-daily', '1');
+        setVal('stat-monthly', '1');
+        setVal('stat-yearly', '1');
+        setVal('stat-total', '1');
+    }
+}
+
+function openStatsWindow() {
+    const win = document.getElementById('stats-window');
+    const task = document.getElementById('stats-task');
+    if (win) {
+        win.style.display = 'flex';
+        if (task) task.style.display = 'flex';
+        document.querySelectorAll('.window').forEach(w => w.style.zIndex = 10);
+        win.style.zIndex = 100;
+        refreshStats();
+    }
+}
+
+function closeStatsWindow() {
+    const win = document.getElementById('stats-window');
+    const task = document.getElementById('stats-task');
+    if (win) win.style.display = 'none';
+    if (task) task.style.display = 'none';
+}
+
+function initSecretTrigger() {
+    const triggers = [
+        document.getElementById('clock'),
+        document.querySelector('.start-button')
+    ];
+    
+    triggers.forEach(el => {
+        if (!el) return;
+        // Cift tiklama ile ac
+        el.addEventListener('dblclick', (e) => {
+            e.preventDefault();
+            openStatsWindow();
+        });
+        // Fare orta tekerlek tusu (button 1) ile ac
+        el.addEventListener('auxclick', (e) => {
+            if (e.button === 1) {
+                e.preventDefault();
+                openStatsWindow();
+            }
+        });
+    });
+}
+

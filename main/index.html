@@ -142,6 +142,46 @@
         </div>
     </div>
 
+    <!-- Secret Stats Window -->
+    <div id="stats-window" class="window stats-window" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/pc_icon.png" width="16" height="16" alt="">
+                <span>sys_stats.exe - Ziyaretçi İstatistikleri</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeStatsWindow()">r</button>
+            </div>
+        </div>
+        <div class="stats-content">
+            <div class="stats-box">
+                <div class="stats-header">📊 SİSTEM TELEMETRİSİ // GİZLİ ERİŞİM</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">📅 Bugünkü Giriş:</span>
+                        <span class="stat-value" id="stat-daily">...</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🗓️ Bu Ayki Giriş:</span>
+                        <span class="stat-value" id="stat-monthly">...</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">📈 Bu Yılki Giriş:</span>
+                        <span class="stat-value" id="stat-yearly">...</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🏆 Toplam Giriş:</span>
+                        <span class="stat-value" id="stat-total">...</span>
+                    </div>
+                </div>
+                <div class="stats-footer">
+                    <span>🟢 Durum: ÇEVRİMİÇİ</span>
+                    <button class="classic-btn" style="padding: 2px 8px; font-size: 10px;" onclick="refreshStats()">Yenile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="start-button">
@@ -156,6 +196,10 @@
         <div class="task-item" id="notepad-task" style="display: none;">
             <img src="assets/notepad_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
             İletişim.txt...
+        </div>
+        <div class="task-item" id="stats-task" style="display: none;">
+            <img src="assets/pc_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
+            sys_stats.exe
         </div>
         <div class="systray">
             <div style="display: flex; gap: 2px; margin-right: 10px;">
