@@ -15,6 +15,7 @@ const translations = {
         ext_header: "Toplam 6 adet eklenti yüklendi. Detaylar için kartlara tıklayın.",
         btn_back: "Geri Dön",
         btn_website: "Web Sitesi",
+        btn_download: "İndir (Release)",
         btn_store: "MAĞAZA",
         btn_detail: "DETAY",
         recycle_bin: "Çöp Kutusu",
@@ -29,13 +30,17 @@ const translations = {
         haytool_wallpaper_desc: "Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.",
         haytool_firewall_title: "Firewall",
         haytool_firewall_desc: "Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.",
-        category_extensions: "Tarayıcı Eklentileri (Chrome, Edge ve Helium)",
+        category_extensions: "Tarayıcı Eklentileri",
+        and_word: "ve",
         category_pc: "PC Yazılımlarım",
         category_scripts: "Scriptlerim",
         tabsuspender_desc: "Kullanılmayan sekmeleri otomatik uyutarak RAM ve sistem kaynaklarından %85'e varan tasarruf sağlayan akıllı, ultra hafif ve gizlilik odaklı sekme yöneticisi.",
         webtranslate_desc: "Işık hızında tam sayfa ve seçili metin çevirmeni. 6 farklı çeviri motoru, canlı ilerleme ve çoklu sekme karşılaştırma özellikli akıllı eklenti.",
         haytool_weather_title: "Weather",
-        haytool_weather_desc: "Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması."
+        haytool_weather_desc: "Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.",
+        restricted_title: "YETKİSİZ ERİŞİM",
+        restricted_desc: "Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.",
+        restricted_btn: "KİMLİK DOĞRULA"
     },
     en: {
         welcome_msg: "System login successful.",
@@ -49,6 +54,7 @@ const translations = {
         ext_header: "A total of 6 extensions loaded. Click on cards for details.",
         btn_back: "Go Back",
         btn_website: "Website",
+        btn_download: "Download",
         btn_store: "STORE",
         btn_detail: "DETAILS",
         recycle_bin: "Recycle Bin",
@@ -59,7 +65,8 @@ const translations = {
         extensityplus_desc: "A handy extension manager to quickly manage, enable, and disable your browser extensions with a single click.",
         tabsuspender_desc: "Smart, ultra-lightweight and privacy-first tab suspender that saves up to 85% RAM and battery by putting background tabs to sleep.",
         webtranslate_desc: "Lightning fast full-page and selection translator featuring 6 engines, real-time progress HUD and multi-tab live comparison.",
-        category_extensions: "Browser Extensions (Chrome, Edge & Helium)",
+        category_extensions: "Browser Extensions",
+        and_word: "&",
         category_pc: "PC Software",
         category_scripts: "My Scripts",
         haytool_title: "Youtube Download",
@@ -69,7 +76,10 @@ const translations = {
         haytool_firewall_title: "Firewall",
         haytool_firewall_desc: "A modern Windows Firewall control panel that categorizes rules into profiles and allows bulk blocking or whitelisting of thousands of .EXE files via recursive folder scanning.",
         haytool_weather_title: "Weather",
-        haytool_weather_desc: "An ultra-lightweight, native Windows desktop application that runs silently in the system tray, dynamically rendering live temperature and weather condition icons."
+        haytool_weather_desc: "An ultra-lightweight, native Windows desktop application that runs silently in the system tray, dynamically rendering live temperature and weather condition icons.",
+        restricted_title: "UNAUTHORIZED ACCESS",
+        restricted_desc: "The script archive can only be viewed in developer and admin mode.",
+        restricted_btn: "AUTHENTICATE"
     }
 };
 

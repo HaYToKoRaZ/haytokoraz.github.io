@@ -33,9 +33,24 @@
             gap: 10px;
         }
 
-        .category-title img {
+        .category-title img.main-icon {
             width: 20px;
             height: 20px;
+        }
+
+        .browser-badges {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+
+        .browser-badge-icon {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+            vertical-align: middle;
         }
 
         .projects-grid {
@@ -206,8 +221,14 @@
                 <!-- Category: Tarayıcı Eklentileri -->
                 <section class="category-section">
                     <div class="category-title">
-                        <img src="assets/world_icon.png" alt="">
-                        <span data-i18n="category_extensions">Tarayıcı Eklentileri (Chrome, Edge ve Helium)</span>
+                        <img src="assets/world_icon.png" class="main-icon" alt="">
+                        <span data-i18n="category_extensions">Tarayıcı Eklentileri</span>
+                        <span class="browser-badges">
+                            (<img src="assets/chrome.png" class="browser-badge-icon" alt="Chrome" title="Chrome"> Chrome, 
+                            <img src="assets/edge.png" class="browser-badge-icon" alt="Edge" title="Edge"> Edge 
+                            <span data-i18n="and_word">ve</span> 
+                            <img src="assets/helium.png" class="browser-badge-icon" alt="Helium" title="Helium"> Helium)
+                        </span>
                     </div>
                     <div class="projects-grid">
                         <!-- Cloud StartPage -->
@@ -376,7 +397,7 @@
                 <!-- Category: PC Yazılımlarım -->
                 <section class="category-section">
                     <div class="category-title">
-                        <img src="assets/pc_icon.png" alt="">
+                        <img src="assets/pc_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_pc">PC Yazılımlarım</span>
                     </div>
                     <div class="pc-projects-grid">
@@ -395,7 +416,7 @@
                                         <img src="assets/world_icon.png" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/github.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
                             </div>
@@ -416,7 +437,7 @@
                                         <img src="assets/world_icon.png" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/github.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
                             </div>
@@ -437,7 +458,7 @@
                                         <img src="assets/world_icon.png" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/github.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
                             </div>
@@ -458,7 +479,7 @@
                                         <img src="assets/world_icon.png" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
                                     <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" class="store-btn">
-                                        <img src="assets/github.png" alt="Download"> İndir / Release
+                                        <img src="assets/github.png" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
                             </div>
@@ -469,14 +490,14 @@
                 <!-- Category: Scriptlerim -->
                 <section class="category-section">
                     <div class="category-title">
-                        <img src="assets/script_icon.png" alt="">
+                        <img src="assets/script_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_scripts">Scriptlerim</span>
                     </div>
                     <div class="restricted-box">
                         <img src="assets/warning_icon.png" alt="Restricted">
-                        <div class="restricted-text">YETKİSİZ ERİŞİM / UNAUTHORIZED ACCESS</div>
-                        <p style="font-size: 10px;">Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.</p>
-                        <button class="login-btn-fake">KİMLİK DOĞRULA / AUTHENTICATE</button>
+                        <div class="restricted-text" data-i18n="restricted_title">YETKİSİZ ERİŞİM</div>
+                        <p style="font-size: 10px;" data-i18n="restricted_desc">Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.</p>
+                        <button class="login-btn-fake" data-i18n="restricted_btn">KİMLİK DOĞRULA</button>
                     </div>
                 </section>
 
