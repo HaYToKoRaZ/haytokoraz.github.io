@@ -37,7 +37,8 @@ const translations = {
         restricted_title: "YETKİSİZ ERİŞİM",
         restricted_desc: "Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.",
         restricted_btn: "KİMLİK DOĞRULA",
-        pending_releases: "Onay Sürecinde (Releases)"
+        pending_releases: "Onay Sürecinde (Releases)",
+        recommended_badge: "(Önerilen)"
     },
     en: {
         welcome_msg: "System login successful.",
@@ -73,7 +74,8 @@ const translations = {
         restricted_title: "UNAUTHORIZED ACCESS",
         restricted_desc: "The script archive can only be viewed in developer and admin mode.",
         restricted_btn: "AUTHENTICATE",
-        pending_releases: "Under Review (Releases)"
+        pending_releases: "Under Review (Releases)",
+        recommended_badge: "(Recommended)"
     }
 };
 

@@ -41,9 +41,10 @@
         .browser-badges {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            margin-left: 2px;
+            gap: 5px;
+            margin-left: 4px;
             vertical-align: middle;
+            font-weight: normal;
         }
 
         .browser-badge-icon {
@@ -51,6 +52,27 @@
             height: 14px;
             object-fit: contain;
             vertical-align: middle;
+        }
+
+        .badge-link {
+            color: inherit;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .badge-link:hover {
+            color: var(--win98-blue);
+        }
+
+        .recommended-tag {
+            font-size: 10px;
+            color: #b00000;
+            font-weight: bold;
+            letter-spacing: -0.2px;
         }
 
         .projects-grid {
@@ -222,10 +244,10 @@
                         <img src="assets/world_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_extensions">Tarayıcı Eklentileri</span>
                         <span class="browser-badges">
-                            (<img src="assets/helium.png" class="browser-badge-icon" alt="Helium" title="Helium"> Helium, 
-                            <img src="assets/chrome.png" class="browser-badge-icon" alt="Chrome" title="Chrome"> Chrome 
+                            (<a href="https://helium.computer/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Helium Browser"><img src="assets/helium.png" class="browser-badge-icon" alt="Helium">Helium</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
+                            <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Google Chrome"><img src="assets/chrome.png" class="browser-badge-icon" alt="Chrome">Chrome</a> 
                             <span data-i18n="and_word">ve</span> 
-                            <img src="assets/edge.png" class="browser-badge-icon" alt="Edge" title="Edge"> Edge)
+                            <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener noreferrer" class="badge-link" title="Microsoft Edge"><img src="assets/edge.png" class="browser-badge-icon" alt="Edge">Edge</a>)
                         </span>
                     </div>
                     <div class="projects-grid">
@@ -390,10 +412,10 @@
                         <img src="assets/pc_icon.png" class="main-icon" alt="">
                         <span data-i18n="category_pc">PC Yazılımlarım</span>
                         <span class="browser-badges">
-                            (<img src="assets/linux.svg" class="browser-badge-icon" alt="Linux" title="Linux"> Linux, 
-                            <img src="assets/windows.svg" class="browser-badge-icon" alt="Windows" title="Windows"> Windows 
+                            (<a href="https://cachyos.org/" target="_blank" rel="noopener noreferrer" class="badge-link" title="CachyOS (Linux)"><img src="assets/linux.svg" class="browser-badge-icon" alt="Linux">Linux (CachyOS)</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
+                            <a href="https://www.microsoft.com/windows" target="_blank" rel="noopener noreferrer" class="badge-link" title="Microsoft Windows"><img src="assets/windows.svg" class="browser-badge-icon" alt="Windows">Windows</a> 
                             <span data-i18n="and_word">ve</span> 
-                            <img src="assets/macos.svg" class="browser-badge-icon" alt="macOS" title="macOS"> macOS)
+                            <a href="https://www.apple.com/macos/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Apple macOS"><img src="assets/macos.svg" class="browser-badge-icon" alt="macOS">macOS</a>)
                         </span>
                     </div>
                     <div class="pc-projects-grid">
@@ -568,7 +590,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 09</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.4</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.5</span>
             <img src="assets/speaker_icon.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>
