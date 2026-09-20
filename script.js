@@ -31,11 +31,13 @@ const translations = {
         category_scripts: "Scriptlerim",
         tabsuspender_desc: "Kullanılmayan sekmeleri otomatik uyutarak RAM ve sistem kaynaklarından %85'e varan tasarruf sağlayan akıllı, ultra hafif ve gizlilik odaklı sekme yöneticisi.",
         webtranslate_desc: "Işık hızında tam sayfa ve seçili metin çevirmeni. 6 farklı çeviri motoru, canlı ilerleme ve çoklu sekme karşılaştırma özellikli akıllı eklenti.",
+        xdownloader_desc: "X (Twitter) üzerindeki video, fotoğraf ve GIF medyalarını tek tıklamayla en yüksek orijinal kalitede indiren ışık hızında ve gizlilik odaklı tarayıcı eklentisi.",
         haytool_weather_title: "Weather",
         haytool_weather_desc: "Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.",
         restricted_title: "YETKİSİZ ERİŞİM",
         restricted_desc: "Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.",
-        restricted_btn: "KİMLİK DOĞRULA"
+        restricted_btn: "KİMLİK DOĞRULA",
+        pending_releases: "Onay Sürecinde (Releases)"
     },
     en: {
         welcome_msg: "System login successful.",
@@ -55,6 +57,7 @@ const translations = {
         extensityplus_desc: "A handy extension manager to quickly manage, enable, and disable your browser extensions with a single click.",
         tabsuspender_desc: "Smart, ultra-lightweight and privacy-first tab suspender that saves up to 85% RAM and battery by putting background tabs to sleep.",
         webtranslate_desc: "Lightning fast full-page and selection translator featuring 6 engines, real-time progress HUD and multi-tab live comparison.",
+        xdownloader_desc: "A lightning-fast, privacy-first browser extension to download videos, photos, and GIFs from X (Twitter) in original maximum quality with one click.",
         category_extensions: "Browser Extensions",
         and_word: "&",
         category_pc: "PC Software",
@@ -69,7 +72,8 @@ const translations = {
         haytool_weather_desc: "An ultra-lightweight, native Windows desktop application that runs silently in the system tray, dynamically rendering live temperature and weather condition icons.",
         restricted_title: "UNAUTHORIZED ACCESS",
         restricted_desc: "The script archive can only be viewed in developer and admin mode.",
-        restricted_btn: "AUTHENTICATE"
+        restricted_btn: "AUTHENTICATE",
+        pending_releases: "Under Review (Releases)"
     }
 };
 
@@ -100,6 +104,14 @@ function applyLanguage(lang) {
             } else {
                 el.innerHTML = t[key];
             }
+        }
+    });
+
+    // Map title attributes by data-i18n-title attribute
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+        const key = el.getAttribute('data-i18n-title');
+        if (t[key]) {
+            el.setAttribute('title', t[key]);
         }
     });
 
