@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaYTo Extension & App Telemetry | Canlı Kullanıcı İzleme Paneli</title>
+    <link rel="icon" href="../assets/pc_icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="brand">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-text">
+                    <h1>HaYTooL Pulse Telemetry</h1>
+                    <p>Eklenti, Yazılım ve Web Siteleri Anlık İzleme Matrisi</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <div class="live-indicator">
+                    <span class="pulse-dot"></span>
+                    <span id="connection-status">Canlı Yayın</span>
+                </div>
+                <a href="../" class="back-btn">
+                    <span>⬅</span> Ana Portala Dön
+                </a>
+            </div>
+        </header>
+
+        <!-- KPI Summary Cards (Compact) -->
+        <section class="kpi-row">
+            <div class="kpi-card">
+                <div class="kpi-title">TOPLAM ANLIK AKTİF</div>
+                <div class="kpi-value text-accent" id="total-active-count">0</div>
+                <div class="kpi-sub">Canlı Çevrimiçi Kullanıcı</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">BUGÜNKÜ TOPLAM GİRİŞ</div>
+                <div class="kpi-value" id="total-today-count">0</div>
+                <div class="kpi-sub">Günlük Tekil Ziyaret</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">BU AYKİ TOPLAM GİRİŞ</div>
+                <div class="kpi-value" id="total-month-count">0</div>
+                <div class="kpi-sub">Aylık Kümülatif Trafik</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">SİSTEM SAĞLIĞI & SENKRON</div>
+                <div class="kpi-value text-muted" id="last-updated-time">--:--:--</div>
+                <div class="kpi-sub">Yenileniyor: <span id="countdown-timer">10s</span></div>
+            </div>
+        </section>
+
+        <!-- Table Toolbar: Filters & Sorters -->
+        <div class="table-toolbar">
+            <div class="toolbar-left">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Tümü (<span id="count-all">0</span>)</button>
+                    <button class="filter-btn" data-filter="extension">🧩 Eklentiler (<span id="count-ext">0</span>)</button>
+                    <button class="filter-btn" data-filter="pc">💻 PC Yazılımları (<span id="count-pc">0</span>)</button>
+                    <button class="filter-btn" data-filter="web">🌐 Web Siteleri (<span id="count-web">0</span>)</button>
+                </div>
+            </div>
+            <div class="toolbar-right">
+                <label for="sort-select">Sıralama:</label>
+                <select id="sort-select" class="sort-dropdown">
+                    <option value="active-desc">⚡ Anlık Aktif (En Yüksek)</option>
+                    <option value="last_seen-desc" selected>🕒 En Son Kullanılanlar</option>
+                    <option value="today-desc">📅 Bugün En Çok Kullanılan</option>
+                    <option value="month-desc">🗓️ Bu Ay En Çok Kullanılan</option>
+                    <option value="name-asc">🔤 İsim (A-Z)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Compact Data Table -->
+        <div class="table-wrapper">
+            <table class="telemetry-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">Durum</th>
+                        <th style="min-width: 240px;">Uygulama / Varlık</th>
+                        <th style="width: 140px;">Kategori</th>
+                        <th style="width: 130px; text-align: right;" class="sort-header" data-sort="active">Anlık Aktif</th>
+                        <th style="width: 120px; text-align: right;" class="sort-header" data-sort="today">Bugün</th>
+                        <th style="width: 120px; text-align: right;" class="sort-header" data-sort="month">Bu Ay</th>
+                        <th style="width: 160px; text-align: right;" class="sort-header" data-sort="last_seen">Son Aktivite</th>
+                        <th style="width: 90px; text-align: center;">Erişim</th>
+                    </tr>
+                </thead>
+                <tbody id="telemetry-tbody">
+                    <!-- Dynamic Rows populated by app.js -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Privacy Assurance Banner -->
+        <footer class="privacy-banner">
+            <div class="shield-icon">🛡️</div>
+            <div>
+                <strong>%100 Gizlilik & Güvenlik Güvencesi:</strong> Bu telemetri paneli, <strong>Cloudflare Workers & KV</strong> uç (edge) altyapısı üzerinde sıfır kişisel veri (Zero Personal Data) ilkesiyle çalışır. Kullanıcı IP adresleri, çerezler, donanım kimlikleri veya tarayıcı geçmişi <u>kesinlikle kaydedilmez ve saklanmaz</u>. Yalnızca oturum süresince Cloudflare KV üzerinde 3 dakikalık geçici anonim kalp atışları (heartbeat) sayılır. Chrome Web Store & Microsoft Edge mağaza politikalarıyla %100 uyumludur.
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
