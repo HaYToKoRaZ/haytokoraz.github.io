@@ -197,17 +197,25 @@ function getStatsKeys() {
 
 async function sendPulseTelemetry() {
     try {
-        const isNew = !sessionStorage.getItem('hayto_portal_session_pinged');
+        let sid = sessionStorage.getItem('hayto_portal_sid');
+        let isNew = false;
+        if (!sid) {
+            sid = 'web_' + Math.random().toString(36).substring(2, 15);
+            sessionStorage.setItem('hayto_portal_sid', sid);
+            isNew = true;
+        }
+
         await fetch('https://hayto-telemetry.korazhayto.workers.dev/api/ping', {
             method: 'POST',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ app: 'web_portal', is_new_session: isNew }),
+            body: JSON.stringify({ 
+                app: 'web_portal', 
+                session_id: sid,
+                is_new_session: isNew 
+            }),
             keepalive: true
         });
-        if (isNew) {
-            sessionStorage.setItem('hayto_portal_session_pinged', 'true');
-        }
     } catch (e) {
         // Sessiz hata yönetimi
     }
