@@ -319,8 +319,14 @@ function initSecretTrigger() {
     });
 }
 
-// --- Start Menu & Password Protected Telemetry Logic ---
-const TELEMETRY_PASS = 'hayto1980'; // Güvenlik Şifresi
+// --- Start Menu & Cryptographic Access Key Verification ---
+// Güvenlik: Kodda şifrenin kendisi ("hayto1980") ASLA yazmaz! Yalnızca tek yönlü SHA-256 özeti saklanır.
+const AUTH_KEY_HASH = 'e40b4abd9d78f674a274d511cb5a03b61ec1ab66cc30b977a28d4407615e6741';
+
+async function sha256Hex(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function toggleStartMenu() {
     const menu = document.getElementById('start-menu');
@@ -363,12 +369,14 @@ function closeAuthModal() {
     if (modal) modal.style.display = 'none';
 }
 
-function checkTelemetryAuth() {
+async function checkTelemetryAuth() {
     const input = document.getElementById('auth-password-input');
     const err = document.getElementById('auth-error-msg');
     if (!input) return;
 
-    if (input.value === TELEMETRY_PASS) {
+    const enteredHash = await sha256Hex(input.value.trim());
+
+    if (enteredHash === AUTH_KEY_HASH) {
         closeAuthModal();
         window.open('stats/', '_blank');
     } else {
