@@ -296,7 +296,7 @@ async function fetchTelemetry() {
         if (res.ok) {
             const data = await res.json();
             if (data && data.apps) {
-                // Eğer yeni Worker yapısındaysa doğrudan ata
+                // 1. Bilinen uygulamaları doldur
                 ITEMS_METADATA.forEach(item => {
                     const appStat = data.apps[item.id];
                     if (typeof appStat === 'object' && appStat !== null) {
@@ -310,6 +310,43 @@ async function fetchTelemetry() {
                         };
                     }
                 });
+
+                // 2. Dinamik Keşif: Listede henüz olmayan yepyeni bir uygulama ping atmışsa otomatik ekle!
+                Object.keys(data.apps).forEach(appId => {
+                    const exists = ITEMS_METADATA.some(i => i.id === appId);
+                    if (!exists) {
+                        let type = 'web';
+                        let categoryLabel = 'Web Sitesi';
+                        let icon = '../assets/folder_icon.png';
+
+                        if (appId.startsWith('pc_')) {
+                            type = 'pc';
+                            categoryLabel = 'PC Yazılımı';
+                            icon = '../assets/pc_icon.png';
+                        } else if (!appId.startsWith('web_')) {
+                            type = 'extension';
+                            categoryLabel = 'Eklenti';
+                            icon = '../assets/world_icon.png';
+                        }
+
+                        // İsmi formatla: 'web_yeni_proje' -> 'Yeni Proje'
+                        const cleanName = appId.replace(/^(web_|pc_)/, '').replace(/_/g, ' ')
+                            .replace(/\b\w/g, l => l.toUpperCase());
+
+                        ITEMS_METADATA.push({
+                            id: appId,
+                            name: cleanName,
+                            type: type,
+                            icon: icon,
+                            categoryLabel: categoryLabel,
+                            website: '#'
+                        });
+
+                        telemetryStore[appId] = data.apps[appId];
+                    }
+                });
+
+                updateFilterCounts();
                 isLive = true;
             }
         }
