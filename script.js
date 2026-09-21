@@ -195,11 +195,34 @@ function getStatsKeys() {
     };
 }
 
+async function sendPulseTelemetry() {
+    try {
+        const isNew = !sessionStorage.getItem('hayto_portal_session_pinged');
+        await fetch('https://hayto-telemetry.korazhayto.workers.dev/api/ping', {
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ app: 'web_portal', is_new_session: isNew }),
+            keepalive: true
+        });
+        if (isNew) {
+            sessionStorage.setItem('hayto_portal_session_pinged', 'true');
+        }
+    } catch (e) {
+        // Sessiz hata yönetimi
+    }
+}
+
 async function recordVisit() {
     const isNewSession = !sessionStorage.getItem('hayto_session_active');
     const keys = getStatsKeys();
     const endpoint = isNewSession ? 'hit' : 'get';
     
+    // 1. Canlı Cloudflare Telemetri Kalp Atışı (web_portal)
+    sendPulseTelemetry();
+    setInterval(sendPulseTelemetry, 2 * 60 * 1000); // 2 dakikada bir güncelle
+
+    // 2. Win98 sys_stats.exe arşivi
     try {
         await Promise.all([
             fetch(`${STATS_API_BASE}/${endpoint}/${keys.daily}`).catch(() => null),
