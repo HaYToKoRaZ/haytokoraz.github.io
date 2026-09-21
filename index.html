@@ -197,16 +197,16 @@
         <div class="start-menu-items">
             <div class="start-menu-item" onclick="location.href='extensions.html'">
                 <img src="assets/folder_icon.png" alt="">
-                <span>Projelerim</span>
+                <span data-i18n="menu_projects">Projelerim</span>
             </div>
             <div class="start-menu-item" onclick="openNotepad()">
                 <img src="assets/notepad_icon.png" alt="">
-                <span>İletişim</span>
+                <span data-i18n="menu_contact">İletişim</span>
             </div>
             <div class="start-menu-divider"></div>
             <div class="start-menu-item" onclick="promptTelemetryAuth()">
                 <img src="assets/pc_icon.png" alt="">
-                <span>Sistem Denetimi...</span>
+                <span data-i18n="menu_sys_audit">Sistem Denetimi...</span>
             </div>
         </div>
     </div>
@@ -216,7 +216,7 @@
         <div class="title-bar">
             <div class="title-bar-text">
                 <img src="assets/warning_icon.png" width="16" height="16" alt="">
-                <span>Sistem Kimlik Doğrulaması</span>
+                <span data-i18n="auth_title">Sistem Kimlik Doğrulaması</span>
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn" onclick="closeAuthModal()">r</button>
@@ -225,15 +225,15 @@
         <div class="window-content" style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; gap: 10px; align-items: center;">
                 <img src="assets/warning_icon.png" width="32" height="32" alt="">
-                <span style="font-size: 11px;">Yönetici konsoluna erişmek için anahtarı girin:</span>
+                <span style="font-size: 11px;" data-i18n="auth_prompt">Yönetici konsoluna erişmek için anahtarı girin:</span>
             </div>
             <div>
-                <input type="password" id="auth-password-input" class="classic-input" placeholder="Anahtar..." style="width: 100%; padding: 4px; font-family: monospace; font-size: 12px;">
-                <div id="auth-error-msg" style="color: red; font-size: 10px; margin-top: 4px; display: none;">Geçersiz anahtar! Erişim engellendi.</div>
+                <input type="password" id="auth-password-input" class="classic-input" placeholder="Anahtar..." data-i18n-placeholder="auth_placeholder" style="width: 100%; padding: 4px; font-family: monospace; font-size: 12px;">
+                <div id="auth-error-msg" style="color: red; font-size: 10px; margin-top: 4px; display: none;" data-i18n="auth_error">Geçersiz anahtar! Erişim engellendi.</div>
             </div>
             <div style="display: flex; justify-content: flex-end; gap: 6px; margin-top: 5px;">
-                <button class="classic-btn" style="min-width: 60px;" onclick="checkTelemetryAuth()">Tamam</button>
-                <button class="classic-btn" style="min-width: 60px;" onclick="closeAuthModal()">İptal</button>
+                <button class="classic-btn" style="min-width: 60px;" onclick="checkTelemetryAuth()" data-i18n="auth_btn_ok">Tamam</button>
+                <button class="classic-btn" style="min-width: 60px;" onclick="closeAuthModal()" data-i18n="auth_btn_cancel">İptal</button>
             </div>
         </div>
     </div>
@@ -263,7 +263,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.15</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.16</span>
             <img src="assets/speaker_icon.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>

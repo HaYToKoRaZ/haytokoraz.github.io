@@ -38,7 +38,16 @@ const translations = {
         restricted_desc: "Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.",
         restricted_btn: "KİMLİK DOĞRULA",
         pending_releases: "Onay Sürecinde (Releases)",
-        recommended_badge: "(Önerilen)"
+        recommended_badge: "(Önerilen)",
+        menu_projects: "Projelerim",
+        menu_contact: "İletişim",
+        menu_sys_audit: "Sistem Denetimi...",
+        auth_title: "Sistem Kimlik Doğrulaması",
+        auth_prompt: "Yönetici konsoluna erişmek için anahtarı girin:",
+        auth_placeholder: "Anahtar...",
+        auth_error: "Geçersiz anahtar! Erişim engellendi.",
+        auth_btn_ok: "Tamam",
+        auth_btn_cancel: "İptal"
     },
     en: {
         welcome_msg: "System login successful.",
@@ -75,7 +84,16 @@ const translations = {
         restricted_desc: "The script archive can only be viewed in developer and admin mode.",
         restricted_btn: "AUTHENTICATE",
         pending_releases: "Under Review (Releases)",
-        recommended_badge: "(Recommended)"
+        recommended_badge: "(Recommended)",
+        menu_projects: "My Projects",
+        menu_contact: "Contact",
+        menu_sys_audit: "System Audit...",
+        auth_title: "System Authentication",
+        auth_prompt: "Enter security key to access administrator console:",
+        auth_placeholder: "Security Key...",
+        auth_error: "Invalid key! Access denied.",
+        auth_btn_ok: "OK",
+        auth_btn_cancel: "Cancel"
     }
 };
 
@@ -106,6 +124,14 @@ function applyLanguage(lang) {
             } else {
                 el.innerHTML = t[key];
             }
+        }
+    });
+
+    // Map placeholder attributes by data-i18n-placeholder attribute
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key]) {
+            el.setAttribute('placeholder', t[key]);
         }
     });
 
@@ -320,8 +346,8 @@ function initSecretTrigger() {
 }
 
 // --- Start Menu & Cryptographic Access Key Verification ---
-// Güvenlik: Kodda şifrenin kendisi ("hayto1980") ASLA yazmaz! Yalnızca tek yönlü SHA-256 özeti saklanır.
-const AUTH_KEY_HASH = 'e40b4abd9d78f674a274d511cb5a03b61ec1ab66cc30b977a28d4407615e6741';
+// Güvenlik: Kodda şifrenin kendisi ASLA yazmaz! Yalnızca tek yönlü SHA-256 özeti ("kedi") saklanır.
+const AUTH_KEY_HASH = '959d8225a0bfdb8867d5db7fb01140b2af93f6b60da6537740a111e10b190fe7';
 
 async function sha256Hex(str) {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
