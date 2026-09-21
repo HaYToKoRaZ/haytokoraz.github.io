@@ -4,9 +4,9 @@
  */
 
 const CONFIG = {
-    API_URL: 'https://hayto-extension-telemetry.BURAYA_SUBDOMAIN.workers.dev/api/stats',
+    API_URL: 'https://hayto-telemetry.korazhayto.workers.dev/api/stats',
     REFRESH_INTERVAL_SEC: 10,
-    DEMO_FALLBACK: true
+    DEMO_FALLBACK: false
 };
 
 // 20 Varlık: Her web sitesi kendi uygulamasının gerçek logosunu taşır!
