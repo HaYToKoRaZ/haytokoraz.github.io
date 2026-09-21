@@ -237,7 +237,11 @@ function renderTable() {
         if (field === 'name') {
             valA = a.name.toLowerCase();
             valB = b.name.toLowerCase();
-            return direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            return direction === 'asc' ? valA.localeCompare(valB, 'tr') : valB.localeCompare(valA, 'tr');
+        } else if (field === 'type') {
+            valA = (a.categoryLabel || a.type).toLowerCase();
+            valB = (b.categoryLabel || b.type).toLowerCase();
+            return direction === 'asc' ? valA.localeCompare(valB, 'tr') : valB.localeCompare(valA, 'tr');
         } else {
             valA = statsA[field] || 0;
             valB = statsB[field] || 0;
@@ -423,7 +427,11 @@ function initControls() {
             } else {
                 currentSort = `${field}-desc`;
             }
-            if (sortSelect) sortSelect.value = currentSort;
+            if (sortSelect) {
+                // Eğer dropdown'da bu seçenek varsa seçili yap
+                const opt = Array.from(sortSelect.options).find(o => o.value === currentSort);
+                if (opt) sortSelect.value = currentSort;
+            }
             renderTable();
         });
     });
