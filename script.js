@@ -300,13 +300,11 @@ function closeStatsWindow() {
 
 function initSecretTrigger() {
     const triggers = [
-        document.getElementById('clock'),
-        document.querySelector('.start-button')
+        document.getElementById('clock')
     ];
     
     triggers.forEach(el => {
         if (!el) return;
-        // Yalnizca fare orta tekerlek tusu (button 1) ile ac
         el.addEventListener('auxclick', (e) => {
             if (e.button === 1) {
                 e.preventDefault();
@@ -320,4 +318,85 @@ function initSecretTrigger() {
         });
     });
 }
+
+// --- Start Menu & Password Protected Telemetry Logic ---
+const TELEMETRY_PASS = 'hayto1980'; // Güvenlik Şifresi
+
+function toggleStartMenu() {
+    const menu = document.getElementById('start-menu');
+    const btn = document.getElementById('start-button');
+    if (!menu) return;
+
+    if (menu.style.display === 'none' || !menu.style.display) {
+        menu.style.display = 'flex';
+        if (btn) btn.style.borderStyle = 'inset';
+    } else {
+        closeStartMenu();
+    }
+}
+
+function closeStartMenu() {
+    const menu = document.getElementById('start-menu');
+    const btn = document.getElementById('start-button');
+    if (menu) menu.style.display = 'none';
+    if (btn) btn.style.borderStyle = '';
+}
+
+function promptTelemetryAuth() {
+    closeStartMenu();
+    const modal = document.getElementById('auth-modal');
+    const input = document.getElementById('auth-password-input');
+    const err = document.getElementById('auth-error-msg');
+    
+    if (modal) {
+        modal.style.display = 'flex';
+        if (err) err.style.display = 'none';
+        if (input) {
+            input.value = '';
+            setTimeout(() => input.focus(), 50);
+        }
+    }
+}
+
+function closeAuthModal() {
+    const modal = document.getElementById('auth-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function checkTelemetryAuth() {
+    const input = document.getElementById('auth-password-input');
+    const err = document.getElementById('auth-error-msg');
+    if (!input) return;
+
+    if (input.value === TELEMETRY_PASS) {
+        closeAuthModal();
+        window.open('stats/', '_blank');
+    } else {
+        if (err) err.style.display = 'block';
+        input.value = '';
+        input.focus();
+    }
+}
+
+// Dışarı tıklayınca Başlat menüsünü kapat & Şifrede Enter desteği
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('start-menu');
+    const btn = document.getElementById('start-button');
+    if (menu && menu.style.display === 'flex') {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            closeStartMenu();
+        }
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('auth-modal');
+    if (modal && modal.style.display === 'flex') {
+        if (e.key === 'Enter') {
+            checkTelemetryAuth();
+        } else if (e.key === 'Escape') {
+            closeAuthModal();
+        }
+    }
+});
 

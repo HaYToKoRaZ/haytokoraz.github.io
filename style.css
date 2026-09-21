@@ -344,6 +344,93 @@ body {
     color: #555;
 }
 
+/* --- Start Menu Retro Style --- */
+.start-menu {
+    position: fixed;
+    bottom: 28px;
+    left: 2px;
+    width: 200px;
+    background: var(--win98-grey);
+    border: 2px solid;
+    border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    z-index: 1000;
+}
+
+.start-menu-sidebar {
+    width: 24px;
+    background: linear-gradient(180deg, #000080 0%, #1084d0 100%);
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 8px 4px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.start-menu-sidebar b {
+    font-weight: 900;
+}
+
+.start-menu-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 11px;
+    cursor: default;
+    user-select: none;
+}
+
+.start-menu-item:hover {
+    background: var(--win98-blue);
+    color: white;
+}
+
+.start-menu-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.start-menu-divider {
+    height: 1px;
+    background: var(--win98-dark-grey);
+    border-bottom: 1px solid var(--win98-white);
+    margin: 3px 2px;
+}
+
+/* --- Password Auth Modal --- */
+.auth-modal {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    z-index: 2000;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.classic-input {
+    background: white;
+    border: 2px solid;
+    border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+    outline: none;
+    box-shadow: inset 1px 1px 0px #000;
+}
+
 /* --- Responsive rules --- */
 @media (max-width: 768px) {
     .desktop {
