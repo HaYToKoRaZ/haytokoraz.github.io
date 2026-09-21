@@ -182,6 +182,8 @@ const ITEMS_METADATA = [
 let currentFilter = 'all';
 let currentSort = 'last_seen-desc';
 let telemetryStore = {};
+let previousTelemetryStore = {};
+let isFirstLoad = true;
 let countdown = CONFIG.REFRESH_INTERVAL_SEC;
 let countdownInterval = null;
 
@@ -194,6 +196,43 @@ const lastUpdatedEl = document.getElementById('last-updated-time');
 const countdownEl = document.getElementById('countdown-timer');
 const connectionStatusEl = document.getElementById('connection-status');
 const sortSelect = document.getElementById('sort-select');
+
+// Ses Bildirimi Yönetimi (Web Audio API ile harici ses dosyası indirmeden kristal netliğinde retro ses)
+let isMasterSoundEnabled = localStorage.getItem('hayto_sound_master') !== 'false';
+let mutedApps = JSON.parse(localStorage.getItem('hayto_sound_muted_apps') || '[]');
+
+let audioCtx = null;
+function playNotificationTone(appName) {
+    if (!isMasterSoundEnabled) return;
+    try {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        // Hoş iki tonlu retro ding sesi (E majör akoru)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(659.25, now); // E5
+        osc.frequency.exponentialRampToValueAtTime(880.00, now + 0.1); // A5
+
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.45);
+    } catch (e) {
+        // Ses çalınamazsa sessiz kal
+    }
+}
 
 // Zamanı "5 dk önce", "2 saat önce" şeklinde formatla
 function formatTimeAgo(timestampSec) {
@@ -283,12 +322,34 @@ function renderTable() {
                 <span class="time-ago">${formatTimeAgo(stats.last_seen)}</span>
             </td>
             <td style="text-align: center;">
+                <button class="row-sound-btn ${mutedApps.includes(item.id) ? '' : 'active'}" 
+                        data-app="${item.id}" 
+                        title="${mutedApps.includes(item.id) ? 'Bu uygulama için sesi aç' : 'Bu uygulama için sesi kapat'}">
+                    ${mutedApps.includes(item.id) ? '🔇' : '🔔'}
+                </button>
+            </td>
+            <td style="text-align: center;">
                 <a href="${item.website}" target="_blank" rel="noopener noreferrer" class="link-btn-icon" title="Sayfayı Ziyaret Et">
                     ↗
                 </a>
             </td>
         `;
         tbody.appendChild(row);
+    });
+
+    // Satır ses butonları olayları
+    document.querySelectorAll('.row-sound-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const appId = btn.dataset.app;
+            if (mutedApps.includes(appId)) {
+                mutedApps = mutedApps.filter(id => id !== appId);
+            } else {
+                mutedApps.push(appId);
+            }
+            localStorage.setItem('hayto_sound_muted_apps', JSON.stringify(mutedApps));
+            renderTable();
+        });
     });
 }
 
@@ -350,6 +411,29 @@ async function fetchTelemetry() {
                     }
                 });
 
+                // 3. Yeni Kullanıcı Girişi Tespiti ve Sesli Bildirim
+                let shouldPlayDing = false;
+                Object.keys(data.apps).forEach(appId => {
+                    const currentStat = data.apps[appId];
+                    const prevStat = previousTelemetryStore[appId];
+                    
+                    if (prevStat && currentStat) {
+                        // Eğer anlık aktif arttıysa veya bugünkü ziyaretçi arttıysa
+                        const hasNewVisitor = (currentStat.active > prevStat.active) || (currentStat.today > prevStat.today);
+                        if (hasNewVisitor && !mutedApps.includes(appId)) {
+                            shouldPlayDing = true;
+                        }
+                    }
+                });
+
+                if (shouldPlayDing && !isFirstLoad) {
+                    playNotificationTone();
+                }
+
+                // Mevcut durumu önceki duruma kopyala
+                previousTelemetryStore = JSON.parse(JSON.stringify(telemetryStore));
+                isFirstLoad = false;
+
                 updateFilterCounts();
                 isLive = true;
             }
@@ -388,7 +472,7 @@ async function fetchTelemetry() {
     lastUpdatedEl.textContent = new Date().toLocaleTimeString();
 
     if (connectionStatusEl) {
-        connectionStatusEl.textContent = isLive ? 'Canlı KV Yayını' : 'Hazır (URL Bekliyor)';
+        connectionStatusEl.textContent = isLive ? 'Canlı D1 SQL Yayını' : 'Hazır (URL Bekliyor)';
     }
 
     renderTable();
@@ -397,6 +481,31 @@ async function fetchTelemetry() {
 // Olay Dinleyicileri (Filtreler, Sıralama, Geri Sayım)
 function initControls() {
     updateFilterCounts();
+
+    // Ana Ses Aç/Kapa Butonu
+    const masterSoundBtn = document.getElementById('master-sound-btn');
+    const soundIcon = document.getElementById('sound-icon');
+    if (masterSoundBtn) {
+        const updateSoundBtnUI = () => {
+            if (isMasterSoundEnabled) {
+                masterSoundBtn.className = 'sound-toggle-btn active';
+                masterSoundBtn.innerHTML = '<span id="sound-icon">🔔</span> Ses Açık';
+            } else {
+                masterSoundBtn.className = 'sound-toggle-btn';
+                masterSoundBtn.innerHTML = '<span id="sound-icon">🔇</span> Ses Kapalı';
+            }
+        };
+        updateSoundBtnUI();
+
+        masterSoundBtn.addEventListener('click', () => {
+            isMasterSoundEnabled = !isMasterSoundEnabled;
+            localStorage.setItem('hayto_sound_master', String(isMasterSoundEnabled));
+            updateSoundBtnUI();
+            if (isMasterSoundEnabled) {
+                playNotificationTone(); // Kullanıcıya test sesi dinlet
+            }
+        });
+    }
 
     // Filtre butonları
     const filterButtons = document.querySelectorAll('.filter-btn');
