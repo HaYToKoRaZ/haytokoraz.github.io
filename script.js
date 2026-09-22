@@ -223,12 +223,22 @@ function getStatsKeys() {
 
 async function sendPulseTelemetry() {
     try {
-        let sid = sessionStorage.getItem('hayto_portal_sid');
-        let isNew = false;
+        // Günlük Tekil Ziyaretçi Mantığı:
+        // Cihaz aynı gün içinde 10 sekme de açsa tek 1 ziyaretçi sayılır.
+        const todayStr = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+        let sid = localStorage.getItem('hayto_portal_sid');
+        const lastVisitDate = localStorage.getItem('hayto_portal_last_date');
+        
+        let isNewSession = false;
         if (!sid) {
             sid = 'web_' + Math.random().toString(36).substring(2, 15);
-            sessionStorage.setItem('hayto_portal_sid', sid);
-            isNew = true;
+            localStorage.setItem('hayto_portal_sid', sid);
+        }
+
+        if (lastVisitDate !== todayStr) {
+            // Bugün ilk defa girdi, sayacı 1 artır
+            isNewSession = true;
+            localStorage.setItem('hayto_portal_last_date', todayStr);
         }
 
         await fetch('https://hayto-telemetry.korazhayto.workers.dev/api/ping', {
@@ -237,8 +247,8 @@ async function sendPulseTelemetry() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 app: 'web_portal', 
-                session_id: sid,
-                is_new_session: isNew 
+                session_id: sid, 
+                is_new_session: isNewSession 
             }),
             keepalive: true
         });
