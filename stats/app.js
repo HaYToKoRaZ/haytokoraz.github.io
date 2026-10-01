@@ -60,6 +60,14 @@ const ITEMS_METADATA = [
         categoryLabel: 'Eklenti',
         website: 'https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd'
     },
+    {
+        id: 'ext_rewriteai',
+        name: 'RewriteAI',
+        type: 'extension',
+        icon: '../assets/rewriteai.png',
+        categoryLabel: 'Eklenti',
+        website: 'https://haytokoraz.github.io/RewriteAI/'
+    },
 
     // --- 2. PC YAZILIMLARI ---
     {
@@ -175,6 +183,14 @@ const ITEMS_METADATA = [
         icon: '../assets/wallpaper.png',
         categoryLabel: 'Web Sitesi',
         website: 'https://haytokoraz.github.io/HaYTooL-Wallpaper/'
+    },
+    {
+        id: 'web_rewriteai',
+        name: 'RewriteAI Sitesi',
+        type: 'web',
+        icon: '../assets/rewriteai.png',
+        categoryLabel: 'Web Sitesi',
+        website: 'https://haytokoraz.github.io/RewriteAI/'
     }
 ];
 
