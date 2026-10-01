@@ -216,6 +216,28 @@
             height: 14px;
             object-fit: contain;
         }
+
+        .notepad-content-area {
+            background: white;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            padding: 10px;
+            height: 100%;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            border: 1px solid var(--win98-dark-grey);
+            box-shadow: inset 1px 1px 0 0 var(--win98-black);
+            flex: 1;
+        }
+        .notepad-content-area a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .notepad-content-area a:hover {
+            color: darkblue;
+        }
     </style>
 </head>
 
@@ -542,7 +564,7 @@
                         <img src="assets/warning_icon.png" alt="Restricted">
                         <div class="restricted-text" data-i18n="restricted_title">YETKİSİZ ERİŞİM</div>
                         <p style="font-size: 10px;" data-i18n="restricted_desc">Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.</p>
-                        <button class="login-btn-fake" data-i18n="restricted_btn">KİMLİK DOĞRULA</button>
+                        <button class="login-btn-fake" onclick="promptTelemetryAuth()" data-i18n="restricted_btn">KİMLİK DOĞRULA</button>
                     </div>
                 </section>
 
@@ -551,6 +573,28 @@
             <div style="margin-top: 15px; text-align: right;">
                 <button class="classic-btn" onclick="location.href='index.html'" data-i18n="btn_back">Geri Dön</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Notepad Window -->
+    <div id="notepad" class="window notepad-window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/notepad_icon.png" width="16" height="16" alt="">
+                <span data-i18n="notepad_title">İletişim.txt - Not Defteri</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeNotepad()">r</button>
+            </div>
+        </div>
+        <div class="notepad-menu">
+            <span>Dosya</span>
+            <span>Düzen</span>
+            <span>Arama</span>
+            <span>Yardım</span>
+        </div>
+        <div class="notepad-content">
+            <div id="notepad-content-area" class="notepad-content-area"></div>
         </div>
     </div>
 
@@ -588,15 +632,67 @@
                 </div>
                 <div class="stats-footer">
                     <span>🟢 Durum: ÇEVRİMİÇİ</span>
-                    <button class="classic-btn" style="padding: 2px 8px; font-size: 10px;" onclick="refreshStats()">Yenile</button>
+                    <div style="display: flex; gap: 6px;">
+                        <a href="stats/" target="_blank" class="classic-btn" style="padding: 2px 8px; font-size: 10px; text-decoration: none; color: black; display: inline-flex; align-items: center; gap: 3px;">⚡ Canlı Telemetri</a>
+                        <button class="classic-btn" style="padding: 2px 8px; font-size: 10px;" onclick="refreshStats()">Yenile</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Retro Start Menu -->
+    <div id="start-menu" class="start-menu" style="display: none;">
+        <div class="start-menu-sidebar">
+            <span>Windows<b>98</b></span>
+        </div>
+        <div class="start-menu-items">
+            <div class="start-menu-item" onclick="location.href='extensions.html'">
+                <img src="assets/folder_icon.png" alt="">
+                <span data-i18n="menu_projects">Projelerim</span>
+            </div>
+            <div class="start-menu-item" onclick="openNotepad()">
+                <img src="assets/notepad_icon.png" alt="">
+                <span data-i18n="menu_contact">İletişim</span>
+            </div>
+            <div class="start-menu-divider"></div>
+            <div class="start-menu-item" onclick="promptTelemetryAuth()">
+                <img src="assets/pc_icon.png" alt="">
+                <span data-i18n="menu_sys_audit">Sistem Denetimi...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Modal Dialog -->
+    <div id="auth-modal" class="window auth-modal" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/warning_icon.png" width="16" height="16" alt="">
+                <span data-i18n="auth_title">Sistem Kimlik Doğrulaması</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeAuthModal()">r</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <img src="assets/warning_icon.png" width="32" height="32" alt="">
+                <span style="font-size: 11px;" data-i18n="auth_prompt">Yönetici konsoluna erişmek için anahtarı girin:</span>
+            </div>
+            <div>
+                <input type="password" id="auth-password-input" class="classic-input" placeholder="Anahtar..." data-i18n-placeholder="auth_placeholder" style="width: 100%; padding: 4px; font-family: monospace; font-size: 12px;">
+                <div id="auth-error-msg" style="color: red; font-size: 10px; margin-top: 4px; display: none;" data-i18n="auth_error">Geçersiz anahtar! Erişim engellendi.</div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 6px; margin-top: 5px;">
+                <button class="classic-btn" style="min-width: 60px;" onclick="checkTelemetryAuth()" data-i18n="auth_btn_ok">Tamam</button>
+                <button class="classic-btn" style="min-width: 60px;" onclick="closeAuthModal()" data-i18n="auth_btn_cancel">İptal</button>
             </div>
         </div>
     </div>
 
     <!-- Taskbar -->
     <div class="taskbar">
-        <div class="start-button">
+        <div class="start-button" id="start-button" onclick="toggleStartMenu()">
             <img src="assets/start_icon.png" alt="">
             <span data-i18n="start_btn">Başlat</span>
         </div>
@@ -604,6 +700,10 @@
         <div class="task-item" style="border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey); box-shadow: none; background: #ddd;">
             <img src="assets/folder_icon.png" width="16" height="16" style="margin-right: 5px;">
             Projelerim
+        </div>
+        <div class="task-item" id="notepad-task" style="display: none;">
+            <img src="assets/notepad_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
+            İletişim.txt...
         </div>
         <div class="task-item" id="stats-task" style="display: none;">
             <img src="assets/pc_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
@@ -617,7 +717,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 10</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.20</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.21</span>
             <img src="assets/speaker_icon.png" width="16" alt="">
             <span id="clock">00:00</span>
         </div>
