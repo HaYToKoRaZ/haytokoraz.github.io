@@ -160,8 +160,8 @@
     <div class="window main-window">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="assets/pc_icon.png" width="16" height="16" alt="">
-                HaYTo.exe
+                <img src="assets/pc_icon.png" width="16" height="16" alt="HaYTo PC">
+                <h1>HaYTo - Windows 98 Portfolio</h1>
             </div>
             <div class="title-bar-controls">
                 <button class="win-btn">0</button>
@@ -184,7 +184,7 @@
     <div id="notepad" class="window notepad-window">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="assets/notepad_icon.png" width="16" height="16" alt="">
+                <img src="assets/notepad_icon.png" width="16" height="16" alt="Not Defteri">
                 <span data-i18n="notepad_title">İletişim.txt - Not Defteri</span>
             </div>
             <div class="title-bar-controls">
@@ -206,7 +206,7 @@
     <div id="stats-window" class="window stats-window" style="display: none;">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="assets/pc_icon.png" width="16" height="16" alt="">
+                <img src="assets/pc_icon.png" width="16" height="16" alt="HaYTo PC">
                 <span>sys_stats.exe - Ziyaretçi İstatistikleri</span>
             </div>
             <div class="title-bar-controls">
@@ -252,16 +252,16 @@
         </div>
         <div class="start-menu-items">
             <div class="start-menu-item" onclick="location.href='extensions.html'">
-                <img src="assets/folder_icon.png" alt="">
+                <img src="assets/folder_icon.png" alt="Projeler">
                 <span data-i18n="menu_projects">Projelerim</span>
             </div>
             <div class="start-menu-item" onclick="openNotepad()">
-                <img src="assets/notepad_icon.png" alt="">
+                <img src="assets/notepad_icon.png" alt="İletişim">
                 <span data-i18n="menu_contact">İletişim</span>
             </div>
             <div class="start-menu-divider"></div>
             <div class="start-menu-item" onclick="promptTelemetryAuth()">
-                <img src="assets/pc_icon.png" alt="">
+                <img src="assets/pc_icon.png" alt="Sistem">
                 <span data-i18n="menu_sys_audit">Sistem Denetimi...</span>
             </div>
         </div>
@@ -271,7 +271,7 @@
     <div id="auth-modal" class="window auth-modal" style="display: none;">
         <div class="title-bar">
             <div class="title-bar-text">
-                <img src="assets/warning_icon.png" width="16" height="16" alt="">
+                <img src="assets/warning_icon.png" width="16" height="16" alt="Uyarı">
                 <span data-i18n="auth_title">Sistem Kimlik Doğrulaması</span>
             </div>
             <div class="title-bar-controls">
@@ -280,7 +280,7 @@
         </div>
         <div class="window-content" style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; gap: 10px; align-items: center;">
-                <img src="assets/warning_icon.png" width="32" height="32" alt="">
+                <img src="assets/warning_icon.png" width="32" height="32" alt="Güvenlik Uyarısı">
                 <span style="font-size: 11px;" data-i18n="auth_prompt">Yönetici konsoluna erişmek için anahtarı girin:</span>
             </div>
             <div>
@@ -297,20 +297,20 @@
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="start-button" id="start-button" onclick="toggleStartMenu()">
-            <img src="assets/start_icon.png" alt="">
+            <img src="assets/start_icon.png" alt="Başlat Menüsü">
             <span data-i18n="start_btn">Başlat</span>
         </div>
         <div class="taskbar-divider"></div>
         <div class="task-item" id="main-task">
-            <img src="assets/pc_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
+            <img src="assets/pc_icon.png" width="16" height="16" alt="Görev" style="margin-right: 5px;">
             HaYTo.exe
         </div>
         <div class="task-item" id="notepad-task" style="display: none;">
-            <img src="assets/notepad_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
+            <img src="assets/notepad_icon.png" width="16" height="16" alt="Görev" style="margin-right: 5px;">
             İletişim.txt...
         </div>
         <div class="task-item" id="stats-task" style="display: none;">
-            <img src="assets/pc_icon.png" width="16" height="16" alt="" style="margin-right: 5px;">
+            <img src="assets/pc_icon.png" width="16" height="16" alt="Görev" style="margin-right: 5px;">
             sys_stats.exe
         </div>
         <div class="systray">
@@ -320,7 +320,7 @@
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
             <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.21</span>
-            <img src="assets/speaker_icon.png" width="16" alt="">
+            <img src="assets/speaker_icon.png" width="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
     </div>
