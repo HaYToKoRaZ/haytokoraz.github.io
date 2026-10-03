@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Google Search Bot
+User-agent: Googlebot
+Allow: /
+
+# Bing & Yahoo Search Bot
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo Search Bot
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex Search Bot
+User-agent: YandexBot
+Allow: /
+
+# Apple Search Bot
+User-agent: Applebot
+Allow: /
+
+# Site Map Location
+Sitemap: https://haytokoraz.github.io/sitemap.xml
