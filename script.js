@@ -158,15 +158,19 @@ function applyLanguage(lang, updateUrl = true) {
         window.history.replaceState({ lang }, '', url.toString());
     }
 
-    // Update document title dynamically based on language
+    // Update document title dynamically based on language (Max 55-60 chars for SEO)
     if (document.location.pathname.includes('extensions')) {
         document.title = lang === 'tr' 
             ? 'Projelerim & Tarayıcı Eklentileri | HaYTo' 
-            : 'Projects & Extensions Hub | HaYTo - Chromium & Desktop Software';
+            : 'Projects & Extensions Catalog | HaYTo';
+    } else if (document.location.pathname.includes('404')) {
+        document.title = lang === 'tr'
+            ? '404 - Sayfa Bulunamadı | HaYTo Windows 98'
+            : '404 - Page Not Found | HaYTo Windows 98';
     } else {
         document.title = lang === 'tr'
-            ? 'HaYTo | Windows 98 Edition - Retro Portfolyo & Yazılım Merkezi'
-            : 'HaYTo | Windows 98 Edition - Retro Portfolio, Browser Extensions & Desktop Software';
+            ? 'HaYTo - Windows 98 Portfolyo & Eklentiler'
+            : 'HaYTo - Windows 98 Portfolio & Extensions';
     }
 
     // Map elements by data-i18n attribute
