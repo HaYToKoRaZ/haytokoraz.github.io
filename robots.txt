@@ -21,5 +21,21 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
+# AI Crawlers & Answer Engines (GEO/AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# LLM Context File
+# LLMs-txt: https://haytokoraz.github.io/llms.txt
+
 # Site Map Location
 Sitemap: https://haytokoraz.github.io/sitemap.xml

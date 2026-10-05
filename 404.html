@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sayfa Bulunamadı | HaYTo Windows 98</title>
+    <meta name="description" content="404 - Aradığınız sayfa bulunamadı. HaYTo Windows 98 portfolyo sistemine geri dönün veya iletişim bilgilerine göz atın.">
+    <meta name="author" content="HaYTo">
+    <meta name="publisher" content="HaYTooL">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Critical Assets Preload (Eliminating Render-Blocking Delay) -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/pc_icon.png">
+
+    <style>
+        .error-dialog-body {
+            display: flex;
+            gap: 16px;
+            padding: 18px 16px 12px 16px;
+            align-items: flex-start;
+        }
+
+        .error-icon-box {
+            flex-shrink: 0;
+        }
+
+        .error-icon-box img {
+            width: 36px;
+            height: 36px;
+            image-rendering: pixelated;
+        }
+
+        .error-message-box {
+            flex: 1;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #000;
+        }
+
+        .error-message-box h2 {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #800000;
+        }
+
+        .error-details-frame {
+            margin-top: 10px;
+            background: #fff;
+            border: 2px solid;
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            box-shadow: inset 1px 1px 0 0 var(--win98-black);
+        }
+
+        .error-contact-list {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .error-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+        }
+
+        .error-contact-item a {
+            color: var(--win98-blue);
+            text-decoration: underline;
+        }
+
+        .error-contact-item a:hover {
+            color: #1084d0;
+        }
+
+        .dialog-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 10px 14px 14px 14px;
+            border-top: 1px solid #dfdfdf;
+        }
+
+        .win-action-btn {
+            min-width: 110px;
+            padding: 4px 12px;
+            background: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            box-shadow: 1px 1px 0 0 var(--win98-black);
+            font-size: 11px;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .win-action-btn:active {
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            box-shadow: none;
+            transform: translate(1px, 1px);
+        }
+
+        .win-action-btn.primary {
+            font-weight: bold;
+            outline: 1px dotted #000;
+            outline-offset: -4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Icons for Navigation Context -->
+    <div class="desktop">
+        <a href="index.html" class="desktop-icon" title="Ana Sayfa (index.html)">
+            <img src="assets/pc_icon.png" width="32" height="32" alt="Home">
+            <span>Bilgisayarım.lnk</span>
+        </a>
+        <a href="extensions.html" class="desktop-icon" title="Projelerim (extensions.html)">
+            <img src="assets/folder_icon.png" width="32" height="32" alt="Projects">
+            <span data-i18n="projects_lnk">Projelerim.lnk</span>
+        </a>
+        <a href="mailto:korazhayto@gmail.com" class="desktop-icon" title="E-Posta (korazhayto@gmail.com)">
+            <img src="assets/mail_icon.png" width="32" height="32" alt="Email">
+            <span>Mail.lnk</span>
+        </a>
+    </div>
+
+    <!-- 404 Windows 98 Error Window (Primary Landmark) -->
+    <main class="window main-window" style="top: 18%; width: 92%; max-width: 540px;">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/warning_icon.png" width="16" height="16" alt="Error">
+                <span data-i18n="page_not_found_title">404 - Sayfa Bulunamadı</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="location.href='index.html'" title="Kapat" aria-label="Kapat">r</button>
+            </div>
+        </div>
+
+        <div class="window-content" style="padding: 0;">
+            <div class="error-dialog-body">
+                <div class="error-icon-box">
+                    <img src="assets/warning_icon.png" alt="Critical Warning">
+                </div>
+                <div class="error-message-box">
+                    <h2 data-i18n="page_not_found_title">404 - Sayfa Bulunamadı</h2>
+                    <p data-i18n="page_not_found_desc">Aradığınız dosya veya sayfa bu sistemde bulunamadı ya da taşınmış olabilir.</p>
+                    
+                    <div class="error-details-frame">
+                        <div style="font-weight: bold; margin-bottom: 4px;" data-i18n="error_code">Hata Kodu: 0x80004005 (E_FAIL_NOT_FOUND)</div>
+                        <div style="color: #666; margin-bottom: 8px;">HaYTo Windows 98 Kernel v1.0.26 // File System Exception</div>
+                        
+                        <div style="border-top: 1px dashed #808080; padding-top: 6px; font-weight: bold; color: #000080;" data-i18n="contact_header">
+                            İLETİŞİM BİLGİLERİ
+                        </div>
+                        <div class="error-contact-list">
+                            <div class="error-contact-item">
+                                <span>📧</span> <b>E-Posta:</b> <a href="mailto:korazhayto@gmail.com" title="korazhayto@gmail.com">korazhayto@gmail.com</a>
+                            </div>
+                            <div class="error-contact-item">
+                                <span>🌐</span> <b>GitHub:</b> <a href="https://github.com/HaYToKoRaZ" target="_blank" rel="noopener noreferrer" title="HaYTo GitHub Profili">github.com/HaYToKoRaZ</a>
+                            </div>
+                            <div class="error-contact-item">
+                                <span>🐦</span> <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank" rel="noopener noreferrer" title="HaYTo X Profili">@HaYTo</a>
+                            </div>
+                            <div class="error-contact-item">
+                                <span>📸</span> <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank" rel="noopener noreferrer" title="HaYTo Instagram Profili">@haytokoraz</a>
+                            </div>
+                            <div class="error-contact-item">
+                                <span>🎮</span> <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank" rel="noopener noreferrer" title="HaYTo Steam Profili">steamcommunity.com/id/HaYTo/</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dialog-actions">
+                <a href="index.html" class="win-action-btn primary" data-i18n="btn_home">
+                    Ana Sayfaya Dön
+                </a>
+                <a href="extensions.html" class="win-action-btn" data-i18n="btn_projects_page">
+                    Projelerim Klasörü
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button class="start-btn" onclick="location.href='index.html'">
+            <img src="assets/win98_start.png" alt="Windows Logo">
+            <span data-i18n="start_btn">Başlat</span>
+        </button>
+        <div class="taskbar-divider"></div>
+        <div class="task-button active">
+            <img src="assets/warning_icon.png" width="16" height="16" alt="404 Error" style="margin-right: 5px;">
+            <span>Error 404: Not Found</span>
+        </div>
+        <div class="systray">
+            <div style="display: flex; gap: 2px; margin-right: 10px;">
+                <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
+                <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
+            </div>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.33</span>
+            <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
+            <span id="clock">00:00</span>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

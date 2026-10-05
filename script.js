@@ -48,7 +48,12 @@ const translations = {
         auth_placeholder: "Anahtar...",
         auth_error: "Geçersiz anahtar! Erişim engellendi.",
         auth_btn_ok: "Tamam",
-        auth_btn_cancel: "İptal"
+        auth_btn_cancel: "İptal",
+        page_not_found_title: "404 - Sayfa Bulunamadı",
+        page_not_found_desc: "Aradığınız dosya veya sayfa bu sistemde bulunamadı ya da taşınmış olabilir.",
+        error_code: "Hata Kodu: 0x80004005 (E_FAIL_NOT_FOUND)",
+        btn_home: "Ana Sayfaya Dön",
+        btn_projects_page: "Projelerim Klasörü"
     },
     en: {
         welcome_msg: "System login successful.",
@@ -95,27 +100,74 @@ const translations = {
         auth_placeholder: "Security Key...",
         auth_error: "Invalid key! Access denied.",
         auth_btn_ok: "OK",
-        auth_btn_cancel: "Cancel"
+        auth_btn_cancel: "Cancel",
+        page_not_found_title: "404 - Page Not Found",
+        page_not_found_desc: "The requested file or page does not exist on this system or has been relocated.",
+        error_code: "Error Code: 0x80004005 (E_FAIL_NOT_FOUND)",
+        btn_home: "Return to Home",
+        btn_projects_page: "Open Projects"
     }
 };
 
-let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('tr') ? 'tr' : 'en');
+function getInitialLanguage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = urlParams.get('lang');
+    if (paramLang && (paramLang === 'tr' || paramLang === 'en')) {
+        return paramLang;
+    }
+    const stored = localStorage.getItem('lang');
+    if (stored && (stored === 'tr' || stored === 'en')) {
+        return stored;
+    }
+    return navigator.language.startsWith('tr') ? 'tr' : 'en';
+}
+
+let currentLang = getInitialLanguage();
 
 document.addEventListener('DOMContentLoaded', () => {
-    applyLanguage(currentLang);
+    applyLanguage(currentLang, false);
     startClock();
-    recordVisit();
     initSecretTrigger();
     console.log('--- SYSTEM_READY // 1980 ---');
+
+    // Register Service Worker for aggressive static asset caching & 0ms repeat visits
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').catch(() => null);
+        });
+    }
+
+    // Defer non-critical network requests to free up the critical request chain & LCP
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => recordVisit(), { timeout: 2500 });
+    } else {
+        setTimeout(recordVisit, 1500);
+    }
 });
 
-function applyLanguage(lang) {
+function applyLanguage(lang, updateUrl = true) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    const t = translations[lang];
+    document.documentElement.lang = lang;
+    const t = translations[lang] || translations.tr;
 
-    // Update title
-    document.title = 'HaYTo | Windows 98 Edition';
+    // Sync URL query parameter (?lang=tr or ?lang=en) without page reload
+    if (updateUrl && window.history && window.history.replaceState) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState({ lang }, '', url.toString());
+    }
+
+    // Update document title dynamically based on language
+    if (document.location.pathname.includes('extensions')) {
+        document.title = lang === 'tr' 
+            ? 'Projelerim & Tarayıcı Eklentileri | HaYTo' 
+            : 'Projects & Extensions Hub | HaYTo - Chromium & Desktop Software';
+    } else {
+        document.title = lang === 'tr'
+            ? 'HaYTo | Windows 98 Edition - Retro Portfolyo & Yazılım Merkezi'
+            : 'HaYTo | Windows 98 Edition - Retro Portfolio, Browser Extensions & Desktop Software';
+    }
 
     // Map elements by data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -152,9 +204,9 @@ function applyLanguage(lang) {
             <b>${t.contact_header}</b>
             -------------------------
             
-            <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank">@haytokoraz</a>
-            <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank">@HaYTo</a>
-            <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank">HaYTo Profile</a>
+            <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank" rel="noopener noreferrer">@haytokoraz</a>
+            <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank" rel="noopener noreferrer">@HaYTo</a>
+            <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank" rel="noopener noreferrer">HaYTo Profile</a>
             <b>Email:</b> <a href="mailto:korazhayto@gmail.com">korazhayto@gmail.com</a>
             
             <b>Status:</b> ONLINE
@@ -165,7 +217,7 @@ function applyLanguage(lang) {
 }
 
 function setLanguage(lang) {
-    applyLanguage(lang);
+    applyLanguage(lang, true);
 }
 
 function startClock() {

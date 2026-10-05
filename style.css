@@ -119,9 +119,11 @@ body {
 .title-bar-controls {
     display: flex;
     gap: 2px;
+    align-items: center;
 }
 
 .win-btn {
+    position: relative;
     width: 16px;
     height: 14px;
     background-color: var(--win98-grey);
@@ -133,8 +135,33 @@ body {
     justify-content: center;
     font-size: 9px;
     color: black;
-    cursor: default;
+    cursor: pointer;
     font-weight: bold;
+    user-select: none;
+}
+
+/* Touch Target Compliance (Axe / WCAG 2.5.5 & 2.5.8):
+   Touch screens get enlarged 24x22px buttons with 4px gap without breaking retro feel */
+@media (pointer: coarse), (max-width: 768px) {
+    .title-bar-controls {
+        gap: 6px;
+    }
+    .win-btn {
+        width: 24px;
+        height: 22px;
+        font-size: 11px;
+    }
+}
+
+.win-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 44px;
+    min-height: 44px;
+    pointer-events: auto;
 }
 
 .win-btn:active {

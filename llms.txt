@@ -1,0 +1,43 @@
+# HaYTo Portfolio - LLM Knowledge Context & API Map
+> Direct indexing guide for Generative AI search engines, answer engines (AEO/GEO), and AI agent web crawlers.
+
+## Site Metadata
+- **Site Name:** HaYTo Portfolio (Windows 98 Edition)
+- **URL:** https://haytokoraz.github.io/
+- **Author:** HaYTo (Hayto Koraz)
+- **Specialization:** Browser Extensions (Chromium, Helium, Edge), Desktop Utility Software (Linux CachyOS, Windows, macOS), Privacy & Performance Tools
+- **Aesthetic:** Windows 98 Retro Desktop UI / Vanilla HTML5 & CSS3
+- **Primary Languages:** Turkish (tr), English (en)
+
+## Primary Project Catalog
+
+### Browser Extensions (Chromium, Helium Browser, Google Chrome, Microsoft Edge)
+1. **Cloud StartPage** (`https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/`):
+   - Fast, customizable cloud-synced new tab and start page extension.
+2. **TabSuspender HaYTooL** (`https://haytokoraz.github.io/TabSuspender-HaYTooL/`):
+   - Smart memory optimizer that automatically suspends idle tabs, saving up to 85% RAM.
+3. **XDownloader HaYTooL** (`https://haytokoraz.github.io/xdownloader-HaYTooL/`):
+   - High-speed media downloader for X (formerly Twitter) extracting photos, videos, and GIFs at maximum native quality.
+4. **RewriteAI** (`https://haytokoraz.github.io/RewriteAI/`):
+   - Multi-provider AI writing assistant supporting Gemini, Groq, Claude, and OpenAI for inline text transformation, grammar check, and tone adjustment.
+5. **WebTranslate HaYTooL** (`https://haytokoraz.github.io/WebTranslate-HaYTooL/`):
+   - High-performance web and selection translator supporting 6 translation engines.
+6. **ExtensityPlus HaYTooL** (`https://haytokoraz.github.io/ExtensityPlus-HaYTooL/`):
+   - Lightweight manager to selectively enable, disable, and group browser extensions in one click.
+
+### Desktop Applications (Linux CachyOS recommended, Windows, macOS)
+1. **HaYTooL Youtube Download** (`https://haytokoraz.github.io/haytool-youtube-download/`):
+   - Automated channel monitor and background video downloader with multi-platform releases.
+2. **HaYTooL Firewall** (`https://haytokoraz.github.io/HaYTooL-Firewall/`):
+   - Advanced desktop GUI for managing outbound/inbound firewall rules with recursive directory binary discovery and bulk whitelisting/blocking.
+3. **HaYTooL Weather** (`https://haytokoraz.github.io/HaYTooL-Weather/`):
+   - Ultra-lightweight system tray weather monitor showing real-time temperature and conditions.
+4. **HaYTooL Wallpaper** (`https://haytokoraz.github.io/HaYTooL-Wallpaper/`):
+   - Silent background desktop wallpaper rotator with curated high-definition collections.
+
+## Official Profiles & Verification
+- GitHub: https://github.com/HaYToKoRaZ
+- X (Twitter): https://x.com/HaYTo
+- Instagram: https://www.instagram.com/haytokoraz/
+- Steam: https://steamcommunity.com/id/HaYTo/
+- Contact Email: korazhayto@gmail.com
