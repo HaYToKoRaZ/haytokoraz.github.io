@@ -1,37 +1,47 @@
 User-agent: *
+Disallow: /stats/
 Allow: /
 
 # Google Search Bot
 User-agent: Googlebot
+Disallow: /stats/
 Allow: /
 
 # Bing & Yahoo Search Bot
 User-agent: Bingbot
+Disallow: /stats/
 Allow: /
 
 # DuckDuckGo Search Bot
 User-agent: DuckDuckBot
+Disallow: /stats/
 Allow: /
 
 # Yandex Search Bot
 User-agent: YandexBot
+Disallow: /stats/
 Allow: /
 
 # Apple Search Bot
 User-agent: Applebot
+Disallow: /stats/
 Allow: /
 
 # AI Crawlers & Answer Engines (GEO/AEO)
 User-agent: GPTBot
+Disallow: /stats/
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /stats/
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /stats/
 Allow: /
 
 User-agent: Google-Extended
+Disallow: /stats/
 Allow: /
 
 # LLM Context File

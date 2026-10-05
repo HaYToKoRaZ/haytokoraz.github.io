@@ -14,13 +14,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Canlı Telemetri & İstatistikler -->
-  <url>
-    <loc>https://haytokoraz.github.io/stats/</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <!-- LLM Context & Agentic Manifest -->
   <url>
     <loc>https://haytokoraz.github.io/llms.txt</loc>
