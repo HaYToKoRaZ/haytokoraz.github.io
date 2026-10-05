@@ -198,23 +198,102 @@
         </div>
     </main>
 
+    <!-- Notepad Window -->
+    <div id="notepad" class="window notepad-window">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/notepad_icon.png" width="16" height="16" alt="Not Defteri">
+                <span data-i18n="notepad_title">İletişim.txt - Not Defteri</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeNotepad()" aria-label="Kapat">r</button>
+            </div>
+        </div>
+        <div class="notepad-menu">
+            <span>Dosya</span>
+            <span>Düzen</span>
+            <span>Arama</span>
+            <span>Yardım</span>
+        </div>
+        <div class="notepad-content">
+            <div id="notepad-content-area" class="notepad-content-area"></div>
+        </div>
+    </div>
+
+    <!-- Retro Start Menu -->
+    <div id="start-menu" class="start-menu" style="display: none;">
+        <div class="start-menu-sidebar">
+            <span>Windows<b>98</b></span>
+        </div>
+        <div class="start-menu-items">
+            <div class="start-menu-item" onclick="location.href='index.html'">
+                <img src="assets/pc_icon.png" width="16" height="16" alt="Ana Sayfa">
+                <span data-i18n="btn_home">Ana Sayfa</span>
+            </div>
+            <div class="start-menu-item" onclick="location.href='extensions.html'">
+                <img src="assets/folder_icon.png" width="16" height="16" alt="Projeler">
+                <span data-i18n="menu_projects">Projelerim</span>
+            </div>
+            <div class="start-menu-item" onclick="openNotepad()">
+                <img src="assets/notepad_icon.png" width="16" height="16" alt="İletişim">
+                <span data-i18n="menu_contact">İletişim</span>
+            </div>
+            <div class="start-menu-divider"></div>
+            <div class="start-menu-item" onclick="promptTelemetryAuth()">
+                <img src="assets/pc_icon.png" width="16" height="16" alt="Sistem">
+                <span data-i18n="menu_sys_audit">Sistem Denetimi...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Modal Dialog -->
+    <div id="auth-modal" class="window auth-modal" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                <img src="assets/warning_icon.png" width="16" height="16" alt="Uyarı">
+                <span data-i18n="auth_title">Sistem Kimlik Doğrulaması</span>
+            </div>
+            <div class="title-bar-controls">
+                <button class="win-btn" onclick="closeAuthModal()" aria-label="Kapat">r</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <img src="assets/warning_icon.png" width="32" height="32" alt="Güvenlik Uyarısı">
+                <span style="font-size: 11px;" data-i18n="auth_prompt">Yönetici konsoluna erişmek için anahtarı girin:</span>
+            </div>
+            <div>
+                <input type="password" id="auth-password-input" class="classic-input" placeholder="Anahtar..." data-i18n-placeholder="auth_placeholder" style="width: 100%; padding: 4px; font-family: monospace; font-size: 12px;">
+                <div id="auth-error-msg" style="color: red; font-size: 10px; margin-top: 4px; display: none;" data-i18n="auth_error">Geçersiz anahtar! Erişim engellendi.</div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 6px; margin-top: 5px;">
+                <button class="classic-btn" style="min-width: 60px;" onclick="checkTelemetryAuth()" data-i18n="auth_btn_ok">Tamam</button>
+                <button class="classic-btn" style="min-width: 60px;" onclick="closeAuthModal()" data-i18n="auth_btn_cancel">İptal</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Taskbar -->
     <div class="taskbar">
-        <button class="start-btn" onclick="location.href='index.html'">
-            <img src="assets/win98_start.png" alt="Windows Logo">
+        <div class="start-button" id="start-button" onclick="toggleStartMenu()">
+            <img src="assets/start_icon.png" width="16" height="16" alt="Başlat Menüsü">
             <span data-i18n="start_btn">Başlat</span>
-        </button>
+        </div>
         <div class="taskbar-divider"></div>
-        <div class="task-button active">
+        <div class="task-item" style="border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey); box-shadow: none; background: #ddd;">
             <img src="assets/warning_icon.png" width="16" height="16" alt="404 Error" style="margin-right: 5px;">
-            <span>Error 404: Not Found</span>
+            Error 404: Not Found
+        </div>
+        <div class="task-item" id="notepad-task" style="display: none;">
+            <img src="assets/notepad_icon.png" width="16" height="16" alt="Görev" style="margin-right: 5px;">
+            İletişim.txt...
         </div>
         <div class="systray">
             <div style="display: flex; gap: 2px; margin-right: 10px;">
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.36</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.37</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
