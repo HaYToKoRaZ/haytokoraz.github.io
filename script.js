@@ -204,9 +204,9 @@ function applyLanguage(lang, updateUrl = true) {
             <b>${t.contact_header}</b>
             -------------------------
             
-            <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank" rel="noopener noreferrer">@haytokoraz</a>
-            <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank" rel="noopener noreferrer">@HaYTo</a>
-            <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank" rel="noopener noreferrer">HaYTo Profile</a>
+            <b>Instagram:</b> <a href="https://www.instagram.com/haytokoraz/" target="_blank" rel="nofollow noopener noreferrer">@haytokoraz</a>
+            <b>X (Twitter):</b> <a href="https://x.com/HaYTo" target="_blank" rel="nofollow noopener noreferrer">@HaYTo</a>
+            <b>Steam:</b> <a href="https://steamcommunity.com/id/HaYTo/" target="_blank" rel="nofollow noopener noreferrer">HaYTo Profile</a>
             <b>Email:</b> <a href="mailto:korazhayto@gmail.com">korazhayto@gmail.com</a>
             
             <b>Status:</b> ONLINE
