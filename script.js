@@ -5,8 +5,8 @@
 const translations = {
     tr: {
         welcome_msg: "Sisteme başarıyla giriş yapıldı.",
-        intro_text: "Merhaba, ben <b>HaYTo</b>. Modern teknolojileri retro bir bakış açısıyla harmanlamayı seviyorum.",
-        projects_info: "Geliştirdiğim projeleri görmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butona tıklayabilirsiniz.",
+        intro_text: "Merhaba, ben <b>HaYTo</b>. Modern Chromium ve Helium tarayıcı eklentileri (RewriteAI, TabSuspender, XDownloader vb.) ile CachyOS Linux ve Windows için açık kaynaklı sistem optimizasyon araçları geliştiriyorum.",
+        projects_info: "Yapay zeka asistanları, gizlilik odaklı sekme yöneticileri ve masaüstü otomasyon yazılımlarını keşfetmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butondan erişebilirsiniz.",
         btn_projects: "PROJELERİ GÖR",
         btn_info: "BİLGİ AL",
         start_btn: "Başlat",
@@ -57,8 +57,8 @@ const translations = {
     },
     en: {
         welcome_msg: "System login successful.",
-        intro_text: "Hi, I'm <b>HaYTo</b>. I love blending modern technologies with a retro perspective.",
-        projects_info: "To see the projects I've developed, you can open the <b>Projelerim.lnk</b> file on the desktop or click the button below.",
+        intro_text: "Hi, I'm <b>HaYTo</b>. I develop open-source browser extensions for Chromium & Helium (RewriteAI, TabSuspender, XDownloader) and high-performance system utility software for CachyOS Linux and Windows.",
+        projects_info: "Explore privacy-oriented AI assistants, memory optimization tools, and desktop automation apps by launching the <b>Projects.lnk</b> shortcut on the desktop or clicking below.",
         btn_projects: "VIEW PROJECTS",
         btn_info: "GET INFO",
         start_btn: "Start",
