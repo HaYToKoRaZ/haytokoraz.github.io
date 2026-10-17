@@ -22,10 +22,8 @@
         })(window, document, "clarity", "script", "ysq5xtaexy");
     </script>
 
-    <!-- Non-Render-Blocking CSS with Instant Fallback -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/pc_icon.png">
@@ -138,7 +136,7 @@
 <body>
     <!-- Desktop Icons for Navigation Context -->
     <div class="desktop">
-        <a href="index.html" class="desktop-icon" title="Ana Sayfa (index.html)">
+        <a href="./" class="desktop-icon" title="Ana Sayfa">
             <img src="assets/pc_icon.png" width="32" height="32" alt="Home">
             <span>Bilgisayarım.lnk</span>
         </a>
@@ -160,7 +158,7 @@
                 <span data-i18n="page_not_found_title">404 - Sayfa Bulunamadı</span>
             </div>
             <div class="title-bar-controls">
-                <button class="win-btn" onclick="location.href='index.html'" title="Kapat" aria-label="Kapat">r</button>
+                <button class="win-btn" onclick="location.href='./'" title="Kapat" aria-label="Kapat">r</button>
             </div>
         </div>
 
@@ -202,7 +200,7 @@
             </div>
 
             <div class="dialog-actions">
-                <a href="index.html" class="win-action-btn primary" data-i18n="btn_home">
+                <a href="./" class="win-action-btn primary" data-i18n="btn_home">
                     Ana Sayfaya Dön
                 </a>
                 <a href="extensions.html" class="win-action-btn" data-i18n="btn_projects_page">
@@ -240,7 +238,7 @@
             <span>Windows<b>98</b></span>
         </div>
         <div class="start-menu-items">
-            <div class="start-menu-item" onclick="location.href='index.html'">
+            <div class="start-menu-item" onclick="location.href='./'">
                 <img src="assets/pc_icon.png" width="16" height="16" alt="Ana Sayfa">
                 <span data-i18n="btn_home">Ana Sayfa</span>
             </div>
@@ -307,7 +305,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.47</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.48</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>

@@ -10,9 +10,6 @@
     <meta name="publisher" content="HaYTooL">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://haytokoraz.github.io/extensions.html">
-    <link rel="alternate" hreflang="tr" href="https://haytokoraz.github.io/extensions.html?lang=tr">
-    <link rel="alternate" hreflang="en" href="https://haytokoraz.github.io/extensions.html?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://haytokoraz.github.io/extensions.html">
 
     <!-- Preconnect & DNS Prefetch to Optimize Third-Party Latency -->
     <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
@@ -179,10 +176,8 @@
     }
     </script>
 
-    <!-- Non-Render-Blocking CSS with Instant Fallback -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/folder_icon.png">
@@ -430,9 +425,9 @@
                 <h1>C:\Projelerim - Tarayıcı Eklentileri ve Yazılımlar</h1>
             </div>
             <div class="title-bar-controls">
-                <button class="win-btn" onclick="location.href='index.html'" aria-label="Simge Durumuna Küçült">_</button>
+                <button class="win-btn" onclick="location.href='./'" aria-label="Simge Durumuna Küçült">_</button>
                 <button class="win-btn" aria-label="Ekranı Kapla">1</button>
-                <button class="win-btn" onclick="location.href='index.html'" aria-label="Kapat">r</button>
+                <button class="win-btn" onclick="location.href='./'" aria-label="Kapat">r</button>
             </div>
         </div>
         
@@ -730,6 +725,48 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Lol Account Switcher -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/lol_switcher.png" width="32" height="32" alt="Lol Account Switcher"></div>
+                                <div class="card-title" data-i18n="lol_switcher_title">Lol Account Switcher</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="lol_switcher_desc">
+                                Riot & League of Legends için milisaniyelik hesap değiştirici, 144Hz/240Hz ekran yenileme hızı optimizasyonu ve oyun içi tuş yapılandırması (cfg) koruyucusu.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/Lol-Account-Switcher/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FakeLord -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/fakelord.png" width="32" height="32" alt="FakeLord"></div>
+                                <div class="card-title" data-i18n="fakelord_title">FakeLord</div>
+                            </div>
+                            <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="fakelord_desc">
+                                Discord üzerinde 4.000+ oyunu 0 MB GPU yükü ve sıfır donanım harcamasıyla çalışıyor gösteren hafif hayalet süreçli akıllı Discord aktivite simülatörü.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="store-btn">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/FakeLord/releases/latest" target="_blank" class="store-btn">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -750,7 +787,7 @@
             </div>
 
             <div style="margin-top: 15px; text-align: right;">
-                <button class="classic-btn" onclick="location.href='index.html'" data-i18n="btn_back">Geri Dön</button>
+                <button class="classic-btn" onclick="location.href='./'" data-i18n="btn_back">Geri Dön</button>
             </div>
         </div>
     </main>
@@ -895,8 +932,8 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 10</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.47</span>
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 12</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.49</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>

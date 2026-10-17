@@ -9,9 +9,6 @@
     <meta name="publisher" content="HaYTooL">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://haytokoraz.github.io/">
-    <link rel="alternate" hreflang="tr" href="https://haytokoraz.github.io/?lang=tr">
-    <link rel="alternate" hreflang="en" href="https://haytokoraz.github.io/?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://haytokoraz.github.io/">
 
     <!-- Preconnect & DNS Prefetch to Optimize Third-Party Latency -->
     <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
@@ -90,14 +87,18 @@
     }
     </script>
 
-    <!-- Non-Render-Blocking CSS with Instant Fallback -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/pc_icon.png">
     <style>
+        /* Prevent Cumulative Layout Shift (CLS) */
+        .window.main-window {
+            width: 480px;
+            max-width: 95vw;
+            min-height: 220px;
+        }
         .notepad-content-area {
             background: white;
             color: black;
@@ -190,6 +191,14 @@
         <a href="https://haytokoraz.github.io/RewriteAI/" target="_blank" class="desktop-icon" title="RewriteAI">
             <img src="assets/rewriteai.png" width="32" height="32" alt="RewriteAI">
             <span>RewriteAI.lnk</span>
+        </a>
+        <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="desktop-icon" title="Lol Account Switcher">
+            <img src="assets/lol_switcher.png" width="32" height="32" alt="Lol Account Switcher">
+            <span>LolSwitcher.lnk</span>
+        </a>
+        <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="desktop-icon" title="FakeLord">
+            <img src="assets/fakelord.png" width="32" height="32" alt="FakeLord">
+            <span>FakeLord.lnk</span>
         </a>
     </div>
 
@@ -356,7 +365,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.47</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.49</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
