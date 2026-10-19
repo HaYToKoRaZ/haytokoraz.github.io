@@ -204,6 +204,61 @@
             margin: 0;
             padding: 0;
         }
+        .taskbar {
+            height: 28px;
+            background-color: var(--win98-grey);
+            border-top: 2px solid var(--win98-white);
+            display: flex;
+            align-items: center;
+            padding: 2px;
+            z-index: 100;
+        }
+        .start-button {
+            height: 22px;
+            padding: 0 5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: bold;
+            font-size: 11px;
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            box-shadow: 1px 1px 0 0 var(--win98-black);
+            cursor: default;
+        }
+        .start-button img {
+            width: 16px;
+            height: 16px;
+        }
+        .taskbar-divider {
+            width: 2px;
+            height: 20px;
+            background-color: var(--win98-dark-grey);
+            border-right: 1px solid var(--win98-white);
+            margin: 0 5px;
+        }
+        .task-item {
+            height: 22px;
+            background-color: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            min-width: 100px;
+        }
+        .systray {
+            margin-left: auto;
+            height: 22px;
+            border: 2px solid;
+            border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            font-size: 11px;
+            gap: 10px;
+        }
         .window {
             position: absolute;
             background-color: var(--win98-grey);
@@ -989,7 +1044,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 14</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.66</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.67</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
