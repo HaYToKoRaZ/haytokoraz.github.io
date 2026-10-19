@@ -48,6 +48,7 @@ body {
     font-size: 11px;
     cursor: default;
     width: 85px;
+    min-height: 68px;
     user-select: none;
 }
 
