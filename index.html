@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HaYTo - Windows 98 Portfolio &amp; Browser Extensions</title>
+    <title>HaYTooL Hub | Modern Yazılımlar &amp; Retro Portfolyo</title>
     <meta name="description" content="Explore verified browser extensions, Linux CachyOS and Windows software by HaYTo. Open-source, privacy-first tools in an authentic Windows 98 desktop.">
     <meta name="author" content="HaYTo">
     <meta name="publisher" content="HaYTooL">
@@ -31,7 +31,7 @@
     <!-- Open Graph / Facebook / Discord / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://haytokoraz.github.io/">
-    <meta property="og:title" content="HaYTo | Windows 98 Edition - Retro Portfolio &amp; Software Hub">
+    <meta property="og:title" content="HaYTooL Hub | Modern Yazılımlar &amp; Retro Portfolyo">
     <meta property="og:description" content="Discover powerful browser extensions and open-source desktop software wrapped in an authentic retro Windows 98 operating system experience.">
     <meta property="og:image" content="https://haytokoraz.github.io/assets/pc_icon.png">
 
@@ -39,7 +39,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@HaYTo">
     <meta name="twitter:creator" content="@HaYTo">
-    <meta name="twitter:title" content="HaYTo | Windows 98 Edition - Retro Portfolio &amp; Software Hub">
+    <meta name="twitter:title" content="HaYTooL Hub | Modern Yazılımlar &amp; Retro Portfolyo">
     <meta name="twitter:description" content="Discover powerful browser extensions and open-source desktop software wrapped in an authentic retro Windows 98 operating system experience.">
     <meta name="twitter:image" content="https://haytokoraz.github.io/assets/pc_icon.png">
 
@@ -171,6 +171,63 @@
             font-weight: bold;
             font-size: 12px;
             min-height: 28px;
+        }
+        .title-bar-text {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .title-bar-text h1 {
+            font-size: 12px;
+            font-weight: bold;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .title-bar-controls {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background-color: var(--win98-grey);
+            border: 1px solid;
+            border-color: var(--win98-white) var(--win98-black) var(--win98-black) var(--win98-white);
+            font-family: 'Marlett', sans-serif;
+            font-size: 9px;
+            line-height: 10px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .window-content {
+            padding: 20px;
+            background-color: var(--win98-grey);
+            color: black;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .welcome-text {
+            font-size: 14px;
+            margin-bottom: 16px;
+            font-weight: normal;
+        }
+        .win-fieldset {
+            border: 1px solid var(--win98-dark-grey);
+            box-shadow: 1px 1px 0 var(--win98-white);
+            padding: 8px 10px;
+            margin-bottom: 14px;
+            font-size: 11px;
+            line-height: 1.45;
         }
         .classic-btn {
             padding: 4px 12px;
@@ -461,7 +518,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.62</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.63</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>

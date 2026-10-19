@@ -191,8 +191,8 @@ function applyLanguage(lang, updateUrl = true) {
             : '404 - Page Not Found | HaYTo Windows 98';
     } else {
         document.title = lang === 'tr'
-            ? 'HaYTo - Windows 98 Portfolyo & Eklentiler'
-            : 'HaYTo - Windows 98 Portfolio & Extensions';
+            ? 'HaYTooL Hub | Modern Yazılımlar & Retro Portfolyo'
+            : 'HaYTooL Hub | Modern Software & Retro Portfolio';
     }
 
     // Map elements by data-i18n attribute
