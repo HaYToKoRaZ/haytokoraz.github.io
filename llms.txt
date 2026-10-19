@@ -24,6 +24,9 @@ HaYTo Portfolio is a retro Windows 98 styled personal website and project index 
 - [HaYTooL Firewall](https://haytokoraz.github.io/HaYTooL-Firewall/): Advanced desktop GUI for managing outbound/inbound firewall rules with recursive directory binary discovery and bulk whitelisting/blocking.
 - [HaYTooL Weather](https://haytokoraz.github.io/HaYTooL-Weather/): Ultra-lightweight system tray weather monitor showing real-time temperature and conditions.
 - [HaYTooL Wallpaper](https://haytokoraz.github.io/HaYTooL-Wallpaper/): Silent background desktop wallpaper rotator with curated high-definition collections.
+- [Lol Account Switcher](https://haytokoraz.github.io/Lol-Account-Switcher/): Ultra-fast League of Legends account switcher, display refresh rate optimizer, and in-game config protector.
+- [FakeLord](https://haytokoraz.github.io/FakeLord/): Ultra-lightweight ghost-process Discord activity status simulator for 4,000+ games.
+- [Power Grid HaYTooL](https://haytokoraz.github.io/Power-Grid/): Next-generation intelligent Windows power management utility featuring autonomous 3-tier GPU-load auto-switching, side-by-side plan comparator, and deep CPU power tuning.
 
 ## Author Profiles & Social
 - [GitHub Profile](https://github.com/HaYToKoRaZ): Open-source repositories and development projects by HaYToKoRaZ.
