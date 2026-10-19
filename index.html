@@ -103,16 +103,84 @@
             --win98-blue: #000080;
             --win98-teal: #008080;
         }
+        * {
+            box-sizing: border-box;
+        }
         body {
             background-color: var(--win98-teal);
             font-family: 'Tahoma', 'Verdana', sans-serif;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .desktop {
+            flex: 1;
+            position: relative;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 12px 16px;
+            max-height: calc(100vh - 28px);
+            overflow: hidden;
+        }
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            width: 85px;
+        }
+        .desktop-icon img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+        .window {
+            position: absolute;
+            background-color: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            box-shadow: 1px 1px 0 0 var(--win98-black);
+            min-width: 400px;
+            padding: 2px;
+            z-index: 10;
         }
         .window.main-window {
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             width: 480px;
             max-width: 95vw;
             min-height: 220px;
+        }
+        .title-bar {
+            background: linear-gradient(90deg, var(--win98-blue), #1084d0);
+            padding: 3px 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            min-height: 28px;
+        }
+        .classic-btn {
+            padding: 4px 12px;
+            background: var(--win98-grey);
+            border: 2px solid;
+            border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
+            box-shadow: 1px 1px 0 0 var(--win98-black);
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: bold;
         }
         .notepad-content-area {
             background: white;
@@ -208,15 +276,15 @@
             <span>RewriteAI.lnk</span>
         </a>
         <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="desktop-icon" title="Lol Account Switcher">
-            <img src="assets/lol_switcher.png" width="32" height="32" alt="Lol Account Switcher">
+            <img src="assets/lol_switcher.webp" width="32" height="32" alt="Lol Account Switcher">
             <span>LolSwitcher.lnk</span>
         </a>
         <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="desktop-icon" title="FakeLord">
-            <img src="assets/fakelord.png" width="32" height="32" alt="FakeLord">
+            <img src="assets/fakelord.webp" width="32" height="32" alt="FakeLord">
             <span>FakeLord.lnk</span>
         </a>
         <a href="https://haytokoraz.github.io/Power-Grid/" target="_blank" class="desktop-icon" title="Power Grid HaYTooL">
-            <img src="assets/power_grid.png" width="32" height="32" alt="Power Grid">
+            <img src="assets/power_grid.webp" width="32" height="32" alt="Power Grid">
             <span>PowerGrid.lnk</span>
         </a>
     </div>
@@ -237,7 +305,16 @@
         <div class="window-content">
             <p class="welcome-text" data-i18n="welcome_msg">Sisteme başarıyla giriş yapıldı.</p>
             <p style="margin-bottom: 10px;" data-i18n="intro_text">Merhaba, ben <b>HaYTo</b>. Modern Chromium ve Helium tarayıcı eklentileri (RewriteAI, TabSuspender, XDownloader vb.) ile CachyOS Linux ve Windows için açık kaynaklı sistem optimizasyon araçları geliştiriyorum.</p>
-            <p style="margin-bottom: 20px;" data-i18n="projects_info">Yapay zeka asistanları, gizlilik odaklı sekme yöneticileri ve masaüstü otomasyon yazılımlarını keşfetmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butondan erişebilirsiniz.</p>
+            <p style="margin-bottom: 12px;" data-i18n="projects_info">Yapay zeka asistanları, gizlilik odaklı sekme yöneticileri ve masaüstü otomasyon yazılımlarını keşfetmek için masaüstündeki <b>Projelerim.lnk</b> dosyasını açabilir veya aşağıdaki butondan erişebilirsiniz.</p>
+            <fieldset class="win-fieldset" style="border: 1px solid var(--win98-dark-grey); box-shadow: 1px 1px 0 var(--win98-white); padding: 8px 10px; margin-bottom: 14px; font-size: 11px; line-height: 1.45;">
+                <legend style="padding: 0 4px; font-weight: bold; color: var(--win98-blue);" data-i18n="legend_specs">Sistem &amp; Geliştirme Özellikleri</legend>
+                <p style="margin-bottom: 6px;" data-i18n="specs_desc">Açık kaynak, hafif mimari ve kullanıcı gizliliği odaklı yazılım ekosistemi:</p>
+                <ul style="margin-left: 18px; margin-bottom: 4px; display: flex; flex-direction: column; gap: 3px;">
+                    <li data-i18n="spec_item_1"><b>Tarayıcı Eklentileri:</b> Yapay zeka metin optimizasyonu, RAM tasarrufu sağlayan sekme uyutucu ve hızlı medya indiriciler.</li>
+                    <li data-i18n="spec_item_2"><b>Masaüstü Araçları:</b> GPU yükü takipli güç yöneticisi (Power Grid), güvenlik duvarı kontrol paneli (Firewall) ve hafif sistem tepsisi araçları.</li>
+                    <li data-i18n="spec_item_3"><b>Platform Uyumu:</b> Helium, Chrome, Edge, CachyOS Linux ve Windows ile tam uyumlu mimari.</li>
+                </ul>
+            </fieldset>
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <button class="classic-btn" onclick="location.href='extensions.html'" data-i18n="btn_projects">PROJELERİ GÖR</button>
                 <button class="classic-btn" onclick="openNotepad()" data-i18n="btn_info">BİLGİ AL</button>
@@ -384,7 +461,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.59</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.62</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>

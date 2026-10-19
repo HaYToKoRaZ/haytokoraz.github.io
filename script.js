@@ -59,7 +59,12 @@ const translations = {
         page_not_found_desc: "Aradığınız dosya veya sayfa bu sistemde bulunamadı ya da taşınmış olabilir.",
         error_code: "Hata Kodu: 0x80004005 (E_FAIL_NOT_FOUND)",
         btn_home: "Ana Sayfaya Dön",
-        btn_projects_page: "Projelerim Klasörü"
+        btn_projects_page: "Projelerim Klasörü",
+        legend_specs: "Sistem &amp; Geliştirme Özellikleri",
+        specs_desc: "Açık kaynak, hafif mimari ve kullanıcı gizliliği odaklı yazılım ekosistemi:",
+        spec_item_1: "<b>Tarayıcı Eklentileri:</b> Yapay zeka metin optimizasyonu, RAM tasarrufu sağlayan sekme uyutucu ve hızlı medya indiriciler.",
+        spec_item_2: "<b>Masaüstü Araçları:</b> GPU yükü takipli güç yöneticisi (Power Grid), güvenlik duvarı kontrol paneli (Firewall) ve hafif sistem tepsisi araçları.",
+        spec_item_3: "<b>Platform Uyumu:</b> Helium, Chrome, Edge, CachyOS Linux ve Windows ile tam uyumlu mimari."
     },
     en: {
         welcome_msg: "System login successful.",
@@ -117,7 +122,12 @@ const translations = {
         page_not_found_desc: "The requested file or page does not exist on this system or has been relocated.",
         error_code: "Error Code: 0x80004005 (E_FAIL_NOT_FOUND)",
         btn_home: "Return to Home",
-        btn_projects_page: "Open Projects"
+        btn_projects_page: "Open Projects",
+        legend_specs: "System &amp; Architecture Overview",
+        specs_desc: "Open-source, lightweight architecture and privacy-first software ecosystem:",
+        spec_item_1: "<b>Browser Extensions:</b> AI-powered text assistants, RAM-saving tab suspender, and lossless high-speed media downloaders.",
+        spec_item_2: "<b>Desktop Utilities:</b> GPU-load reactive power manager (Power Grid), bulk Windows Firewall rule controller, and native tray apps.",
+        spec_item_3: "<b>Cross-Platform:</b> Native compatibility with Helium, Chrome, Edge, CachyOS Linux, and Windows."
     }
 };
 
