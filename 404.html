@@ -9,8 +9,8 @@
     <meta name="publisher" content="HaYTooL">
     <meta name="robots" content="noindex, follow">
     
-    <!-- Preconnect & DNS Prefetch to Optimize Third-Party Latency -->
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <!-- DNS Prefetch & Optimized Preconnect (Eliminates Unused Preconnect Warnings) -->
+    <link rel="preconnect" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
 
     <!-- Microsoft Clarity Tracking Code -->
@@ -22,13 +22,31 @@
         })(window, document, "clarity", "script", "ysq5xtaexy");
     </script>
 
-    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Asynchronous Non-Blocking Stylesheet (Eliminates Render-Blocking) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/pc_icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#008080">
 
     <style>
+        /* Critical Instant Base Styles (Prevents FOUC & CLS) */
+        :root {
+            --win98-grey: #c0c0c0;
+            --win98-white: #ffffff;
+            --win98-dark-grey: #808080;
+            --win98-black: #000000;
+            --win98-blue: #000080;
+            --win98-teal: #008080;
+        }
+        body {
+            background-color: var(--win98-teal);
+            font-family: 'Tahoma', 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         .error-dialog-body {
             display: flex;
             gap: 16px;

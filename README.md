@@ -40,10 +40,13 @@ This site is designed to bring back the golden era of computing while showcasing
 
 | Software | Repository | Icon |
 | :--- | :--- | :---: |
-| **HaYTooL Firewall** | [Web Site](https://haytokoraz.github.io/HaYTooL-Firewall/) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall Icon"> |
-| **HaYTooL Weather** | [Web Site](https://haytokoraz.github.io/HaYTooL-Weather/) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather Icon"> |
-| **HaYTooL Youtube Download** | [Web Site](https://haytokoraz.github.io/haytool-youtube-download/) | <img src="assets/haytool.png" width="32" alt="HaYTooL Youtube Download Icon"> |
-| **HaYTooL Wallpaper** | [Web Site](https://haytokoraz.github.io/HaYTooL-Wallpaper/) | <img src="assets/wallpaper.png" width="32" alt="HaYTooL Wallpaper Icon"> |
+| **Power Grid HaYTooL** | [Web Site](https://haytokoraz.github.io/Power-Grid/) / [GitHub](https://github.com/HaYToKoRaZ/Power-Grid) | <img src="assets/power_grid.png" width="32" alt="Power Grid HaYTooL Icon"> |
+| **FakeLord** | [Web Site](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord Icon"> |
+| **Lol Account Switcher** | [Web Site](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher Icon"> |
+| **HaYTooL Firewall** | [Web Site](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall Icon"> |
+| **HaYTooL Weather** | [Web Site](https://haytokoraz.github.io/HaYTooL-Weather/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather Icon"> |
+| **HaYTooL Youtube Download** | [Web Site](https://haytokoraz.github.io/haytool-youtube-download/) / [GitHub](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32" alt="HaYTooL Youtube Download Icon"> |
+| **HaYTooL Wallpaper** | [Web Site](https://haytokoraz.github.io/HaYTooL-Wallpaper/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32" alt="HaYTooL Wallpaper Icon"> |
 
 ---
 
@@ -103,12 +106,15 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 
 ## 💻 PC Yazılımları
 
-| Yazılım Adı | Depo | İkon |
+| Yazılım Adı | Depo / Bağlantı | İkon |
 | :--- | :--- | :---: |
-| **HaYTooL Firewall** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Firewall/) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall İkonu"> |
-| **HaYTooL Weather** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Weather/) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather İkonu"> |
-| **HaYTooL Youtube Download** | [Web Sitesi](https://haytokoraz.github.io/haytool-youtube-download/) | <img src="assets/haytool.png" width="32" alt="HaYTooL Youtube Download İkonu"> |
-| **HaYTooL Wallpaper** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Wallpaper/) | <img src="assets/wallpaper.png" width="32" alt="HaYTooL Wallpaper İkonu"> |
+| **Power Grid HaYTooL** | [Web Sitesi](https://haytokoraz.github.io/Power-Grid/) / [GitHub](https://github.com/HaYToKoRaZ/Power-Grid) | <img src="assets/power_grid.png" width="32" alt="Power Grid HaYTooL İkonu"> |
+| **FakeLord** | [Web Sitesi](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord İkonu"> |
+| **Lol Account Switcher** | [Web Sitesi](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher İkonu"> |
+| **HaYTooL Firewall** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall İkonu"> |
+| **HaYTooL Weather** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Weather/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather İkonu"> |
+| **HaYTooL Youtube Download** | [Web Sitesi](https://haytokoraz.github.io/haytool-youtube-download/) / [GitHub](https://github.com/HaYToKoRaZ/haytool-youtube-download) | <img src="assets/haytool.png" width="32" alt="HaYTooL Youtube Download İkonu"> |
+| **HaYTooL Wallpaper** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Wallpaper/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper) | <img src="assets/wallpaper.png" width="32" alt="HaYTooL Wallpaper İkonu"> |
 
 ---
 

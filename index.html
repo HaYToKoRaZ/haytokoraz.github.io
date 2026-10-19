@@ -10,12 +10,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://haytokoraz.github.io/">
 
-    <!-- Preconnect & DNS Prefetch to Optimize Third-Party Latency -->
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <!-- DNS Prefetch & Optimized Preconnect (Eliminates Unused Preconnect Warnings) -->
+    <link rel="preconnect" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
-    <link rel="preconnect" href="https://hayto-telemetry.korazhayto.workers.dev" crossorigin>
     <link rel="dns-prefetch" href="https://hayto-telemetry.korazhayto.workers.dev">
-    <link rel="preconnect" href="https://countapi.mileshilliard.com" crossorigin>
     <link rel="dns-prefetch" href="https://countapi.mileshilliard.com">
 
     <!-- Microsoft Clarity Tracking Code -->
@@ -87,13 +85,30 @@
     }
     </script>
 
-    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Asynchronous Non-Blocking Stylesheet (Eliminates Render-Blocking) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/pc_icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#008080">
     <style>
-        /* Prevent Cumulative Layout Shift (CLS) */
+        /* Critical Instant Base Styles (Prevents FOUC & CLS) */
+        :root {
+            --win98-grey: #c0c0c0;
+            --win98-white: #ffffff;
+            --win98-dark-grey: #808080;
+            --win98-black: #000000;
+            --win98-blue: #000080;
+            --win98-teal: #008080;
+        }
+        body {
+            background-color: var(--win98-teal);
+            font-family: 'Tahoma', 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         .window.main-window {
             width: 480px;
             max-width: 95vw;
@@ -369,7 +384,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">SYSTEM_READY // 1980</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.50</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.59</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>

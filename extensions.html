@@ -11,12 +11,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://haytokoraz.github.io/extensions.html">
 
-    <!-- Preconnect & DNS Prefetch to Optimize Third-Party Latency -->
-    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <!-- DNS Prefetch & Optimized Preconnect (Eliminates Unused Preconnect Warnings) -->
+    <link rel="preconnect" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
-    <link rel="preconnect" href="https://hayto-telemetry.korazhayto.workers.dev" crossorigin>
     <link rel="dns-prefetch" href="https://hayto-telemetry.korazhayto.workers.dev">
-    <link rel="preconnect" href="https://countapi.mileshilliard.com" crossorigin>
     <link rel="dns-prefetch" href="https://countapi.mileshilliard.com">
 
     <!-- Microsoft Clarity Tracking Code -->
@@ -176,12 +174,30 @@
     }
     </script>
 
-    <!-- Primary Core Stylesheet (Immediate Render to Prevent CLS) -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Asynchronous Non-Blocking Stylesheet (Eliminates Render-Blocking) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/folder_icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#008080">
     <style>
+        /* Critical Instant Base Styles (Prevents FOUC & CLS) */
+        :root {
+            --win98-grey: #c0c0c0;
+            --win98-white: #ffffff;
+            --win98-dark-grey: #808080;
+            --win98-black: #000000;
+            --win98-blue: #000080;
+            --win98-teal: #008080;
+        }
+        body {
+            background-color: var(--win98-teal);
+            font-family: 'Tahoma', 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         .projects-container {
             background: #eee;
             border: 2px solid;
@@ -195,13 +211,13 @@
             margin-bottom: 30px;
         }
 
-        .category-title {
+        .category-title, h2.category-title {
             font-size: 14px;
             font-weight: bold;
             color: var(--win98-blue);
             border-bottom: 2px solid var(--win98-dark-grey);
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin: 0 0 15px 0;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -341,7 +357,7 @@
             object-fit: contain;
         }
 
-        .card-title {
+        .card-title, h3.card-title {
             font-weight: bold;
             font-size: 13px;
             color: var(--win98-blue);
@@ -349,6 +365,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
         }
 
         .card-footer {
@@ -436,38 +455,38 @@
                 
                 <!-- Category: Tarayıcı Eklentileri -->
                 <section class="category-section">
-                    <div class="category-title">
+                    <h2 class="category-title">
                         <img src="assets/world_icon.png" width="20" height="20" class="main-icon" alt="Tarayıcı Eklentileri">
                         <span data-i18n="category_extensions">Tarayıcı Eklentileri</span>
                         <span class="browser-badges">
-                            (<a href="https://helium.computer/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Helium Browser"><img src="assets/helium.png" width="14" height="14" class="browser-badge-icon" alt="Helium">Helium</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
-                            <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Google Chrome"><img src="assets/chrome.png" width="14" height="14" class="browser-badge-icon" alt="Chrome">Chrome</a> 
+                            (<a href="https://helium.computer/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Helium Browser"><img src="assets/helium.png" width="14" height="14" class="browser-badge-icon" alt="Helium">Helium</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
+                            <a href="https://www.google.com/chrome/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Google Chrome"><img src="assets/chrome.png" width="14" height="14" class="browser-badge-icon" alt="Chrome">Chrome</a> 
                             <span data-i18n="and_word">ve</span> 
-                            <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener noreferrer" class="badge-link" title="Microsoft Edge"><img src="assets/edge.png" width="14" height="14" class="browser-badge-icon" alt="Edge">Edge</a>)
+                            <a href="https://www.microsoft.com/edge" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Microsoft Edge"><img src="assets/edge.png" width="14" height="14" class="browser-badge-icon" alt="Edge">Edge</a>)
                         </span>
-                    </div>
+                    </h2>
                     <div class="projects-grid">
                         <!-- Cloud StartPage -->
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/cloud_startpage.png" width="32" height="32" alt="Cloud StartPage"></div>
-                                <div class="card-title">Cloud StartPage</div>
+                                <h3 class="card-title">Cloud StartPage</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="cloud_startpage_desc">
                                 Hızlı, minimalist ve bulut entegrasyonlu özelleştirilebilir yeni sekme ve başlangıç sayfası eklentisi.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Cloud-StartPage/" target="_blank" class="store-btn" title="HaYTooL Cloud StartPage Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/haytool-cloud-startpage/fgiompioalgpjalpmdjchlgecgdkkncn" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/haytool-cloud-startpage/fgiompioalgpjalpmdjchlgecgdkkncn" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Cloud StartPage Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/haytool-cloud-startpage/jkefcejfnbeifclgpkfkpidoegohcchp" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/haytool-cloud-startpage/jkefcejfnbeifclgpkfkpidoegohcchp" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Cloud StartPage Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Cloud-StartPage" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Cloud StartPage GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -478,23 +497,23 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/extensityplus.png" width="32" height="32" alt="ExtensityPlus"></div>
-                                <div class="card-title">ExtensityPlus</div>
+                                <h3 class="card-title">ExtensityPlus</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="extensityplus_desc">
                                 Tarayıcı eklentilerinizi tek tıkla hızlıca yönetmenizi, etkinleştirip devre dışı bırakmanızı sağlayan pratik eklenti yöneticisi.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/ExtensityPlus-HaYTooL/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/ExtensityPlus-HaYTooL/" target="_blank" class="store-btn" title="ExtensityPlus HaYTooL Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/mpcogfjfimnlfamonkfelppdcdhfhcom" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/mpcogfjfimnlfamonkfelppdcdhfhcom" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="ExtensityPlus Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/dabnojjcohhbhbopbgjaaeajffagiiph" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/dabnojjcohhbhbopbgjaaeajffagiiph" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="ExtensityPlus Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/ExtensityPlus-HaYTooL" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="ExtensityPlus GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -505,23 +524,23 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/webtranslate.png" width="32" height="32" alt="WebTranslate"></div>
-                                <div class="card-title">WebTranslate</div>
+                                <h3 class="card-title">WebTranslate</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="webtranslate_desc">
                                 Işık hızında tam sayfa ve seçili metin çevirmeni. 6 farklı çeviri motoru, canlı ilerleme ve çoklu sekme karşılaştırma özellikli akıllı eklenti.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/WebTranslate-HaYTooL/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/WebTranslate-HaYTooL/" target="_blank" class="store-btn" title="WebTranslate HaYTooL Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/webtranslate-haytool/imjenhligglmpnnobmipgafhbhepfebh" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/webtranslate-haytool/imjenhligglmpnnobmipgafhbhepfebh" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="WebTranslate Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/cdpmckcmphjjepmeoflajckbppfnahob" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/cdpmckcmphjjepmeoflajckbppfnahob" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="WebTranslate Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/WebTranslate-HaYTooL" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/WebTranslate-HaYTooL" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="WebTranslate GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -532,23 +551,23 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/tabsuspender.png" width="32" height="32" alt="TabSuspender"></div>
-                                <div class="card-title">TabSuspender</div>
+                                <h3 class="card-title">TabSuspender</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="tabsuspender_desc">
                                 Kullanılmayan sekmeleri otomatik uyutarak RAM ve sistem kaynaklarından %85'e varan tasarruf sağlayan akıllı, ultra hafif ve gizlilik odaklı sekme yöneticisi.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/TabSuspender-HaYTooL/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/TabSuspender-HaYTooL/" target="_blank" class="store-btn" title="TabSuspender HaYTooL Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/tabsuspender-haytool/jdobamnoklijnglcdbadcbefhncmnkad" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/tabsuspender-haytool/jdobamnoklijnglcdbadcbefhncmnkad" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="TabSuspender Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/oiiaihdhfoepcipblaiggcbignahmbeg" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/oiiaihdhfoepcipblaiggcbignahmbeg" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="TabSuspender Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/TabSuspender-HaYTooL" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/TabSuspender-HaYTooL" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="TabSuspender GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -559,23 +578,23 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/xdownloader.png" width="32" height="32" alt="XDownloader HaYTooL"></div>
-                                <div class="card-title">XDownloader</div>
+                                <h3 class="card-title">XDownloader</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="xdownloader_desc">
                                 X (Twitter) üzerindeki video, fotoğraf ve GIF medyalarını tek tıklamayla en yüksek orijinal kalitede indiren ışık hızında ve gizlilik odaklı tarayıcı eklentisi.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/xdownloader-HaYTooL/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/xdownloader-HaYTooL/" target="_blank" class="store-btn" title="XDownloader HaYTooL Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/xdownloader-haytool-x-twi/jnlbcckjheilahbmllldndcgamfahnfb" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/xdownloader-haytool-x-twi/jnlbcckjheilahbmllldndcgamfahnfb" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="XDownloader Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/ehpcnkiobcjfgnepikdmempghdonipkb" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/ehpcnkiobcjfgnepikdmempghdonipkb" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="XDownloader Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="XDownloader GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -586,23 +605,23 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/rewriteai.png" width="32" height="32" alt="RewriteAI"></div>
-                                <div class="card-title">RewriteAI</div>
+                                <h3 class="card-title">RewriteAI</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="rewriteai_desc">
                                 Chrome, Edge ve Helium'da seçili metinleri Gemini, Groq, Claude ve OpenAI desteğiyle tek tıkla yeniden yazan, imla düzelten ve ton değiştiren akıllı AI asistanı.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/RewriteAI/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/RewriteAI/" target="_blank" class="store-btn" title="RewriteAI Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://chromewebstore.google.com/detail/hmblfojhnndofecfffkmamklcpibhbep" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/hmblfojhnndofecfffkmamklcpibhbep" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="RewriteAI Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/hkhjhlaciakanpanhfckcalfddbgdibf" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/hkhjhlaciakanpanhfckcalfddbgdibf" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="RewriteAI Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/RewriteAI" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/RewriteAI" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="RewriteAI GitHub Deposu">
                                         <img src="assets/github.png" width="14" height="14" alt="GitHub"> GitHub
                                     </a>
                                 </div>
@@ -613,14 +632,14 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/whatsapp.png" width="32" height="32" alt="Whatsapp to Sahibinden"></div>
-                                <div class="card-title">Whatsapp To Sahibinden</div>
+                                <h3 class="card-title">Whatsapp To Sahibinden</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="store-btn">
+                                    <a href="https://chromewebstore.google.com/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Whatsapp to Sahibinden Chrome Web Mağazası">
                                         <img src="assets/chrome.png" width="14" height="14" alt="Chrome"> Chrome
                                     </a>
-                                    <a href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" class="store-btn">
+                                    <a href="https://microsoftedge.microsoft.com/addons/detail/whatsapp-to-sahibinden/kpgemfhcbfplfinonlfolenclpjmplbd" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Whatsapp to Sahibinden Microsoft Edge Eklentileri">
                                         <img src="assets/edge.png" width="14" height="14" alt="Edge"> Edge
                                     </a>
                                 </div>
@@ -631,32 +650,32 @@
 
                 <!-- Category: PC Yazılımlarım -->
                 <section class="category-section">
-                    <div class="category-title">
+                    <h2 class="category-title">
                         <img src="assets/pc_icon.png" width="20" height="20" class="main-icon" alt="PC Yazılımları">
                         <span data-i18n="category_pc">PC Yazılımlarım</span>
                         <span class="browser-badges">
-                            (<a href="https://cachyos.org/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Linux / CachyOS"><img src="assets/linux.svg" width="14" height="14" class="browser-badge-icon" alt="Linux">Linux / <img src="assets/cachyos.svg" width="14" height="14" class="browser-badge-icon" alt="CachyOS">CachyOS</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
-                            <a href="https://www.microsoft.com/windows" target="_blank" rel="noopener noreferrer" class="badge-link" title="Microsoft Windows"><img src="assets/windows.svg" width="14" height="14" class="browser-badge-icon" alt="Windows">Windows</a> 
+                            (<a href="https://cachyos.org/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Linux / CachyOS"><img src="assets/linux.svg" width="14" height="14" class="browser-badge-icon" alt="Linux">Linux / <img src="assets/cachyos.svg" width="14" height="14" class="browser-badge-icon" alt="CachyOS">CachyOS</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
+                            <a href="https://www.microsoft.com/windows" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Microsoft Windows"><img src="assets/windows.svg" width="14" height="14" class="browser-badge-icon" alt="Windows">Windows</a> 
                             <span data-i18n="and_word">ve</span> 
-                            <a href="https://www.apple.com/macos/" target="_blank" rel="noopener noreferrer" class="badge-link" title="Apple macOS"><img src="assets/macos.svg" width="14" height="14" class="browser-badge-icon" alt="macOS">macOS</a>)
+                            <a href="https://www.apple.com/macos/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Apple macOS"><img src="assets/macos.svg" width="14" height="14" class="browser-badge-icon" alt="macOS">macOS</a>)
                         </span>
-                    </div>
+                    </h2>
                     <div class="pc-projects-grid">
                         <!-- HaYTooL Youtube Download -->
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/haytool.png" width="32" height="32" alt="Youtube Download"></div>
-                                <div class="card-title" data-i18n="haytool_title">Youtube Download</div>
+                                <h3 class="card-title" data-i18n="haytool_title">Youtube Download</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
                                 YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/haytool-youtube-download/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/haytool-youtube-download/" target="_blank" class="store-btn" title="HaYTooL Youtube Download Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Youtube Download İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -667,17 +686,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/firewall.png" width="32" height="32" alt="Firewall"></div>
-                                <div class="card-title" data-i18n="haytool_firewall_title">Firewall</div>
+                                <h3 class="card-title" data-i18n="haytool_firewall_title">Firewall</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_firewall_desc">
                                 Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Firewall/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Firewall/" target="_blank" class="store-btn" title="HaYTooL Firewall Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Firewall İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -688,17 +707,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/weather.png" width="32" height="32" alt="Weather"></div>
-                                <div class="card-title" data-i18n="haytool_weather_title">Weather</div>
+                                <h3 class="card-title" data-i18n="haytool_weather_title">Weather</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_weather_desc">
                                 Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Weather/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Weather/" target="_blank" class="store-btn" title="HaYTooL Weather Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Weather İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -709,17 +728,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/wallpaper.png" width="32" height="32" alt="Wallpaper"></div>
-                                <div class="card-title" data-i18n="haytool_wallpaper_title">Wallpaper</div>
+                                <h3 class="card-title" data-i18n="haytool_wallpaper_title">Wallpaper</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_wallpaper_desc">
                                 Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Wallpaper/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Wallpaper/" target="_blank" class="store-btn" title="HaYTooL Wallpaper Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Wallpaper İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -730,17 +749,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/lol_switcher.png" width="32" height="32" alt="Lol Account Switcher"></div>
-                                <div class="card-title" data-i18n="lol_switcher_title">Lol Account Switcher</div>
+                                <h3 class="card-title" data-i18n="lol_switcher_title">Lol Account Switcher</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="lol_switcher_desc">
                                 Riot & League of Legends için milisaniyelik hesap değiştirici, 144Hz/240Hz ekran yenileme hızı optimizasyonu ve oyun içi tuş yapılandırması (cfg) koruyucusu.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="store-btn" title="Lol Account Switcher Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/Lol-Account-Switcher/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/Lol-Account-Switcher/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Lol Account Switcher İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -751,17 +770,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/fakelord.png" width="32" height="32" alt="FakeLord"></div>
-                                <div class="card-title" data-i18n="fakelord_title">FakeLord</div>
+                                <h3 class="card-title" data-i18n="fakelord_title">FakeLord</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="fakelord_desc">
                                 Discord üzerinde 4.000+ oyunu 0 MB GPU yükü ve sıfır donanım harcamasıyla çalışıyor gösteren hafif hayalet süreçli akıllı Discord aktivite simülatörü.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="store-btn" title="FakeLord Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/FakeLord/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/FakeLord/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="FakeLord İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -772,17 +791,17 @@
                         <div class="project-card">
                             <div class="card-header">
                                 <div class="card-icon"><img src="assets/power_grid.png" width="32" height="32" alt="Power Grid"></div>
-                                <div class="card-title" data-i18n="power_grid_title">Power Grid</div>
+                                <h3 class="card-title" data-i18n="power_grid_title">Power Grid</h3>
                             </div>
                             <div style="font-size: 10px; color: #555; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="power_grid_desc">
                                 Windows için akıllı GPU yükü takipli (3-Tier) otonom güç planı değiştirici, yan yana plan karşılaştırma aracı ve gelişmiş CPU güç optimizasyon paneli.
                             </div>
                             <div class="card-footer">
                                 <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/Power-Grid/" target="_blank" class="store-btn">
+                                    <a href="https://haytokoraz.github.io/Power-Grid/" target="_blank" class="store-btn" title="Power Grid HaYTooL Web Sitesi">
                                         <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
                                     </a>
-                                    <a href="https://github.com/HaYToKoRaZ/Power-Grid/releases/latest" target="_blank" class="store-btn">
+                                    <a href="https://github.com/HaYToKoRaZ/Power-Grid/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Power Grid HaYTooL İndir (Release)">
                                         <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
                                     </a>
                                 </div>
@@ -793,10 +812,10 @@
 
                 <!-- Category: Scriptlerim -->
                 <section class="category-section">
-                    <div class="category-title">
+                    <h2 class="category-title">
                         <img src="assets/script_icon.png" width="20" height="20" class="main-icon" alt="Scriptler">
                         <span data-i18n="category_scripts">Scriptlerim</span>
-                    </div>
+                    </h2>
                     <div class="restricted-box">
                         <img src="assets/warning_icon.png" alt="Restricted">
                         <div class="restricted-text" data-i18n="restricted_title">YETKİSİZ ERİŞİM</div>
@@ -953,8 +972,8 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('tr')">TR</button>
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
-            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 13</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.50</span>
+            <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 14</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.0.59</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
