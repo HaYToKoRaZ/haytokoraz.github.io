@@ -41,6 +41,7 @@ This site is designed to bring back the golden era of computing while showcasing
 | Software | Repository | Icon |
 | :--- | :--- | :---: |
 | **FakeLord** | [Web Site](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord Icon"> |
+| **WattCost** | [Web Site](https://haytokoraz.github.io/WattCost/) / [GitHub](https://github.com/HaYToKoRaZ/WattCost) | <img src="assets/wattcost.png" width="32" alt="WattCost Icon"> |
 | **Lol Account Switcher** | [Web Site](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher Icon"> |
 | **HaYTooL Firewall** | [Web Site](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall Icon"> |
 | **HaYTooL Weather** | [Web Site](https://haytokoraz.github.io/HaYTooL-Weather/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather Icon"> |
@@ -108,6 +109,7 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 | Yazılım Adı | Depo / Bağlantı | İkon |
 | :--- | :--- | :---: |
 | **FakeLord** | [Web Sitesi](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord İkonu"> |
+| **WattCost** | [Web Sitesi](https://haytokoraz.github.io/WattCost/) / [GitHub](https://github.com/HaYToKoRaZ/WattCost) | <img src="assets/wattcost.png" width="32" alt="WattCost İkonu"> |
 | **Lol Account Switcher** | [Web Sitesi](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher İkonu"> |
 | **HaYTooL Firewall** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall İkonu"> |
 | **HaYTooL Weather** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Weather/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Weather) | <img src="assets/weather.png" width="32" alt="HaYTooL Weather İkonu"> |
