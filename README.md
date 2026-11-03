@@ -40,7 +40,6 @@ This site is designed to bring back the golden era of computing while showcasing
 
 | Software | Repository | Icon |
 | :--- | :--- | :---: |
-| **Power Grid HaYTooL** | [Web Site](https://haytokoraz.github.io/Power-Grid/) / [GitHub](https://github.com/HaYToKoRaZ/Power-Grid) | <img src="assets/power_grid.png" width="32" alt="Power Grid HaYTooL Icon"> |
 | **FakeLord** | [Web Site](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord Icon"> |
 | **Lol Account Switcher** | [Web Site](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher Icon"> |
 | **HaYTooL Firewall** | [Web Site](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall Icon"> |
@@ -108,7 +107,6 @@ Bu site, HaYTo tarafından geliştirilen modern web eklentilerini ve yazılımla
 
 | Yazılım Adı | Depo / Bağlantı | İkon |
 | :--- | :--- | :---: |
-| **Power Grid HaYTooL** | [Web Sitesi](https://haytokoraz.github.io/Power-Grid/) / [GitHub](https://github.com/HaYToKoRaZ/Power-Grid) | <img src="assets/power_grid.png" width="32" alt="Power Grid HaYTooL İkonu"> |
 | **FakeLord** | [Web Sitesi](https://haytokoraz.github.io/FakeLord/) / [GitHub](https://github.com/HaYToKoRaZ/FakeLord) | <img src="assets/fakelord.png" width="32" alt="FakeLord İkonu"> |
 | **Lol Account Switcher** | [Web Sitesi](https://haytokoraz.github.io/Lol-Account-Switcher/) / [GitHub](https://github.com/HaYToKoRaZ/Lol-Account-Switcher) | <img src="assets/lol_switcher.png" width="32" alt="Lol Account Switcher İkonu"> |
 | **HaYTooL Firewall** | [Web Sitesi](https://haytokoraz.github.io/HaYTooL-Firewall/) / [GitHub](https://github.com/HaYToKoRaZ/HaYTooL-Firewall) | <img src="assets/firewall.png" width="32" alt="HaYTooL Firewall İkonu"> |

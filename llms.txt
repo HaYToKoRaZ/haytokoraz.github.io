@@ -6,7 +6,7 @@
 HaYTo Portfolio is a retro Windows 98 styled personal website and project index showcasing desktop utilities, privacy-focused applications, and browser extensions built by HaYTo (Hayto Koraz).
 
 ## Core Pages
-- [Home Page](https://haytokoraz.github.io/): Main retro desktop interface, developer biography, and system telemetry.
+- [Home Page](https://haytokoraz.github.io/): Main retro desktop interface and developer biography.
 - [Projects & Extensions Catalog](https://haytokoraz.github.io/extensions.html): Complete software catalog of browser extensions and desktop tools.
 - [Sitemap](https://haytokoraz.github.io/sitemap.xml): Complete XML sitemap of all indexed public endpoints.
 - [Robots Configuration](https://haytokoraz.github.io/robots.txt): Crawler rules and bot permissions for AI user-agents.
@@ -26,7 +26,6 @@ HaYTo Portfolio is a retro Windows 98 styled personal website and project index 
 - [HaYTooL Wallpaper](https://haytokoraz.github.io/HaYTooL-Wallpaper/): Silent background desktop wallpaper rotator with curated high-definition collections.
 - [Lol Account Switcher](https://haytokoraz.github.io/Lol-Account-Switcher/): Ultra-fast League of Legends account switcher, display refresh rate optimizer, and in-game config protector.
 - [FakeLord](https://haytokoraz.github.io/FakeLord/): Ultra-lightweight ghost-process Discord activity status simulator for 4,000+ games.
-- [Power Grid HaYTooL](https://haytokoraz.github.io/Power-Grid/): Next-generation intelligent Windows power management utility featuring autonomous 3-tier GPU-load auto-switching, side-by-side plan comparator, and deep CPU power tuning.
 
 ## Author Profiles & Social
 - [GitHub Profile](https://github.com/HaYToKoRaZ): Open-source repositories and development projects by HaYToKoRaZ.

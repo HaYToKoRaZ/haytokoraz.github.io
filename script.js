@@ -28,7 +28,6 @@ const translations = {
         category_extensions: "Tarayıcı Eklentileri",
         and_word: "ve",
         category_pc: "PC Yazılımlarım",
-        category_scripts: "Scriptlerim",
         tabsuspender_desc: "Kullanılmayan sekmeleri otomatik uyutarak RAM ve sistem kaynaklarından %85'e varan tasarruf sağlayan akıllı, ultra hafif ve gizlilik odaklı sekme yöneticisi.",
         webtranslate_desc: "Işık hızında tam sayfa ve seçili metin çevirmeni. 6 farklı çeviri motoru, canlı ilerleme ve çoklu sekme karşılaştırma özellikli akıllı eklenti.",
         xdownloader_desc: "X (Twitter) üzerindeki video, fotoğraf ve GIF medyalarını tek tıklamayla en yüksek orijinal kalitede indiren ışık hızında ve gizlilik odaklı tarayıcı eklentisi.",
@@ -39,22 +38,10 @@ const translations = {
         lol_switcher_desc: "Riot & League of Legends için milisaniyelik hesap değiştirici, 144Hz/240Hz ekran yenileme hızı optimizasyonu ve oyun içi tuş yapılandırması (cfg) koruyucusu.",
         fakelord_title: "FakeLord",
         fakelord_desc: "Discord üzerinde 4.000+ oyunu 0 MB GPU yükü ve sıfır donanım harcamasıyla çalışıyor gösteren hafif hayalet süreçli akıllı Discord aktivite simülatörü.",
-        power_grid_title: "Power Grid",
-        power_grid_desc: "Windows için akıllı GPU yükü takipli (3-Tier) otonom güç planı değiştirici, yan yana plan karşılaştırma aracı ve gelişmiş CPU güç optimizasyon paneli.",
-        restricted_title: "YETKİSİZ ERİŞİM",
-        restricted_desc: "Script arşivi sadece geliştirici ve admin modunda görüntülenebilir.",
-        restricted_btn: "KİMLİK DOĞRULA",
         pending_releases: "Onay Sürecinde (Releases)",
         recommended_badge: "(Önerilen)",
         menu_projects: "Projelerim",
         menu_contact: "İletişim",
-        menu_sys_audit: "Sistem Denetimi...",
-        auth_title: "Sistem Kimlik Doğrulaması",
-        auth_prompt: "Yönetici konsoluna erişmek için anahtarı girin:",
-        auth_placeholder: "Anahtar...",
-        auth_error: "Geçersiz anahtar! Erişim engellendi.",
-        auth_btn_ok: "Tamam",
-        auth_btn_cancel: "İptal",
         page_not_found_title: "404 - Sayfa Bulunamadı",
         page_not_found_desc: "Aradığınız dosya veya sayfa bu sistemde bulunamadı ya da taşınmış olabilir.",
         error_code: "Hata Kodu: 0x80004005 (E_FAIL_NOT_FOUND)",
@@ -63,7 +50,7 @@ const translations = {
         legend_specs: "Sistem &amp; Geliştirme Özellikleri",
         specs_desc: "Açık kaynak, hafif mimari ve kullanıcı gizliliği odaklı yazılım ekosistemi:",
         spec_item_1: "<b>Tarayıcı Eklentileri:</b> Yapay zeka metin optimizasyonu, RAM tasarrufu sağlayan sekme uyutucu ve hızlı medya indiriciler.",
-        spec_item_2: "<b>Masaüstü Araçları:</b> GPU yükü takipli güç yöneticisi (Power Grid), güvenlik duvarı kontrol paneli (Firewall) ve hafif sistem tepsisi araçları.",
+        spec_item_2: "<b>Masaüstü Araçları:</b> Güvenlik duvarı kontrol paneli (Firewall) ve hafif sistem tepsisi araçları.",
         spec_item_3: "<b>Platform Uyumu:</b> Helium, Chrome, Edge, CachyOS Linux ve Windows ile tam uyumlu mimari.",
         spec_item_4: "<b>Açık Kaynak &amp; Güvenlik:</b> Bağımsız denetlenebilir kaynak kodları, sıfır telemetri ve MIT lisanslı dağıtım modeli.",
         spec_footer: "Tüm yazılımlar kullanıcı gizliliği, sıfır bellek sızıntısı ve yüksek performans optimizasyonu hedeflenerek tasarlanmıştır.",
@@ -92,7 +79,6 @@ const translations = {
         category_extensions: "Browser Extensions",
         and_word: "&",
         category_pc: "PC Software",
-        category_scripts: "My Scripts",
         haytool_title: "Youtube Download",
         haytool_desc: "A premium, lightweight, and cross-platform automation software that automatically monitors YouTube channels and downloads new videos in the background.",
         haytool_wallpaper_title: "Wallpaper",
@@ -105,22 +91,10 @@ const translations = {
         lol_switcher_desc: "Ultra-fast Riot & League of Legends profile switcher, 144Hz/240Hz display optimizer, and native in-game config & keybind protector.",
         fakelord_title: "FakeLord",
         fakelord_desc: "Lightweight Discord Rich Presence simulator for 4,000+ games using zero GPU and minimal RAM with ghost process architecture.",
-        power_grid_title: "Power Grid",
-        power_grid_desc: "Intelligent Windows power management utility featuring autonomous 3-tier GPU-load auto-switching, side-by-side plan comparator, and deep CPU power tuning.",
-        restricted_title: "UNAUTHORIZED ACCESS",
-        restricted_desc: "The script archive can only be viewed in developer and admin mode.",
-        restricted_btn: "AUTHENTICATE",
         pending_releases: "Under Review (Releases)",
         recommended_badge: "(Recommended)",
         menu_projects: "My Projects",
         menu_contact: "Contact",
-        menu_sys_audit: "System Audit...",
-        auth_title: "System Authentication",
-        auth_prompt: "Enter security key to access administrator console:",
-        auth_placeholder: "Security Key...",
-        auth_error: "Invalid key! Access denied.",
-        auth_btn_ok: "OK",
-        auth_btn_cancel: "Cancel",
         page_not_found_title: "404 - Page Not Found",
         page_not_found_desc: "The requested file or page does not exist on this system or has been relocated.",
         error_code: "Error Code: 0x80004005 (E_FAIL_NOT_FOUND)",
@@ -129,7 +103,7 @@ const translations = {
         legend_specs: "System &amp; Architecture Overview",
         specs_desc: "Open-source, lightweight architecture and privacy-first software ecosystem:",
         spec_item_1: "<b>Browser Extensions:</b> AI-powered text assistants, RAM-saving tab suspender, and lossless high-speed media downloaders.",
-        spec_item_2: "<b>Desktop Utilities:</b> GPU-load reactive power manager (Power Grid), bulk Windows Firewall rule controller, and native tray apps.",
+        spec_item_2: "<b>Desktop Utilities:</b> Bulk Windows Firewall rule controller and native tray apps.",
         spec_item_3: "<b>Cross-Platform:</b> Native compatibility with Helium, Chrome, Edge, CachyOS Linux, and Windows.",
         spec_item_4: "<b>Open Source &amp; Security:</b> Transparent codebases, zero telemetry policy, and permissive MIT licensing across all projects.",
         spec_footer: "All applications are engineered with strict focus on memory efficiency, responsive performance, and uncompromising user privacy.",
@@ -155,7 +129,6 @@ let currentLang = getInitialLanguage();
 document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(currentLang, false);
     startClock();
-    initSecretTrigger();
     console.log('--- SYSTEM_READY // 1980 ---');
 
     // Register Service Worker for aggressive static asset caching & 0ms repeat visits
@@ -163,13 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js').catch(() => null);
         });
-    }
-
-    // Defer non-critical network requests to free up the critical request chain & LCP
-    if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(() => recordVisit(), { timeout: 2500 });
-    } else {
-        setTimeout(recordVisit, 1500);
     }
 });
 
@@ -290,165 +256,6 @@ function closeNotepad() {
     document.getElementById('notepad-task').style.display = 'none';
 }
 
-// --- Secret Visitor Counter & Stats Logic ---
-const STATS_API_BASE = 'https://countapi.mileshilliard.com/api/v1';
-const SITE_NAMESPACE = 'haytokoraz_portfolio';
-
-function getStatsKeys() {
-    const now = new Date();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, '0');
-    const dd = String(now.getDate()).padStart(2, '0');
-    return {
-        daily: `${SITE_NAMESPACE}_day_${yyyy}_${mm}_${dd}`,
-        monthly: `${SITE_NAMESPACE}_month_${yyyy}_${mm}`,
-        yearly: `${SITE_NAMESPACE}_year_${yyyy}`,
-        total: `${SITE_NAMESPACE}_total`
-    };
-}
-
-async function sendPulseTelemetry() {
-    try {
-        // Günlük Tekil Ziyaretçi Mantığı:
-        // Cihaz aynı gün içinde 10 sekme de açsa tek 1 ziyaretçi sayılır.
-        const todayStr = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
-        let sid = localStorage.getItem('hayto_portal_sid');
-        const lastVisitDate = localStorage.getItem('hayto_portal_last_date');
-        
-        let isNewSession = false;
-        if (!sid) {
-            sid = 'web_' + Math.random().toString(36).substring(2, 15);
-            localStorage.setItem('hayto_portal_sid', sid);
-        }
-
-        if (lastVisitDate !== todayStr) {
-            // Bugün ilk defa girdi, sayacı 1 artır
-            isNewSession = true;
-            localStorage.setItem('hayto_portal_last_date', todayStr);
-        }
-
-        await fetch('https://hayto-telemetry.korazhayto.workers.dev/api/ping', {
-            method: 'POST',
-            mode: 'cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                app: 'web_portal', 
-                session_id: sid, 
-                is_new_session: isNewSession 
-            }),
-            keepalive: true
-        });
-    } catch (e) {
-        // Sessiz hata yönetimi
-    }
-}
-
-async function recordVisit() {
-    const isNewSession = !sessionStorage.getItem('hayto_session_active');
-    const keys = getStatsKeys();
-    const endpoint = isNewSession ? 'hit' : 'get';
-    
-    // 1. Canlı Cloudflare Telemetri Kalp Atışı (web_portal)
-    sendPulseTelemetry();
-    setInterval(sendPulseTelemetry, 2 * 60 * 1000); // 2 dakikada bir güncelle
-
-    // 2. Win98 sys_stats.exe arşivi
-    try {
-        await Promise.all([
-            fetch(`${STATS_API_BASE}/${endpoint}/${keys.daily}`).catch(() => null),
-            fetch(`${STATS_API_BASE}/${endpoint}/${keys.monthly}`).catch(() => null),
-            fetch(`${STATS_API_BASE}/${endpoint}/${keys.yearly}`).catch(() => null),
-            fetch(`${STATS_API_BASE}/${endpoint}/${keys.total}`).catch(() => null),
-        ]);
-        
-        if (isNewSession) {
-            sessionStorage.setItem('hayto_session_active', 'true');
-        }
-    } catch (e) {
-        console.warn('Stats recording bypassed:', e);
-    }
-}
-
-async function refreshStats() {
-    const keys = getStatsKeys();
-    const setVal = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val !== undefined && val !== null ? val.toLocaleString() : '---';
-    };
-    
-    setVal('stat-daily', '...');
-    setVal('stat-monthly', '...');
-    setVal('stat-yearly', '...');
-    setVal('stat-total', '...');
-
-    try {
-        const [dailyRes, monthlyRes, yearlyRes, totalRes] = await Promise.all([
-            fetch(`${STATS_API_BASE}/get/${keys.daily}`).then(r => r.json()).catch(() => null),
-            fetch(`${STATS_API_BASE}/get/${keys.monthly}`).then(r => r.json()).catch(() => null),
-            fetch(`${STATS_API_BASE}/get/${keys.yearly}`).then(r => r.json()).catch(() => null),
-            fetch(`${STATS_API_BASE}/get/${keys.total}`).then(r => r.json()).catch(() => null),
-        ]);
-
-        setVal('stat-daily', dailyRes?.value ?? 1);
-        setVal('stat-monthly', monthlyRes?.value ?? 1);
-        setVal('stat-yearly', yearlyRes?.value ?? 1);
-        setVal('stat-total', totalRes?.value ?? 1);
-    } catch (e) {
-        setVal('stat-daily', '1');
-        setVal('stat-monthly', '1');
-        setVal('stat-yearly', '1');
-        setVal('stat-total', '1');
-    }
-}
-
-function openStatsWindow() {
-    const win = document.getElementById('stats-window');
-    const task = document.getElementById('stats-task');
-    if (win) {
-        win.style.display = 'flex';
-        if (task) task.style.display = 'flex';
-        document.querySelectorAll('.window').forEach(w => w.style.zIndex = 10);
-        win.style.zIndex = 100;
-        refreshStats();
-    }
-}
-
-function closeStatsWindow() {
-    const win = document.getElementById('stats-window');
-    const task = document.getElementById('stats-task');
-    if (win) win.style.display = 'none';
-    if (task) task.style.display = 'none';
-}
-
-function initSecretTrigger() {
-    const triggers = [
-        document.getElementById('clock')
-    ];
-    
-    triggers.forEach(el => {
-        if (!el) return;
-        el.addEventListener('auxclick', (e) => {
-            if (e.button === 1) {
-                e.preventDefault();
-                openStatsWindow();
-            }
-        });
-        el.addEventListener('mousedown', (e) => {
-            if (e.button === 1) {
-                e.preventDefault();
-            }
-        });
-    });
-}
-
-// --- Start Menu & Cryptographic Access Key Verification ---
-// Güvenlik: Kodda şifrenin kendisi ASLA yazmaz! Yalnızca tek yönlü SHA-256 özeti ("kedi") saklanır.
-const AUTH_KEY_HASH = '959d8225a0bfdb8867d5db7fb01140b2af93f6b60da6537740a111e10b190fe7';
-
-async function sha256Hex(str) {
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
 
 function toggleStartMenu() {
     const menu = document.getElementById('start-menu');
@@ -470,62 +277,13 @@ function closeStartMenu() {
     if (btn) btn.style.borderStyle = '';
 }
 
-function promptTelemetryAuth() {
-    closeStartMenu();
-    const modal = document.getElementById('auth-modal');
-    const input = document.getElementById('auth-password-input');
-    const err = document.getElementById('auth-error-msg');
-    
-    if (modal) {
-        modal.style.display = 'flex';
-        if (err) err.style.display = 'none';
-        if (input) {
-            input.value = '';
-            setTimeout(() => input.focus(), 50);
-        }
-    }
-}
 
-function closeAuthModal() {
-    const modal = document.getElementById('auth-modal');
-    if (modal) modal.style.display = 'none';
-}
-
-async function checkTelemetryAuth() {
-    const input = document.getElementById('auth-password-input');
-    const err = document.getElementById('auth-error-msg');
-    if (!input) return;
-
-    const enteredHash = await sha256Hex(input.value.trim());
-
-    if (enteredHash === AUTH_KEY_HASH) {
-        closeAuthModal();
-        window.open('stats/', '_blank');
-    } else {
-        if (err) err.style.display = 'block';
-        input.value = '';
-        input.focus();
-    }
-}
-
-// Dışarı tıklayınca Başlat menüsünü kapat & Şifrede Enter desteği
 document.addEventListener('click', (e) => {
     const menu = document.getElementById('start-menu');
     const btn = document.getElementById('start-button');
     if (menu && menu.style.display === 'flex') {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
             closeStartMenu();
-        }
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    const modal = document.getElementById('auth-modal');
-    if (modal && modal.style.display === 'flex') {
-        if (e.key === 'Enter') {
-            checkTelemetryAuth();
-        } else if (e.key === 'Escape') {
-            closeAuthModal();
         }
     }
 });

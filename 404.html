@@ -9,25 +9,11 @@
     <meta name="publisher" content="HaYTooL">
     <meta name="robots" content="noindex, follow">
     
-    <!-- DNS Prefetch & Optimized Preconnect (Eliminates Unused Preconnect Warnings) -->
-    <link rel="preconnect" href="https://www.clarity.ms">
-    <link rel="dns-prefetch" href="https://www.clarity.ms">
-
-    <!-- Microsoft Clarity Tracking Code -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ysq5xtaexy");
-    </script>
-
     <!-- Asynchronous Non-Blocking Stylesheet (Eliminates Render-Blocking) -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="assets/pc_icon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#008080">
 
@@ -93,7 +79,7 @@
             margin-top: 8px;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
         }
 
         .error-contact-item {
@@ -106,6 +92,10 @@
         .error-contact-item a {
             color: var(--win98-blue);
             text-decoration: underline;
+            display: inline-block;
+            min-height: 24px;
+            padding: 3px 4px;
+            margin: -3px 0;
         }
 
         .error-contact-item a:hover {
@@ -176,7 +166,7 @@
                 <span data-i18n="page_not_found_title">404 - Sayfa Bulunamadı</span>
             </div>
             <div class="title-bar-controls">
-                <button class="win-btn" onclick="location.href='./'" title="Kapat" aria-label="Kapat">r</button>
+                <button class="win-btn win-btn--close" onclick="location.href='./'" title="Kapat" aria-label="Kapat"></button>
             </div>
         </div>
 
@@ -236,7 +226,7 @@
                 <span data-i18n="notepad_title">İletişim.txt - Not Defteri</span>
             </div>
             <div class="title-bar-controls">
-                <button class="win-btn" onclick="closeNotepad()" aria-label="Kapat">r</button>
+                <button class="win-btn win-btn--close" onclick="closeNotepad()" aria-label="Kapat"></button>
             </div>
         </div>
         <div class="notepad-menu">
@@ -267,38 +257,6 @@
             <div class="start-menu-item" onclick="openNotepad()">
                 <img src="assets/notepad_icon.png" width="16" height="16" alt="İletişim">
                 <span data-i18n="menu_contact">İletişim</span>
-            </div>
-            <div class="start-menu-divider"></div>
-            <div class="start-menu-item" onclick="promptTelemetryAuth()">
-                <img src="assets/pc_icon.png" width="16" height="16" alt="Sistem">
-                <span data-i18n="menu_sys_audit">Sistem Denetimi...</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Password Modal Dialog -->
-    <div id="auth-modal" class="window auth-modal" style="display: none;">
-        <div class="title-bar">
-            <div class="title-bar-text">
-                <img src="assets/warning_icon.png" width="16" height="16" alt="Uyarı">
-                <span data-i18n="auth_title">Sistem Kimlik Doğrulaması</span>
-            </div>
-            <div class="title-bar-controls">
-                <button class="win-btn" onclick="closeAuthModal()" aria-label="Kapat">r</button>
-            </div>
-        </div>
-        <div class="window-content" style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <img src="assets/warning_icon.png" width="32" height="32" alt="Güvenlik Uyarısı">
-                <span style="font-size: 11px;" data-i18n="auth_prompt">Yönetici konsoluna erişmek için anahtarı girin:</span>
-            </div>
-            <div>
-                <input type="password" id="auth-password-input" class="classic-input" placeholder="Anahtar..." data-i18n-placeholder="auth_placeholder" style="width: 100%; padding: 4px; font-family: monospace; font-size: 12px;">
-                <div id="auth-error-msg" style="color: red; font-size: 10px; margin-top: 4px; display: none;" data-i18n="auth_error">Geçersiz anahtar! Erişim engellendi.</div>
-            </div>
-            <div style="display: flex; justify-content: flex-end; gap: 6px; margin-top: 5px;">
-                <button class="classic-btn" style="min-width: 60px;" onclick="checkTelemetryAuth()" data-i18n="auth_btn_ok">Tamam</button>
-                <button class="classic-btn" style="min-width: 60px;" onclick="closeAuthModal()" data-i18n="auth_btn_cancel">İptal</button>
             </div>
         </div>
     </div>
