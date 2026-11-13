@@ -1,5 +1,5 @@
 // HaYTo Portfolio - Service Worker for Offline & High Performance Caching
-const CACHE_NAME = 'hayto-portfolio-cache-v1.7.4';
+const CACHE_NAME = 'hayto-portfolio-cache-v1.7.5';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -37,6 +37,7 @@ const ASSETS_TO_CACHE = [
     './assets/folder_icon.png',
     './assets/pc_icon.png',
     './assets/wattcost.png',
+    './assets/diskhay.png',
     './assets/pc_icon_192.png',
     './assets/pc_icon_512.png',
     './assets/apple-touch-icon.png',

@@ -27,6 +27,7 @@ HaYTo Portfolio is a retro Windows 98 styled personal website and project index 
 - [Lol Account Switcher](https://haytokoraz.github.io/Lol-Account-Switcher/): Ultra-fast League of Legends account switcher, display refresh rate optimizer, and in-game config protector.
 - [FakeLord](https://haytokoraz.github.io/FakeLord/): Ultra-lightweight ghost-process Discord activity status simulator for 4,000+ games.
 - [WattCost](https://haytokoraz.github.io/WattCost/): Driverless Windows telemetry suite computing live wall power (Watts) and electricity cost from hardware sensors, with in-game RTSS overlay, smart power plan switching, and refresh-rate automation.
+- [DiskHaY](https://haytokoraz.github.io/DiskHaY/): GPU-accelerated interactive disk space visualizer and cleaner built with Rust and GPUI, featuring allocation-aware treemap/details views and safe staged cleanup for Windows and Linux.
 
 ## Author Profiles & Social
 - [GitHub Profile](https://github.com/HaYToKoRaZ): Open-source repositories and development projects by HaYToKoRaZ.
