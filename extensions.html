@@ -277,13 +277,17 @@
             background: #eee;
             border: 2px solid;
             border-color: var(--win98-dark-grey) var(--win98-white) var(--win98-white) var(--win98-dark-grey);
-            height: 750px;
+            max-height: calc(100vh - 145px);
             overflow-y: auto;
-            padding: 10px;
+            padding: 8px 10px;
         }
 
         .category-section {
-            margin-bottom: 30px;
+            margin-bottom: 14px;
+        }
+
+        .category-section:last-child {
+            margin-bottom: 0;
         }
 
         .category-title, h2.category-title {
@@ -291,8 +295,8 @@
             font-weight: bold;
             color: var(--win98-blue);
             border-bottom: 2px solid var(--win98-dark-grey);
-            padding-bottom: 5px;
-            margin: 0 0 15px 0;
+            padding-bottom: 4px;
+            margin: 0 0 8px 0;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -342,23 +346,25 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
 
         .pc-projects-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 10px;
         }
 
         @media (max-width: 1200px) {
+            .projects-grid,
             .pc-projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 650px) {
+            .projects-grid,
             .pc-projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -369,10 +375,10 @@
             border: 2px solid;
             border-color: var(--win98-white) var(--win98-dark-grey) var(--win98-dark-grey) var(--win98-white);
             box-shadow: 1px 1px 0 0 var(--win98-black);
-            padding: 12px;
+            padding: 8px 10px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 6px;
             text-decoration: none;
             color: black;
             transition: transform 0.2s;
@@ -382,9 +388,9 @@
         .card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             border-bottom: 1px solid var(--win98-dark-grey);
-            padding-bottom: 8px;
+            padding-bottom: 5px;
         }
 
         .card-icon {
@@ -485,7 +491,7 @@
 <body>
     <div class="desktop"></div>
 
-    <main class="window" style="top: 2%; left: 5%; width: 90%; min-height: 900px;">
+    <main class="window" style="top: 1.5%; left: 3%; width: 94%;">
         <div class="title-bar">
             <div class="title-bar-text">
                 <img src="assets/folder_icon.png" width="16" height="16" alt="Projeler Klasörü">
@@ -501,6 +507,189 @@
         <div class="window-content" style="padding: 15px;">
             <div class="projects-container">
                 
+                <!-- Category: PC Yazılımlarım -->
+                <section class="category-section">
+                    <h2 class="category-title">
+                        <img src="assets/pc_icon.png" width="20" height="20" class="main-icon" alt="PC Yazılımları">
+                        <span data-i18n="category_pc">PC Yazılımlarım</span>
+                        <span class="browser-badges">
+                            (<a href="https://cachyos.org/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Linux / CachyOS"><img src="assets/linux.svg" width="14" height="14" class="browser-badge-icon" alt="Linux">Linux / <img src="assets/cachyos.svg" width="14" height="14" class="browser-badge-icon" alt="CachyOS">CachyOS</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
+                            <a href="https://www.microsoft.com/windows" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Microsoft Windows"><img src="assets/windows.svg" width="14" height="14" class="browser-badge-icon" alt="Windows">Windows</a> 
+                            <span data-i18n="and_word">ve</span> 
+                            <a href="https://www.apple.com/macos/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Apple macOS"><img src="assets/macos.svg" width="14" height="14" class="browser-badge-icon" alt="macOS">macOS</a>)
+                        </span>
+                    </h2>
+                    <div class="pc-projects-grid">
+                        <!-- HaYTooL Youtube Download -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/haytool.png" width="32" height="32" alt="Youtube Download"></div>
+                                <h3 class="card-title" data-i18n="haytool_title">Youtube Download</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
+                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/haytool-youtube-download/" target="_blank" class="store-btn" title="HaYTooL Youtube Download Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Youtube Download İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTooL Firewall -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/firewall.png" width="32" height="32" alt="Firewall"></div>
+                                <h3 class="card-title" data-i18n="haytool_firewall_title">Firewall</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_firewall_desc">
+                                Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Firewall/" target="_blank" class="store-btn" title="HaYTooL Firewall Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Firewall İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTooL Weather -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/weather.png" width="32" height="32" alt="Weather"></div>
+                                <h3 class="card-title" data-i18n="haytool_weather_title">Weather</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_weather_desc">
+                                Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Weather/" target="_blank" class="store-btn" title="HaYTooL Weather Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Weather İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HaYTooL Wallpaper -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/wallpaper.png" width="32" height="32" alt="Wallpaper"></div>
+                                <h3 class="card-title" data-i18n="haytool_wallpaper_title">Wallpaper</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_wallpaper_desc">
+                                Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/HaYTooL-Wallpaper/" target="_blank" class="store-btn" title="HaYTooL Wallpaper Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Wallpaper İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lol Account Switcher -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/lol_switcher.webp" width="32" height="32" alt="Lol Account Switcher"></div>
+                                <h3 class="card-title" data-i18n="lol_switcher_title">Lol Account Switcher</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="lol_switcher_desc">
+                                Riot & League of Legends için milisaniyelik hesap değiştirici, 144Hz/240Hz ekran yenileme hızı optimizasyonu ve oyun içi tuş yapılandırması (cfg) koruyucusu.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="store-btn" title="Lol Account Switcher Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/Lol-Account-Switcher/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Lol Account Switcher İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FakeLord -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/fakelord.webp" width="32" height="32" alt="FakeLord"></div>
+                                <h3 class="card-title" data-i18n="fakelord_title">FakeLord</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="fakelord_desc">
+                                Discord üzerinde 4.000+ oyunu 0 MB GPU yükü ve sıfır donanım harcamasıyla çalışıyor gösteren hafif hayalet süreçli akıllı Discord aktivite simülatörü.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="store-btn" title="FakeLord Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/FakeLord/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="FakeLord İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WattCost -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/wattcost.png" width="32" height="32" alt="WattCost"></div>
+                                <h3 class="card-title" data-i18n="wattcost_title">WattCost</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="wattcost_desc">
+                                Donanım sensörlerinden anlık priz gücünü (Watt) ve elektrik maliyetini hesaplayan, oyun içi RTSS göstergesi sunan ve akıllı güç planları yöneten sürücüsüz Windows telemetri süiti.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/WattCost/" target="_blank" class="store-btn" title="WattCost Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/WattCost/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="WattCost İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DiskHaY -->
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon"><img src="assets/diskhay.png" width="32" height="32" alt="DiskHaY"></div>
+                                <h3 class="card-title" data-i18n="diskhay_title">DiskHaY</h3>
+                            </div>
+                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="diskhay_desc">
+                                Rust ve GPUI ile geliştirilmiş, disk kullanımını gerçek blok tahsisatına göre interaktif mozaik (treemap) veya ayrıntılı liste olarak görselleştiren, güvenli silme korumalı GPU hızlandırmalı disk alanı analiz ve temizleme aracı.
+                            </div>
+                            <div class="card-footer">
+                                <div class="store-links">
+                                    <a href="https://haytokoraz.github.io/DiskHaY/" target="_blank" class="store-btn" title="DiskHaY Web Sitesi">
+                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
+                                    </a>
+                                    <a href="https://github.com/HaYToKoRaZ/DiskHaY/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="DiskHaY İndir (Release)">
+                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Category: Tarayıcı Eklentileri -->
                 <section class="category-section">
                     <h2 class="category-title">
@@ -696,189 +885,6 @@
                     </div>
                 </section>
 
-                <!-- Category: PC Yazılımlarım -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <img src="assets/pc_icon.png" width="20" height="20" class="main-icon" alt="PC Yazılımları">
-                        <span data-i18n="category_pc">PC Yazılımlarım</span>
-                        <span class="browser-badges">
-                            (<a href="https://cachyos.org/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Linux / CachyOS"><img src="assets/linux.svg" width="14" height="14" class="browser-badge-icon" alt="Linux">Linux / <img src="assets/cachyos.svg" width="14" height="14" class="browser-badge-icon" alt="CachyOS">CachyOS</a> <span class="recommended-tag" data-i18n="recommended_badge">(Önerilen)</span>, 
-                            <a href="https://www.microsoft.com/windows" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Microsoft Windows"><img src="assets/windows.svg" width="14" height="14" class="browser-badge-icon" alt="Windows">Windows</a> 
-                            <span data-i18n="and_word">ve</span> 
-                            <a href="https://www.apple.com/macos/" target="_blank" rel="nofollow noopener noreferrer" class="badge-link" title="Apple macOS"><img src="assets/macos.svg" width="14" height="14" class="browser-badge-icon" alt="macOS">macOS</a>)
-                        </span>
-                    </h2>
-                    <div class="pc-projects-grid">
-                        <!-- HaYTooL Youtube Download -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/haytool.png" width="32" height="32" alt="Youtube Download"></div>
-                                <h3 class="card-title" data-i18n="haytool_title">Youtube Download</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_desc">
-                                YouTube kanallarını otomatik izleyen ve yeni videoları arka planda indiren premium, hafif ve çoklu işletim sistemi destekli otomasyon yazılımı.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/haytool-youtube-download/" target="_blank" class="store-btn" title="HaYTooL Youtube Download Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/haytool-youtube-download/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Youtube Download İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- HaYTooL Firewall -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/firewall.png" width="32" height="32" alt="Firewall"></div>
-                                <h3 class="card-title" data-i18n="haytool_firewall_title">Firewall</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_firewall_desc">
-                                Windows Güvenlik Duvarı kurallarını profiller halinde düzenleyen, özyinelemeli (recursive) akıllı klasör taraması ile binlerce .EXE dosyasını tek tıkla engelleyen veya izin veren (whitelist) modern masaüstü kontrol paneli.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Firewall/" target="_blank" class="store-btn" title="HaYTooL Firewall Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Firewall/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Firewall İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- HaYTooL Weather -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/weather.png" width="32" height="32" alt="Weather"></div>
-                                <h3 class="card-title" data-i18n="haytool_weather_title">Weather</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_weather_desc">
-                                Windows bildirim alanında (saatin yanında) sessizce çalışan, anlık sıcaklık derecesini ve hava durumu sembolünü dinamik sistem tepsisi simgeleriyle gösteren hafif masaüstü hava durumu uygulaması.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Weather/" target="_blank" class="store-btn" title="HaYTooL Weather Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Weather/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Weather İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- HaYTooL Wallpaper -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/wallpaper.png" width="32" height="32" alt="Wallpaper"></div>
-                                <h3 class="card-title" data-i18n="haytool_wallpaper_title">Wallpaper</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="haytool_wallpaper_desc">
-                                Windows masaüstü arka planınızı belirlediğiniz kaynaklardan yüksek çözünürlüklü görsellerle dinamik olarak değiştiren, tamamen sessiz çalışan hafif ve modern PC yazılımı.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/HaYTooL-Wallpaper/" target="_blank" class="store-btn" title="HaYTooL Wallpaper Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/HaYTooL-Wallpaper/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="HaYTooL Wallpaper İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lol Account Switcher -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/lol_switcher.webp" width="32" height="32" alt="Lol Account Switcher"></div>
-                                <h3 class="card-title" data-i18n="lol_switcher_title">Lol Account Switcher</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="lol_switcher_desc">
-                                Riot & League of Legends için milisaniyelik hesap değiştirici, 144Hz/240Hz ekran yenileme hızı optimizasyonu ve oyun içi tuş yapılandırması (cfg) koruyucusu.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/Lol-Account-Switcher/" target="_blank" class="store-btn" title="Lol Account Switcher Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/Lol-Account-Switcher/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="Lol Account Switcher İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FakeLord -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/fakelord.webp" width="32" height="32" alt="FakeLord"></div>
-                                <h3 class="card-title" data-i18n="fakelord_title">FakeLord</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="fakelord_desc">
-                                Discord üzerinde 4.000+ oyunu 0 MB GPU yükü ve sıfır donanım harcamasıyla çalışıyor gösteren hafif hayalet süreçli akıllı Discord aktivite simülatörü.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/FakeLord/" target="_blank" class="store-btn" title="FakeLord Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/FakeLord/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="FakeLord İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- WattCost -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/wattcost.png" width="32" height="32" alt="WattCost"></div>
-                                <h3 class="card-title" data-i18n="wattcost_title">WattCost</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="wattcost_desc">
-                                Donanım sensörlerinden anlık priz gücünü (Watt) ve elektrik maliyetini hesaplayan, oyun içi RTSS göstergesi sunan ve akıllı güç planları yöneten sürücüsüz Windows telemetri süiti.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/WattCost/" target="_blank" class="store-btn" title="WattCost Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/WattCost/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="WattCost İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- DiskHaY -->
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon"><img src="assets/diskhay.png" width="32" height="32" alt="DiskHaY"></div>
-                                <h3 class="card-title" data-i18n="diskhay_title">DiskHaY</h3>
-                            </div>
-                            <div style="font-size: 10px; color: #3f3f3f; line-height: 1.3; margin: 5px 0; flex: 1;" data-i18n="diskhay_desc">
-                                Rust ve GPUI ile geliştirilmiş, disk kullanımını gerçek blok tahsisatına göre interaktif mozaik (treemap) veya ayrıntılı liste olarak görselleştiren, güvenli silme korumalı GPU hızlandırmalı disk alanı analiz ve temizleme aracı.
-                            </div>
-                            <div class="card-footer">
-                                <div class="store-links">
-                                    <a href="https://haytokoraz.github.io/DiskHaY/" target="_blank" class="store-btn" title="DiskHaY Web Sitesi">
-                                        <img src="assets/world_icon.png" width="14" height="14" alt="Web Site"> <span data-i18n="btn_website">Web Sitesi</span>
-                                    </a>
-                                    <a href="https://github.com/HaYToKoRaZ/DiskHaY/releases/latest" target="_blank" rel="nofollow noopener noreferrer" class="store-btn" title="DiskHaY İndir (Release)">
-                                        <img src="assets/github.png" width="14" height="14" alt="Download"> <span data-i18n="btn_download">İndir (Release)</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
             </div>
 
             <div style="margin-top: 15px; text-align: right;">
@@ -948,7 +954,7 @@
                 <button class="classic-btn" style="padding: 1px 4px; font-size: 9px; font-weight: bold;" onclick="setLanguage('en')">EN</button>
             </div>
             <span style="font-weight: bold; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">RECORDS: 15</span>
-            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.7.5</span>
+            <span style="font-size: 10px; font-weight: bold; color: #333; border-right: 1px solid var(--win98-dark-grey); padding-right: 5px; margin-right: 5px;">v1.7.7</span>
             <img src="assets/speaker_icon.png" width="16" height="16" alt="Ses Kontrolü">
             <span id="clock">00:00</span>
         </div>
